@@ -1,14 +1,17 @@
 import React from 'react'
 import Dashboard from './Dashboard'
 import Header from './Header'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 
 function Home(){
     return(
-        <div className='home'>
+        <div className='container'>
             
-            <Header>
-
-            </Header>
+           <Navbar></Navbar>
+            <Sidebar>
+                
+            </Sidebar>
             <Dashboard>
 
             </Dashboard>
