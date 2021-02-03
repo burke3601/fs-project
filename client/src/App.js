@@ -1,6 +1,6 @@
 
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import Graph from './Graph'
 import axios from 'axios'
 import Home from './Home';
@@ -21,14 +21,8 @@ import {
 
 function App() {
   return (
-
+    
     <Router>
-     
-    <div className="container">
-      <header>
-     
-      </header>
-      <div >
         <Switch>
 
           <Route path="/" exact>
@@ -58,10 +52,9 @@ function App() {
          
 
         </Switch>
-    </div>
-
-    </div>
+  
     </Router>
+    
   );
 }
 

@@ -6,15 +6,30 @@ import Map from './Map'
 
 function Dashboard(){
     return(
-        <div className= 'container'>
+        
             <div className='dashboard'>
-               
                 
-                <Sidebar>
-                    
-                </Sidebar>
+                <div className="graphBox">
+                <div className="mainGraph">
+                    <Graph>
+
+                    </Graph>
+                </div>
+                    <Graph>
+
+                    </Graph>
+                    <Graph>
+
+                    </Graph>
+                    <Graph>
+
+                    </Graph>
+                </div>
+                <Map>
+
+                </Map>
             </div>
-        </div>
+      
     )
 }
 
