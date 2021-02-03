@@ -11,7 +11,7 @@ function Dashboard(){
                
                 
                 <Sidebar>
-                    
+                    <Graph />
                 </Sidebar>
             </div>
         </div>

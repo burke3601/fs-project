@@ -16,6 +16,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 
 
@@ -36,13 +37,20 @@ function App() {
             <LoginForm 
            
             />
+           
         
           </Route>
+          
           <Route path="/home" exact>
             <Home>
               <h1>
                 Welcome to the Dashboard
               </h1>
+
+              
+              <Map />
+
+              <Sidebar />
             </Home>
           </Route>
           <Route path="/graph">
@@ -51,10 +59,10 @@ function App() {
           </Route>
 
           
-          <Route path="/map">
+          
             <Map />
 
-          </Route>
+         
          
 
         </Switch>
