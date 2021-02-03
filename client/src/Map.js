@@ -6,7 +6,7 @@ import './map.css'
 function Map({ location, zoomLevel}){
     return(
         <div className="map">
-        <h2 className="map-h2">Come Visit Us At Our Campus</h2>
+       
     
         <div className="google-map">
           <GoogleMapReact

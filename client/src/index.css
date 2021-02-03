@@ -1,5 +1,5 @@
 body {
-  /* display: flex; */
+  display: grid;
   
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,8 +13,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.flex-container{
-  flex-direction: column;
+.container{
+  display: grid;
+  background-color: yellow;
+
 }
 .dashboard {
   
@@ -38,18 +40,20 @@ code {
 
 .header {
   height: 30px;
-  display: flex;
+  
   align-items: center;
   background: linear-gradient(#444444, #333333);
   color: #bbbbbb;
 }
 
 .sidebar {
-  flex-direction: row;
+  grid-row: 1 / span 3;
+  
   background-color: rgba(5, 34, 48, 0.582);
 }
 
 
+<<<<<<< HEAD
 .navbar {
   background: var(--mainWhite);
   height: 5rem;
@@ -88,3 +92,5 @@ code {
   width: 12rem;
 }
 
+=======
+>>>>>>> main

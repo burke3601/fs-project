@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import Dashboard from './Dashboard'
 import Header from './Header'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 import Api from './Api'
 import {REACT_APP_API_KEY} from './config'
 import axios from 'axios'
@@ -49,6 +51,7 @@ const api = {
 // }
 //setWeather(getWeather)
 
+
 function Home(){
     const [weather, setWeather] = useState([])
     async function fetchWeather(){
@@ -61,11 +64,12 @@ function Home(){
 }
     console.log(weather)
     return(
-        <div className='home'>
+        <div className='container'>
             
-            <Header>
-
-            </Header>
+           <Navbar></Navbar>
+            <Sidebar>
+                
+            </Sidebar>
             <Dashboard>
 
             </Dashboard>

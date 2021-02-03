@@ -1,6 +1,6 @@
 
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import Graph from './Graph'
 import axios from 'axios'
 import Home from './Home';
@@ -18,20 +18,21 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 
 
 
 function App() {
   return (
-
+    
     <Router>
      <Navbar />
     <div className="container">
       <header>
           
       </header>
-      <div >
+      </div >
         <Switch>
 
           <Route path="/" exact>
@@ -39,14 +40,21 @@ function App() {
             <LoginForm 
            
             />
+           
         
           </Route>
+          
           <Route path="/home" exact>
             
             <Home>
               <h1>
                 Welcome to the Dashboard
               </h1>
+
+              
+              <Map />
+
+              <Sidebar />
             </Home>
           </Route>
           <Route path="/graph">
@@ -55,18 +63,17 @@ function App() {
           </Route>
 
           
-          <Route path="/map">
+          
             <Map />
             
 
-          </Route>
+         
          
 
         </Switch>
-    </div>
-
-    </div>
+  
     </Router>
+    
   );
 }
 
