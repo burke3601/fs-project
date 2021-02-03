@@ -9,6 +9,7 @@ function Dashboard(){
         
             <div className='dashboard'>
                 
+
                 <div className="graphBox">
                 <div className="mainGraph">
                     <Graph>
@@ -28,6 +29,9 @@ function Dashboard(){
                 <Map>
 
                 </Map>
+
+               
+
             </div>
       
     )
