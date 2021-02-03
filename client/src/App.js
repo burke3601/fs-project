@@ -18,6 +18,20 @@ import {
 } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
+const location = {
+  address: 'Pueblo Nuevo',
+  lat: 14.365316,
+  lng: -91.81191,
+}
+
+const locationTwo = {
+  address: 'Location 2',
+  lat: 16.365316,
+  lng: -91.81191,
+
+
+}
+
 
 
 function App() {
@@ -34,23 +48,31 @@ function App() {
 
           <Route path="/" exact>
            
-            <LoginForm 
+         
+          <Map
+           location={location} zoomLevel={8}
            
-            />
+              
+          />
+          <Map
+           location={locationTwo} zoomLevel={8}
+           
+              
+          />
            
         
           </Route>
           
           <Route path="/home" exact>
             <Home>
-              <h1>
-                Welcome to the Dashboard
-              </h1>
+            
 
               
-              <Map />
+           
 
-              <Sidebar />
+             
+              
+              
             </Home>
           </Route>
           <Route path="/graph">
@@ -60,7 +82,11 @@ function App() {
 
           
           
-            <Map />
+            <Map path="map"
+            
+            
+            
+            />
 
          
          
