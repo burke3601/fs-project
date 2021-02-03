@@ -6,6 +6,8 @@ import axios from 'axios'
 import Home from './Home';
 import LoginForm from './LoginForm';
 import Map from './Map';
+import Navbar from './Navbar'
+import Api from './Api'
 
 
 import {useState, useEffect} from 'react'
@@ -19,14 +21,15 @@ import {
 
 
 
+
 function App() {
   return (
 
     <Router>
-     
+     <Navbar />
     <div className="container">
       <header>
-     
+          
       </header>
       <div >
         <Switch>
@@ -39,6 +42,7 @@ function App() {
         
           </Route>
           <Route path="/home" exact>
+            
             <Home>
               <h1>
                 Welcome to the Dashboard
@@ -53,6 +57,7 @@ function App() {
           
           <Route path="/map">
             <Map />
+            
 
           </Route>
          
