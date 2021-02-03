@@ -10,9 +10,7 @@ function Graph(){
     return(
         <>
         <div className='graph'>
-            this is the Graph
-        </div>
-        <div>
+            
             <Line 
             data ={{
                 labels: ['spot 1', 'spot 2', 'spot 3', 'spot 4', 'spot 5', 'spot 6', 'spot 7'],

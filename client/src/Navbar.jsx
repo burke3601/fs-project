@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-
+function Navbar(){
+    return(
 <nav className="navbar">
     <div className="nav-center">
         <Link to='/'>
-            <img src="./logo.svg" alt="app-logo" className="logo" />
+            
         </Link>
         <ul className="nav-links">
             <li>
@@ -17,5 +18,7 @@ import {Link} from 'react-router-dom'
         </ul>
     </div>
 </nav>
+    )
+}
 
 export default Navbar
