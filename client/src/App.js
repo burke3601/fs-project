@@ -6,6 +6,8 @@ import axios from 'axios'
 import Home from './Home';
 import LoginForm from './LoginForm';
 import Map from './Map';
+import Navbar from './Navbar'
+import Api from './Api'
 
 
 import {useState, useEffect} from 'react'
@@ -34,10 +36,17 @@ const locationTwo = {
 
 
 
+
 function App() {
   return (
     
     <Router>
+     <Navbar />
+    <div className="container">
+      <header>
+          
+      </header>
+      </div >
         <Switch>
 
           <Route path="/" exact>
@@ -58,6 +67,7 @@ function App() {
           </Route>
           
           <Route path="/home" exact>
+            
             <Home>
             
 
@@ -76,11 +86,16 @@ function App() {
 
           
           
+
+            <Map />
+            
+
             <Map path="map"
             
             
             
             />
+
 
          
          
