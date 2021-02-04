@@ -6,14 +6,14 @@ function Sidebar(){
     return(
         <div className='sidebar'>
             <div className = 'sidebarLinks'>
-                    <Link to='/map'>
+                    <Link to='/home'>
                         <div className="sidebarItem">  
                             <img className="icon" src="https://img.icons8.com/ios/20/000000/brittany-map.png"/>
                             View Map
                         </div>
                     </Link>
                     <br/>
-                    <Link to='/rocja'>
+                    <Link to='/graphs'>
                         <div className="sidebarItem">   
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
                             Rio Rocja 
@@ -21,7 +21,7 @@ function Sidebar(){
                         </div> 
                     </Link>
                     <br/>
-                    <Link to='/naranjo'>
+                    <Link to='/graphs'>
                         <div className="sidebarItem">  
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
                            Rio Naranjo 
