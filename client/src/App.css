@@ -237,7 +237,7 @@ ul{
 }
 .temp-unit {
   border: solid;
- 
+}
 
 @media screen and (min-width: 799px) {
   .google-map {
@@ -253,5 +253,4 @@ ul{
   .pin-icon {
     font-size: 10vw;
   }
-
 }
