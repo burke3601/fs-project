@@ -24,10 +24,13 @@ function Home(props){
     
     return(
         <div className="map">
+
             <Weather />
+
             <Map
             location={location} zoomLevel={6}
             locationTwo={locationTwo}
+            
             />
             <Api
             fetchWeather = {props.fetchWeather}
