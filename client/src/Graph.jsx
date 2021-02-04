@@ -42,7 +42,7 @@ function Graph(){
 
             }}
             height={400}
-            width={600}
+            width={400}
             options={{
                 maintainAspectRatio: false,
                 scales: {

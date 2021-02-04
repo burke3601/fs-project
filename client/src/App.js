@@ -6,6 +6,9 @@ import axios from 'axios'
 import Home from './Home';
 import LoginForm from './LoginForm';
 import Map from './Map';
+import Navbar from './Navbar'
+import Api from './Api'
+import Dashboard from './Dashboard'
 
 
 import {useState, useEffect} from 'react'
@@ -18,75 +21,76 @@ import {
 } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-const location = {
-  address: 'Pueblo Nuevo',
-  lat: 14.365316,
-  lng: -91.81191,
+import {REACT_APP_API_KEY} from './config'
+const api = {
+    
+  url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
 }
+  
+ 
+ 
+  
 
-const locationTwo = {
-  address: 'Location 2',
-  lat: 16.365316,
-  lng: -91.81191,
 
 
-}
 
 
 
 function App() {
-  return (
-    
-    <Router>
-        <Switch>
 
-          <Route path="/" exact>
-           
-         
-          <Map
-           location={location} zoomLevel={8}
-           
-              
-          />
-          <Map
-           location={locationTwo} zoomLevel={8}
-           
-              
-          />
-           
-        
-          </Route>
-          
-          <Route path="/home" exact>
-            <Home>
-            
+  const [data,setData] = useState({results: []})
 
-              
-           
-
-             
-              
-              
-            </Home>
-          </Route>
-          <Route path="/graph">
-            <Graph />
-
-          </Route>
-
-          
-          
-            <Map path="map"
-            
-            
-            
-            />
-
-         
-         
-
-        </Switch>
+  const [weather, setWeather] = useState([])
   
+  
+  async function getRocja(){
+    const resp = await axios.get(`/api/rocja`);
+    // console.log(resp)
+    setData(resp.data)
+  }
+  async function getNaranjo(){
+    const resp = await axios.get(`/api/naranjo`);
+    //console.log(resp)
+    setData(resp.data)
+  }
+  
+  async function fetchWeather(lat,lon){
+  const response = await axios.get(`${api.url}`)
+  setWeather(response.data)
+  console.log(`**************`)
+  //console.log(response.data)
+}
+
+useEffect(()=>{
+  fetchWeather()
+  //setInterval(fetchWeather,1000*60*30)
+  // setInterval(()=>{
+  //   getRocja()
+  //   getNaranjo()
+  // },1000*60*15)
+},[])
+
+  return (
+   
+    <Router>
+       <div className='container'>
+      <Switch>
+          <Route path="/graphs" exact>
+              <Navbar></Navbar>
+              <Sidebar></Sidebar>
+              <Dashboard></Dashboard>
+
+          </Route>
+          <Route path="/home" exact> 
+              <Navbar></Navbar>
+              <Sidebar></Sidebar>
+              <Home 
+              fetchWeather={fetchWeather}
+              weather = {weather}
+              ></Home>
+          </Route>
+      </Switch>
+      </div>
     </Router>
     
   );

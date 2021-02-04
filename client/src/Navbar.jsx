@@ -16,6 +16,7 @@ function Navbar(){
                 <Link to='/about'>about</Link>
             </li>
         </ul>
+        
     </div>
 </nav>
     )

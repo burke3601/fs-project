@@ -1,41 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+//import {REACT_APP_API_KEY} from './config'
 
-const api = {
-    APIkey: "",
-    url: "api.openweathermap.org/data/2.5/forecast?q={city name}&appid={APIkey}&units=imperial"
-}
-const [weather, setWeather]
 
-const fetchWeather = async() => {
-    const response = await fetch(`${api}`)
-    const data = await response.json()
-    console.log(data);
-    const {weather} = data
-    if (weather) {
-        const getWeather = weather.map((w) =>{
-            const {
-                temp,
-                feels_like,
-                temp_min,
-                temp_max,
-                humidity,
-                main,
-                description,
-                icon
-            } = weather
 
-            return {
-                temp: temp,
-                feels_like: feels_like,
-                temp_min: temp_min,
-                temp_max: temp_max,
-                humidity: humidity,
-                main: main,
-                description: description,
-                icon: icon,
-            }
-        })
-        setWeather(getWeather)
-    }
+function Api(props){
+   
+   
+    console.log(props)
+
+
+return(
+    <div>
+        
+        <h1>
+            {props.weather && props.weather.current && props.weather.current.weather && props.weather.current.weather[0].main}
+        </h1>
+    </div>
+);
 
 }
+//fetchWeather()
+
+
+export default Api;
