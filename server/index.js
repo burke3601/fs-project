@@ -48,7 +48,7 @@ for(let d of data){
     let Level = parseFloat(d.match(level))
     if(Id == '50202002'){
         river = 'Rio Naranjo'
-        station = 'La playa'
+        station = 'La Playa'
         departamento = 'San Marcos'
 
     }
@@ -145,6 +145,7 @@ app.get('/api/naranjo',(req, res) =>{
     let laVirgen = usableData.filter( data => data['station'] == 'La Virgen' )
     let puebloNuevo = usableData.filter( data => data['station'] == 'Pueblo Nuevo' )
     let naranjoData = [sintana, laPlaya, laVirgen, puebloNuevo]
+    console.log(naranjoData)
     res.json({
         results: naranjoData,
         image: '/P21011011265810.jpg'
