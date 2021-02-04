@@ -9,6 +9,8 @@ import Map from './Map';
 import Navbar from './Navbar'
 import Api from './Api'
 import Dashboard from './Dashboard'
+import About from "./pages/About";
+
 
 
 import {useState, useEffect} from 'react'
@@ -50,14 +52,15 @@ function App() {
   }
   async function getNaranjo(){
     const resp = await axios.get(`/api/naranjo`);
-    //console.log(resp)
+    console.log(`**************`)
+    console.log(resp)
     setData(resp.data)
   }
   
   async function fetchWeather(lat,lon){
   const response = await axios.get(`${api.url}`)
   setWeather(response.data)
-  console.log(`**************`)
+  //console.log(`**************`)
   //console.log(response.data)
 }
 
@@ -73,21 +76,35 @@ useEffect(()=>{
   return (
    
     <Router>
+     
        <div className='container'>
       <Switch>
           <Route path="/graphs" exact>
               <Navbar></Navbar>
-              <Sidebar></Sidebar>
-              <Dashboard></Dashboard>
+              <Sidebar
+              getRocja = {getRocja}
+              getNaranjo = {getNaranjo}
+              ></Sidebar>
+              <Dashboard
+              data = {data}
+              ></Dashboard>
 
           </Route>
           <Route path="/home" exact> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>
+             
               <Home 
               fetchWeather={fetchWeather}
               weather = {weather}
+              data = {data}
+              // getRocja = {getRocja}
+              // getNaranjo = {getNaranjo}
               ></Home>
+          </Route>
+          <Route path="/about">
+            <Navbar />
+            <About />
           </Route>
       </Switch>
       </div>

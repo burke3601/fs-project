@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 
 import Map from './Map'
 import Api from './Api'
+import Weather from './Weather'
 
 
 const location = {
@@ -26,6 +27,7 @@ function Home(props){
             <Map
             location={location} zoomLevel={10}
             locationTwo={locationTwo}
+            
             />
             {/* <Api
             fetchWeather = {props.fetchWeather}

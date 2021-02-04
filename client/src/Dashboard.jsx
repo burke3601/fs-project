@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Graph from './Graph'
 import Map from './Map'
-
+import {useEffect} from 'react'
 const location = {
     address: 'Pueblo Nuevo',
     lat: 14.365316,
@@ -17,29 +17,26 @@ const location = {
   
   }
 
-function Dashboard(){
+function Dashboard(props){
+  //console.log(props)
     return(
         
         
         <div className='dashboard'>
             
                 <div className="mainGraph">
-                    <Graph>
+                    {}
+                    <Graph data = {props.data}>
 
                     </Graph>
+                   
                 </div>
-                <div className="thumbnailGraph1">
-                    <Graph></Graph>
-                    </div>
-                    <div className="thumbnailGraph2">
-                    <Graph></Graph>
-                    </div>
-                    <div className="thumbnailGraph3">
-                    <Graph></Graph>
-                </div>
-            
-        </div>
-          
+                {/* <Graph></Graph>
+                <Graph></Graph>
+                <Graph></Graph> */}
+            </div>
+        
+
     )
 }
 
