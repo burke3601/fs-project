@@ -10,7 +10,7 @@ import Navbar from './Navbar'
 import Api from './Api'
 import Dashboard from './Dashboard'
 import About from "./pages/About";
-import Weather from './Weather';
+
 
 
 import {useState, useEffect} from 'react'
@@ -75,7 +75,7 @@ useEffect(()=>{
   return (
    
     <Router>
-      <Navbar />
+     
        <div className='container'>
       <Switch>
           <Route path="/graphs" exact>
@@ -87,7 +87,7 @@ useEffect(()=>{
           <Route path="/home" exact> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>
-              <Weather />
+             
               <Home 
               fetchWeather={fetchWeather}
               weather = {weather}
