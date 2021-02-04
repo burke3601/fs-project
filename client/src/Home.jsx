@@ -4,13 +4,13 @@ import Header from './Header'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Api from './Api'
-import {REACT_APP_API_KEY} from './config'
+//import {REACT_APP_API_KEY} from './config'
 import axios from 'axios'
 const lat = ''
 const lon = ''
 const api = {
     
-    url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
+    //url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
 }
 // const [weather, setWeather] = useState([])
 // async function fetchWeather(){
