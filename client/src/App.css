@@ -163,3 +163,21 @@ ul{
   grid-column: 1/4;
   grid-row: 1/2;
 }
+
+.map{
+  grid-row:2/13;
+  grid-column: 4/13;
+}
+
+
+.about-section {
+  width: var(--smallWidth);
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+.about-section p {
+  line-height: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+ 

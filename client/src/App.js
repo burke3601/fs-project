@@ -9,6 +9,7 @@ import Map from './Map';
 import Navbar from './Navbar'
 import Api from './Api'
 import Dashboard from './Dashboard'
+import About from "./pages/About";
 
 
 import {useState, useEffect} from 'react'
@@ -73,6 +74,7 @@ useEffect(()=>{
   return (
    
     <Router>
+      <Navbar />
        <div className='container'>
       <Switch>
           <Route path="/graphs" exact>
@@ -88,6 +90,10 @@ useEffect(()=>{
               fetchWeather={fetchWeather}
               weather = {weather}
               ></Home>
+          </Route>
+          <Route path="/about">
+            <Navbar />
+            <About />
           </Route>
       </Switch>
       </div>

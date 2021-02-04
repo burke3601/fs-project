@@ -23,7 +23,7 @@ const LocationPin = ({ text }) => (
   
   function Map ({ location, locationTwo, zoomLevel }) {
       return (
-    <div className="map">
+    <div>
       <h2 className="map-h2">Location Sites</h2>
   
       <div className="google-map">

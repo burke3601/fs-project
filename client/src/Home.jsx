@@ -22,7 +22,7 @@ const location = {
 function Home(props){
     
     return(
-        <div>
+        <div className="map">
             <Map
             location={location} zoomLevel={6}
             locationTwo={locationTwo}
