@@ -50,14 +50,15 @@ function App() {
   }
   async function getNaranjo(){
     const resp = await axios.get(`/api/naranjo`);
-    //console.log(resp)
+    console.log(`**************`)
+    console.log(resp)
     setData(resp.data)
   }
   
   async function fetchWeather(lat,lon){
   const response = await axios.get(`${api.url}`)
   setWeather(response.data)
-  console.log(`**************`)
+  //console.log(`**************`)
   //console.log(response.data)
 }
 
@@ -77,8 +78,13 @@ useEffect(()=>{
       <Switch>
           <Route path="/graphs" exact>
               <Navbar></Navbar>
-              <Sidebar></Sidebar>
-              <Dashboard></Dashboard>
+              <Sidebar
+              getRocja = {getRocja}
+              getNaranjo = {getNaranjo}
+              ></Sidebar>
+              <Dashboard
+              data = {data}
+              ></Dashboard>
 
           </Route>
           <Route path="/home" exact> 
@@ -87,6 +93,9 @@ useEffect(()=>{
               <Home 
               fetchWeather={fetchWeather}
               weather = {weather}
+              data = {data}
+              // getRocja = {getRocja}
+              // getNaranjo = {getNaranjo}
               ></Home>
           </Route>
       </Switch>
