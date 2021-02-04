@@ -23,8 +23,10 @@ const LocationPin = ({ text }) => (
   
   function Map ({ location, locationTwo, zoomLevel }) {
       return (
+
     <div >
       
+
   
       <div className="google-map">
         <GoogleMapReact

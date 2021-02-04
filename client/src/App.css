@@ -176,6 +176,68 @@ ul{
 .pin-text {
   font-size: 1.3em;
 }
+
+.map{
+  grid-row:2/13;
+  grid-column: 4/13;
+}
+
+
+.about-section {
+  width: var(--smallWidth);
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+.about-section p {
+  line-height: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+ 
+
+.weather-container {
+  background-color: goldenrod;
+  display: flex;
+  flex-direction: column; 
+  max-width: 35%;
+
+}
+
+.info-container {
+  background-color: red;
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+
+}
+.temp-info {
+  background-color:goldenrod;
+  display: flex;
+  flex-direction: row;
+}
+.img {
+  height: 50%;
+  object-fit: cover;
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+}
+/* p {
+  padding: 0,0,0,40px;
+  background-color: white;
+} */
+
+/* h3 {
+  padding-bottom: 2rem;
+  margin: 2px;
+} */
+.location-info {
+  border: solid;
+
+}
+.temp-unit {
+  border: solid;
+}
+
 @media screen and (min-width: 799px) {
   .google-map {
     height: 80vh;
