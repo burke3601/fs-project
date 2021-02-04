@@ -23,8 +23,8 @@ const LocationPin = ({ text }) => (
   
   function Map ({ location, locationTwo, zoomLevel }) {
       return (
-    <div>
-      <h2 className="map-h2">Location Sites</h2>
+    <div >
+      
   
       <div className="google-map">
         <GoogleMapReact

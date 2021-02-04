@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
  
-function Sidebar(){
+function Sidebar(props){
     return(
         <div className='sidebar'>
             <div className = 'sidebarLinks'>
@@ -13,7 +13,7 @@ function Sidebar(){
                         </div>
                     </Link>
                     <br/>
-                    <Link to='/graphs'>
+                    <Link to='/graphs'onClick={props.getRocja}>
                         <div className="sidebarItem">   
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
                             Rio Rocja 
@@ -21,7 +21,7 @@ function Sidebar(){
                         </div> 
                     </Link>
                     <br/>
-                    <Link to='/graphs'>
+                    <Link to='/graphs' onClick={props.getNaranjo}>
                         <div className="sidebarItem">  
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
                            Rio Naranjo 

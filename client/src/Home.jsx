@@ -28,6 +28,7 @@ function Home(props){
             <Map
             location={location} zoomLevel={6}
             locationTwo={locationTwo}
+            
             />
             <Api
             fetchWeather = {props.fetchWeather}
