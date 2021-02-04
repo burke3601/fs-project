@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react'
 import { Link } from 'react-router-dom'
-import './map.css'
+
 
 import locationIcon from '@iconify/icons-mdi/map-marker'
 import { Icon } from '@iconify/react'
