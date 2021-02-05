@@ -35,9 +35,9 @@ function Weather(props) {
                 </div>
                 <div className="temp-details">
                     <ul>
-                        <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like}</li>
+                        <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like + "°"}</li>
                         <li>{props.weather && props.weather.current && props.weather.current.weather && props.weather.current.weather[0].description}</li>
-                        <li>humidity:{props.weather && props.weather.current && props.weather.current.humidity}</li>
+                        <li>max temp: {props.weather && props.weather.daily && props.weather.daily[0].temp && props.weather.daily[0].temp.max + "°" }</li>
                     </ul>
                 </div>
              
