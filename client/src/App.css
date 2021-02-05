@@ -195,27 +195,37 @@ ul{
 }
  
 
-.weather-container {
+@media (min-width: 700px) {
+  .weather-container {
   background-color: goldenrod;
   display: flex;
   flex-direction: column; 
   max-width: 35%;
-
+  }
 }
 
 .info-container {
-  background-color: red;
+  background-color: goldenrod;
   display: flex;
   /* flex-wrap:wrap; */
   flex-direction: row;
 
 }
 .info-container > div {
-  flex: 0 1 auto
+  display: flex;
+  flex: 0 1 auto;
+  padding: 0 0 2px 2px;
+  margin: auto;
+  
 }
 .temp-info {
-  background-color:goldenrod;
+  background-color:whitesmoke;
+  display: flex;
+  align-items: center;
 
+}
+.temp-details > li {
+  padding: 10px ;
 }
 .img {
   height: 50%;

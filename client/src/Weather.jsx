@@ -12,32 +12,31 @@ function Weather(props) {
                     <h3>
                        Guatemala 
                     </h3> 
-                </div>
-                <div className="temp-unit">
+                </div> 
+                <div className="image-icon">
                     <div
-                    weather = 
-                    {props.weather && props.weather.current && props.weather.current.temp}
-                    >
-
-
-                    </div>
-                </div>
-            </div>
-            <div className="temp-info">
-                 <div className="image-icon">
-                 <div
-                    fetchWeather = {props.fetchWeather}
-                    weather = {props.weather}></div>
-                    <img className="img-fluid" alt="logo" src={props.weather && props.weather.current && props.weather.current.weather && 
-                    ("https://openweathermap.org/img/w/" +  props.weather.current.weather[0].icon + ".png")
-                }
+                        fetchWeather = {props.fetchWeather}
+                        weather = {props.weather}></div>
+                        <img className="img-fluid" alt="logo" src={props.weather && props.weather.current && props.weather.current.weather && 
+                        ("https://openweathermap.org/img/w/" +  props.weather.current.weather[0].icon + ".png")
+                        }
                     />
                 </div>
+
+            </div>
+            <div className="temp-info">
+                <div className="temp-unit">
+                        <div> 
+                            Current Temp:
+                            <br></br>   
+                        {props.weather && props.weather.current && props.weather.current.temp + "° C"}  
+                        </div>
+                </div> 
                 <div className="temp-details">
                     <ul>
-                        <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like + "°"}</li>
+                        <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like + "° C"}</li>
                         <li>{props.weather && props.weather.current && props.weather.current.weather && props.weather.current.weather[0].description}</li>
-                        <li>max temp: {props.weather && props.weather.daily && props.weather.daily[0].temp && props.weather.daily[0].temp.max + "°" }</li>
+                        <li>max temp: {props.weather && props.weather.daily && props.weather.daily[0].temp && props.weather.daily[0].temp.max + "° C" }</li>
                     </ul>
                 </div>
              
