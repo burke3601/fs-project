@@ -161,8 +161,13 @@ ul{
   text-align: center;
 }
 .google-map {
-  width: 100%;
+  width:auto ;
   height: 20vh;
+  border:#114c5f8f solid;
+  border-width: 3em;
+  border-radius: 1em;
+  box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+
 }
 .pin {
   display: flex;
@@ -177,10 +182,7 @@ ul{
   font-size: 1.3em;
 }
 
-.map{
-  grid-row:2/13;
-  grid-column: 4/13;
-}
+
 
 
 .about-section {
@@ -197,21 +199,29 @@ ul{
 
 @media (min-width: 700px) {
   .weather-container {
-  background-color: goldenrod;
+  background-color: #114B5F;
+  color: white;
   display: flex;
   flex-direction: column; 
   max-width: 35%;
+  margin: 6%;
+  border-radius: 1.5em;
+  box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+  border: rgba(255, 255, 255, 0.783) solid;
+ 
   }
 }
 
 .info-container {
-  background-color: goldenrod;
+  border-radius: 2em;
+  background-color: #114B5F;
   display: flex;
   /* flex-wrap:wrap; */
   flex-direction: row;
 
 }
 .info-container > div {
+  border-radius: 1em;
   display: flex;
   flex: 0 1 auto;
   padding: 0 0 2px 2px;
@@ -219,7 +229,8 @@ ul{
   
 }
 .temp-info {
-  background-color:whitesmoke;
+  background-color:#b1dadaf3;
+  color: #114B5F;
   display: flex;
   align-items: center;
 
@@ -242,13 +253,13 @@ ul{
   padding-bottom: 2rem;
   margin: 2px;
 } */
-.location-info {
-  
-  /* border: solid; */
 
+.current-temp {
+  padding-left: 10px;
+  margin-bottom: 50px;
 }
-.temp-unit {
-  /* border: solid; */
+.footer {
+  text-align: center;
 }
 
 @media screen and (min-width: 799px) {

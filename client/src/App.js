@@ -13,6 +13,7 @@ import About from "./pages/About";
 
 
 
+
 import {useState, useEffect} from 'react'
 
 import { 
@@ -90,6 +91,8 @@ useEffect(()=>{
               ></Dashboard>
 
           </Route>
+          
+
           <Route path="/home" exact> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>

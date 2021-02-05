@@ -26,14 +26,15 @@ function Weather(props) {
             </div>
             <div className="temp-info">
                 <div className="temp-unit">
-                        <div> 
-                            Current Temp:
+                        <div className="current-temp"> 
+                            {/* <h3>Current Temp:</h3> */}
                             <br></br>   
                         {props.weather && props.weather.current && props.weather.current.temp + "° C"}  
                         </div>
                 </div> 
                 <div className="temp-details">
                     <ul>
+                        <h3>Details:</h3>
                         <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like + "° C"}</li>
                         <li>{props.weather && props.weather.current && props.weather.current.weather && props.weather.current.weather[0].description}</li>
                         <li>max temp: {props.weather && props.weather.daily && props.weather.daily[0].temp && props.weather.daily[0].temp.max + "° C" }</li>
@@ -42,7 +43,9 @@ function Weather(props) {
              
             </div>
         
-
+            <footer className="footer">
+                    Clima
+            </footer>
         </div>
     );
 }
