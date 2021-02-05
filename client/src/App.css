@@ -206,14 +206,16 @@ ul{
 .info-container {
   background-color: red;
   display: flex;
-  flex-wrap:wrap;
+  /* flex-wrap:wrap; */
   flex-direction: row;
 
 }
+.info-container > div {
+  flex: 0 1 auto
+}
 .temp-info {
   background-color:goldenrod;
-  display: flex;
-  flex-direction: row;
+
 }
 .img {
   height: 50%;
@@ -231,6 +233,7 @@ ul{
   margin: 2px;
 } */
 .location-info {
+  
   border: solid;
 
 }

@@ -25,16 +25,18 @@ function Home(props){
     return(
         <div className="map">
 
-            <Weather />
-
+            <Weather 
+            weather={props.weather}
+            />
+              
             <Map
             location={location} zoomLevel={6}
             locationTwo={locationTwo}
             
             />
             <Api
-            fetchWeather = {props.fetchWeather}
-            weather = {props.weather}></Api>
+            fetchWeather={props.fetchWeather}
+            weather={props.weather}></Api>
         </div>
     )
 }

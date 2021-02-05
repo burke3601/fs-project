@@ -1,7 +1,9 @@
 import React from 'react';
+import Api from './Api'
 
 
-function Weather() {
+function Weather(props) {
+   
   
     return(
         <div className="weather-container">
@@ -9,16 +11,21 @@ function Weather() {
                 <div className="location-info">
                     <h3>
                         L
-                    </h3>
+                    </h3> 
+                </div>
                 <div className="temp-unit">
                     <p>8 degrees C</p>
-                </div>
-               
                 </div>
             </div>
             <div className="temp-info">
                  <div className="image-icon">
-                    <img src="/public/icons8-rope-bridge-50.png"alt="weather-logo"/>
+                 <div
+                    fetchWeather = {props.fetchWeather}
+                    weather = {props.weather}></div>
+                    <img className="img-fluid" alt="logo" src={props.weather && props.weather.current && props.weather.current.weather && 
+                    ("https://openweathermap.org/img/w/" +  props.weather.current.weather[0].icon + ".png")
+                }
+                    />
                 </div>
                 <div className="temp-details">
                     <ul>
