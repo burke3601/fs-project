@@ -10,6 +10,8 @@ import Navbar from './Navbar'
 import Api from './Api'
 import Dashboard from './Dashboard'
 import About from "./pages/About";
+import NavbarBootstrap from './NavbarBootstrap';
+
 
 
 
@@ -24,7 +26,11 @@ import {
 import Sidebar from './Sidebar';
 
 import {REACT_APP_API_KEY} from './config'
+
+
+
 import Footer from './Footer';
+>
 const api = {
     
   url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
@@ -77,11 +83,13 @@ useEffect(()=>{
   return (
    
     <Router>
-     
+        {/* <NavbarBootstrap></NavbarBootstrap> */}
+        
        <div className='container'>
       <Switch>
           <Route path="/graphs" exact>
               <Navbar></Navbar>
+              {/* <NavbarBootstrap></NavbarBootstrap> */}
               <Sidebar
               getRocja = {getRocja}
               getNaranjo = {getNaranjo}
