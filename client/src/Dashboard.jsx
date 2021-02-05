@@ -21,8 +21,9 @@ function Dashboard(props){
   //console.log(props)
     return(
         
+        
         <div className='dashboard'>
-            <div className="graphBox">
+            
                 <div className="mainGraph">
                     {}
                     <Graph data = {props.data}>
@@ -34,7 +35,7 @@ function Dashboard(props){
                 <Graph></Graph>
                 <Graph></Graph> */}
             </div>
-        </div>
+        
 
     )
 }

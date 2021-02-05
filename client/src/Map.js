@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react'
 import { Link } from 'react-router-dom'
-import './map.css'
+
 
 import locationIcon from '@iconify/icons-mdi/map-marker'
 import { Icon } from '@iconify/react'
@@ -27,7 +27,7 @@ const LocationPin = ({ text }) => (
     <div >
       
 
-  
+      <h2 className="map-h2">Elija marcador para ver datos</h2>
       <div className="google-map">
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY_MAP }}
