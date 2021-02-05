@@ -15,6 +15,7 @@ import NavbarBootstrap from './NavbarBootstrap';
 
 
 
+
 import {useState, useEffect} from 'react'
 
 import { 
@@ -99,6 +100,8 @@ useEffect(()=>{
               ></Dashboard>
 
           </Route>
+          
+
           <Route path="/home" exact> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>

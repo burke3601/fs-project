@@ -24,14 +24,28 @@ function Home(props){
     
     return(
         <div className="map">
+
+
+            <Weather 
+            weather={props.weather}
+            />
+              
+
+
             <Map
             location={location} zoomLevel={10}
             locationTwo={locationTwo}
             
             />
+
+            <Api
+            fetchWeather={props.fetchWeather}
+            weather={props.weather}></Api>
+
             {/* <Api
             fetchWeather = {props.fetchWeather}
             weather = {props.weather}></Api> */}
+
         </div>
     )
 }
