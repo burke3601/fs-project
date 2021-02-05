@@ -27,7 +27,7 @@ const LocationPin = ({ text }) => (
     <div >
       
 
-  
+      <h2 className="map-h2">Elija marcador para ver datos</h2>
       <div className="google-map">
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY_MAP }}
