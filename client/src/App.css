@@ -234,11 +234,11 @@ ul{
 } */
 .location-info {
   
-  border: solid;
+  /* border: solid; */
 
 }
 .temp-unit {
-  border: solid;
+  /* border: solid; */
 }
 
 @media screen and (min-width: 799px) {

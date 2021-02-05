@@ -10,11 +10,17 @@ function Weather(props) {
             <div className="info-container">
                 <div className="location-info">
                     <h3>
-                        L
+                       Guatemala 
                     </h3> 
                 </div>
                 <div className="temp-unit">
-                    <p>8 degrees C</p>
+                    <div
+                    weather = 
+                    {props.weather && props.weather.current && props.weather.current.temp}
+                    >
+
+
+                    </div>
                 </div>
             </div>
             <div className="temp-info">
@@ -29,9 +35,9 @@ function Weather(props) {
                 </div>
                 <div className="temp-details">
                     <ul>
-                        <li>Humidity: 89%</li>
-                        <li>Min Temp: 34</li>
-                        <li>Max Temp: 89</li>
+                        <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like}</li>
+                        <li>{props.weather && props.weather.current && props.weather.current.weather && props.weather.current.weather[0].description}</li>
+                        <li>humidity:{props.weather && props.weather.current && props.weather.current.humidity}</li>
                     </ul>
                 </div>
              
