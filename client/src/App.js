@@ -24,6 +24,7 @@ import {
 import Sidebar from './Sidebar';
 
 import {REACT_APP_API_KEY} from './config'
+import Footer from './Footer';
 const api = {
     
   url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
@@ -107,6 +108,7 @@ useEffect(()=>{
             <About />
           </Route>
       </Switch>
+      <Footer></Footer>
       </div>
     </Router>
     
