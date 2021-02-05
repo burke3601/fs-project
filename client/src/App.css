@@ -44,7 +44,11 @@
 }
 .navbar {
   margin-bottom: 2%;
+
   flex-direction: row;
+
+ 
+
   grid-column: 1/13;
   background: var(--mainWhite);
   /* height: 5rem; */
@@ -101,7 +105,7 @@ a{
   text-decoration: none;
   color: #302d2d;
   display: block;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .sidebar a:hover {
   background-color:#387bd3;
@@ -112,17 +116,20 @@ ul{
   list-style-type:none;
 }
 .icon{
-  background-color: white;
+  background-color:white;
   border-radius: 2em;
-  margin-right: 1em;
-  border: rgba(20, 193, 236, 0.5) solid; 
+  margin-right: .5em;
+  margin-left: 1em;
+  border: #114B5F solid; 
   justify-content: center;
+  vertical-align: middle;
 }
 .sidebarItem{
-  vertical-align: middle;
+ 
   align-content: center;
   justify-content: center;
 }
+
 /* GRAPHS */
 .canvas{
   max-width: 100%;
@@ -148,7 +155,11 @@ ul{
   background-color: white;
 }
 .graph :hover{
-  box-shadow: 5px 10px #109c9c50;
+  
+  border-radius: 1em;
+}
+.graph{
+  box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
   border-radius: 1em;
 }
 .mainGraph{
@@ -156,11 +167,10 @@ ul{
   border: #456990 solid;
   border-radius: 1em;
   background-color: white;
-  
- 
-
 }
-
+footer{
+  background-color: #456990 ;
+}
 
 
 /* MAP CSS */
@@ -173,6 +183,7 @@ ul{
   grid-row: 2/13;
   grid-column: 4/13;
   background-color: pink;
+  
 }
 .main-map{
   grid-column: 4/7;
@@ -180,15 +191,22 @@ ul{
 }
 
 .map-h2 {
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 1rem;
   padding: 20px;
   padding-left: 10px;
   text-align: center;
+  color:#114c5f ;
 }
 .google-map {
-  width: 100%;
+  width:auto ;
   height: 20vh;
+  border:#114c5f8f solid;
+  border-width: 3em;
+  border-radius: 1em;
+  box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+
 }
 .pin {
   display: flex;
@@ -205,10 +223,7 @@ ul{
   font-size: 1.3em;
 }
 
-.map{
-  grid-row:2/13;
-  grid-column: 4/13;
-}
+
 
 
 .about-section {
@@ -278,7 +293,7 @@ ul{
     width: 15vw;
   }
   .pin-icon {
-    font-size: 10vw;
+    font-size: auto;
   }
 }
 
