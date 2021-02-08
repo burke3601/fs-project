@@ -4,7 +4,7 @@ import './App.css';
 import Graph from './Graph'
 import axios from 'axios'
 import Home from './Home';
-import LoginForm from './LoginForm';
+import Login from './Login';
 import Map from './Map';
 import Navbar from './Navbar'
 import Api from './Api'
@@ -103,7 +103,7 @@ useEffect(()=>{
           </Route>
           
           <Route exact path="/">
-            <LoginForm />
+            <Login />
           </Route>
           
 
