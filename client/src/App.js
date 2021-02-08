@@ -16,6 +16,7 @@ import NavbarBootstrap from './NavbarBootstrap';
 
 
 
+
 import {useState, useEffect} from 'react'
 
 import { 
@@ -31,7 +32,7 @@ import {REACT_APP_API_KEY} from './config'
 
 
 import Footer from './Footer';
->
+
 const api = {
     
   url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
@@ -101,10 +102,16 @@ useEffect(()=>{
 
           </Route>
           
+          <Route exact path="/">
+            <LoginForm />
+          </Route>
+          
 
-          <Route path="/home" exact> 
+          <Route path="/home"> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>
+              <Home />
+              
              
               <Home 
               fetchWeather={fetchWeather}
