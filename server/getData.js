@@ -1,3 +1,4 @@
+require('dotenv').config()
 const ftp = require("basic-ftp")
  
 example()
@@ -10,9 +11,9 @@ async function example() {
     try {
         console.log('inside try')
         await client.access({
-            host: "143.208.180.120",
-            user: "satgal",
-            password: "ftp2018",
+            host: '45.226.176.12',
+            user: 'ftptest',
+            password: 'ftp2021$',
             // secure: true
             
         })
