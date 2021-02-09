@@ -1,12 +1,16 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
- 
+const center = {
+    lat: 15.4651,
+    lng: -90.3843
+  }
 function Sidebar(props){
     return(
         <div className='sidebar'>
             <div className = 'sidebarLinks'>
-                    <Link to='/home'>
+                    <Link to='/home'onClick={props.fetchWeather}
+                      >
                         <div className="sidebarItem">  
                             <img className="icon" src="https://img.icons8.com/ios/20/000000/brittany-map.png"/>
                             View Map
