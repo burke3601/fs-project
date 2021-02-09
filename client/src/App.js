@@ -87,6 +87,9 @@ useEffect(()=>{
    
     <Router>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
+        <Route exact path="/">
+            <Login />
+          </Route>
         
        <div className='container'>
       <Switch>
@@ -103,9 +106,7 @@ useEffect(()=>{
 
           </Route>
           
-          <Route exact path="/">
-            <Login />
-          </Route>
+          
           
 
           <Route path="/home"> 

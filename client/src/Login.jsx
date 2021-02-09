@@ -1,4 +1,11 @@
 import React, {useState} from 'react';
+import Home from './Home'
+import { 
+    BrowserRouter as Router, 
+    Link,
+    Switch,
+    Route
+  } from 'react-router-dom';
 
 
 
@@ -60,7 +67,9 @@ function Login() {
                             <label htmlFor="password">Password:</label>
                             <input type="password" name="password" id="password" onChange={e => setDetails({...details,password: e.target.value})} value={details.password} />
                         </div>
+                        <Link to="/home">
                            <input type="submit" value="LOGIN" onClick={loginCheck} />
+                        </Link>   
                     </div>
                 </form>
             )}

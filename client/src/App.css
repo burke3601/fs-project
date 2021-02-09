@@ -1,4 +1,4 @@
-/* .container{
+.container{
   background-color:#e4e1e100 ;
   display: grid;
   grid-template-rows: repeat(12, 1fr);
@@ -7,7 +7,7 @@
   font-family:  'Helvetica Neue', sans-serif;
   
  
-} */
+}
 .headernav{
   color:honeydew
 }
@@ -458,6 +458,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
   color: #FE4880;
   font-weight: 700;
 }
+
 
 
 
