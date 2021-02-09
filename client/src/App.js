@@ -88,7 +88,21 @@ function App() {
   const [data,setData] = useState({results: []})
 
   const [weather, setWeather] = useState([])
-  
+  async function getDay (params){
+    const resp = await axios.get(`/api/getStation/${params}`);
+    console.log(resp)
+    setData(resp.data)
+  }
+  async function getWeek (params){
+    const resp = await axios.get(`/api/getStation/${params}`);
+    console.log(resp)
+    setData(resp.data)
+  }
+  async function getMonth (params){
+    const resp = await axios.get(`/api/getStation/${params}`);
+    console.log(resp)
+    setData(resp.data)
+  }
   async function getStation(params) {
     console.log(params)
     const resp = await axios.get(`/api/getStation/${params}`);
@@ -120,7 +134,8 @@ useEffect(()=>{
   // setInterval(()=>{
     getRocja()
    getNaranjo()
-   getStation()
+  //  getStation()
+  //  getDay()
   // },1000*60*15)
 },[])
 
@@ -148,6 +163,9 @@ useEffect(()=>{
               location = {location}
               fetchWeather={fetchWeather}
               weather = {weather}
+              getDay ={getDay}
+              getWeek ={getWeek}
+              getMonth ={getMonth}
               ></Dashboard>
 
           </Route>
