@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-// import LoginForm from './LoginForm';
+
+
 
 function Login() {
     const adminUser = {
@@ -14,14 +15,15 @@ function Login() {
     const loginCheck = (details) => {
         console.log(details);
 
-        if (details.email == adminUser.email && details.password == adminUser.password ){
+        if (details.email === adminUser.email && details.password === adminUser.password ){
             console.log("Logged in");
             setUser ({
                 name: details.name,
                 email: details.email
             });
         } else {
-            console.log("Try again")
+            console.log("Authentication Does Not Match!!")
+            setError("Authentication Does Not Match!!")
         }
     }
 
@@ -33,7 +35,7 @@ function Login() {
 
     return(
         <div className="Login">
-            {(user.email != "") ? (
+            {(user.email !== "") ? (
                 <div className="welcome">
                     <h2>welcome, <span>{user.name}</span></h2>
                     <button onClick={Logout}>Logout</button>
@@ -45,7 +47,7 @@ function Login() {
                 }}>
                     <div className="form-inner">
                         <h2>Login</h2>
-                        {/* {(error != "") ? ( <div className="error"></div>)} */}
+                        {(error !== "") ? ( <div className="error">{error}</div>) : ""}
                         <div className="form-group">
                             <label htmlFor="name">Name:</label>
                             <input type="text" name="name" id="name"  onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
