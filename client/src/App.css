@@ -158,6 +158,11 @@ ul{
   
   border-radius: 1em;
 }
+.graphButtons{
+  border:rgba(0, 0, 0, 0.2) solid;
+  background-color: pink;
+  border-radius: 4%;
+}
 .graph{
   
    overflow-x: scroll;

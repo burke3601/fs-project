@@ -20,6 +20,7 @@ const fullRiverData = async (req, res) =>{
 const stationData = async (req, res) =>{
     console.log('Here is stationData')
     console.log(req.params)
+   
     const data = await Data.findAll({
         where: {
             station: req.params.name
