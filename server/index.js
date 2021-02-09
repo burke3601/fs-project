@@ -14,31 +14,18 @@ const { static } = require('express')
 app.use(express.static('public'))
 const logger = morgan('dev')
 
+const {
+    riverControllers,
+    stationData
+} = require('./controllers') 
 
-app.get('/api/rocja',(req, res) =>{
+app.use('/api/rocja', riverControllers.fullRiverData)
+
+app.use('/api/getStation/:name',riverControllers.stationData)
     
-    let rocja = usableData.filter( data => data['station'] == 'Rocja Pontila' )
-    let laPaz = usableData.filter( data => data['station'] == 'La Paz' )
-    let entreRios = usableData.filter( data => data['station'] == 'Entre Rios' )
-    let rocjaData = [rocja, laPaz, entreRios]
-    console.log(rocjaData)
-    res.json({
-        results: rocjaData,
-        image: '/P21011011265810.jpg'
-    })
-})
-app.get('/api/naranjo',(req, res) =>{
-    let sintana = usableData.filter( data => data['station'] == 'Sintana' )
-    let laPlaya = usableData.filter( data => data['station'] == 'La Playa' )
-    let laVirgen = usableData.filter( data => data['station'] == 'La Virgen' )
-    let puebloNuevo = usableData.filter( data => data['station'] == 'Pueblo Nuevo' )
-    let naranjoData = [sintana, laPlaya, laVirgen, puebloNuevo]
-    console.log(naranjoData)
-    res.json({
-        results: naranjoData,
-        image: '/P21011011265810.jpg'
-    })
-})
+
+app.use('/api/naranjo', riverControllers.fullRiverData)
+    
 app.get('/api/picture', (req, res)=>{
     console.log('picture')
     res.sendFile(
