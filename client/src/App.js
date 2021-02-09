@@ -31,7 +31,7 @@ import {REACT_APP_API_KEY} from './config'
 
 
 import Footer from './Footer';
->
+
 const api = {
     
   url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
@@ -47,12 +47,17 @@ const api = {
 
 
 function App() {
-
+ 
   const [data,setData] = useState({results: []})
 
   const [weather, setWeather] = useState([])
   
-  
+  async function getStation(params) {
+    console.log(params)
+    const resp = await axios.get(`/api/getStation/${params}`);
+    // console.log(resp)
+    setData(resp.data)
+  }
   async function getRocja(){
     const resp = await axios.get(`/api/rocja`);
     // console.log(resp)
@@ -76,8 +81,9 @@ useEffect(()=>{
   fetchWeather()
   //setInterval(fetchWeather,1000*60*30)
   // setInterval(()=>{
-  //   getRocja()
-  //   getNaranjo()
+    getRocja()
+  //  getNaranjo()/
+   //getStation()
   // },1000*60*15)
 },[])
 
@@ -100,7 +106,6 @@ useEffect(()=>{
               ></Dashboard>
 
           </Route>
-          
 
           <Route path="/home" exact> 
               <Navbar></Navbar>
@@ -109,7 +114,8 @@ useEffect(()=>{
               <Home 
               fetchWeather={fetchWeather}
               weather = {weather}
-              data = {data}
+              getStation = {getStation}
+              
               // getRocja = {getRocja}
               // getNaranjo = {getNaranjo}
               ></Home>
