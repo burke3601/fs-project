@@ -24,7 +24,8 @@ import {
   BrowserRouter as Router, 
   Link,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
@@ -128,6 +129,7 @@ useEffect(()=>{
     <Router>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
+
             <Login />
           </Route>
         

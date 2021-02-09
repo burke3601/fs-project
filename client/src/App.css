@@ -274,6 +274,7 @@ footer{
   display: flex;
   /* flex-wrap:wrap; */
   flex-direction: row;
+  padding: 20px;
 
 }
 .info-container > div {
@@ -292,8 +293,8 @@ footer{
   align-items: center;
 
 }
-.temp-details > li {
-  padding: 10px ;
+.temp-details  {
+  padding-left: 20px ;
 }
 .img {
   height: 50%;
@@ -359,6 +360,8 @@ input, button {
   justify-content: center;
   /* background-color: #53565A; */
   background-image: url("https://geology.com/world/guatemala-map.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
  
 }
 
@@ -431,6 +434,9 @@ form .form-inner .form-group input {
   background-color: #F8F8F8;
   border-radius: 8px;
   transition: 0.4s;
+}
+form .form-inner .error {
+  color: red;
 }
 
 form .form-inner .form-group input:focus {
