@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "basic-ftp": "^4.6.3",
     "dotenv": "^8.2.0",
@@ -15,11 +22,8 @@
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+
 }
