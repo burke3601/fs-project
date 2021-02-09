@@ -25,7 +25,10 @@ const stationData = async (req, res) =>{
             station: req.params.name
         }
     })
+    console.log('************')
+    console.log(data)
     res.json(data)
+    
     
 }
 module.exports = {

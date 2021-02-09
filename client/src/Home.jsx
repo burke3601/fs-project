@@ -13,7 +13,7 @@ import Weather from './Weather'
 
 function Home(props){
   //useEffect(()=>props.fetchWeather(15.4651,-90.3843),[])
-    console.log(props)
+    console.log(props.location)
     return(
         <div className="map">
 
