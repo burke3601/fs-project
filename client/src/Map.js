@@ -5,23 +5,34 @@ import { Link } from 'react-router-dom'
 
 import locationIcon from '@iconify/icons-mdi/map-marker'
 import { Icon } from '@iconify/react'
+const location = {
+  address: 'Pueblo Nuevo',
+  lat: 14.365316,
+  lng: -91.81191,
+}
+
+const locationTwo = {
+  address: 'Sintana',
+  lat: 16.365316,
+  lng: -91.81191,
+}
 
 
-
-
-
-
-
-
-
-const LocationPin = ({ text }) => (
+const LocationPin = ({ text, getStation }) => (
     <div className="pin">
-      <Icon icon={locationIcon} className="pin-icon" style={{transform: 'scale(0.8)'}} />
-      <p className="pin-text">{text}</p>
+      <Link to='/graphs' >
+      <Icon  icon={locationIcon} className="pin-icon" style={{transform: 'scale(0.8)'} } onClick={(e)=>getStation(e.target.id)} id={text} />
+      <p className="pin-text" onClick={(e)=>getStation(e.target.id)} id={text}>{text}</p>
+      </Link>
+      
     </div>
   )
   
-  function Map ({ location, locationTwo, zoomLevel }) {
+  function Map ({center, location, zoomLevel, getStation }) {
+   
+     
+
+     
       return (
 
     <div >
@@ -31,29 +42,64 @@ const LocationPin = ({ text }) => (
       <div className="google-map">
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY_MAP }}
-          defaultCenter={location}
-          defaultCenterTwo={locationTwo}
+          defaultCenter={center}
+          location = {location}
           defaultZoom={zoomLevel}
         >
-         <Link to='/graphs'>
+     
             <LocationPin
-              lat={location.lat}
-              lng={location.lng}
-              text={location.address}
+             text = {location[0].address}
+             lat = {location[0].lat}
+             lng = {location[0].lng}
+             getStation = {getStation}
             />
-          </Link>
-          <Link to='/graphs'>
-            <LocationPin
-              lat={locationTwo.lat}
-              lng={locationTwo.lng}
-              text={locationTwo.address}
+             <LocationPin
+             text = {location[1].address}
+             lat = {location[1].lat}
+             lng = {location[1].lng}
+             getStation = {getStation}
             />
-          </Link>
+             <LocationPin
+             text = {location[2].address}
+             lat = {location[2].lat}
+             lng = {location[2].lng}
+             getStation = {getStation}
+            />
+              <LocationPin
+             text = {location[3].address}
+             lat = {location[3].lat}
+             lng = {location[3].lng}
+             getStation = {getStation}
+            />
+             <LocationPin
+             text = {location[4].address}
+             lat = {location[4].lat}
+             lng = {location[4].lng}
+             getStation = {getStation}
+            />
+             <LocationPin
+             text = {location[5].address}
+             lat = {location[5].lat}
+             lng = {location[5].lng}
+             getStation = {getStation}
+            />        
+             <LocationPin
+             text = {location[6].address}
+             lat = {location[6].lat}
+             lng = {location[6].lng}
+             getStation = {getStation}
+            />        
+          {/* <Link to='/graphs'> */}
+            {/* <LocationPin */}
+       
+            {/* /> */}
+          {/* </Link> */}
          
         </GoogleMapReact>
       </div>
     </div>
   )
+
 }
 
 export default Map
