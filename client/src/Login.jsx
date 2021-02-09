@@ -4,45 +4,54 @@ import {
     BrowserRouter as Router, 
     Link,
     Switch,
-    Route
+    Route,
+    Redirect
   } from 'react-router-dom';
+import { render } from '@testing-library/react';
+
 
 
 
 function Login() {
     const adminUser = {
-        email: "admin@admin.com",
+        userName: "admin",
         password: "admin123"
 
     }
-    const [details, setDetails] = useState({name: "", email: "", password: ""});
-    const [user, setUser] = useState({name: "", email: ""});
+    const [details, setDetails] = useState({name: "", userName: "", password: ""});
+    const [user, setUser] = useState({name: "", userName: ""});
     const [error, setError] = useState("");
+    const [loginSuccess, setLoginSuccess] = useState(false);
 
     const loginCheck = (details) => {
         console.log(details);
 
-        if (details.email === adminUser.email && details.password === adminUser.password ){
+        if (details.userName === adminUser.userName && details.password === adminUser.password ){
             console.log("Logged in");
             setUser ({
                 name: details.name,
-                email: details.email
+                email: details.userName
+          
+           
             });
+           setLoginSuccess (true)
         } else {
             console.log("Authentication Does Not Match!!")
             setError("Authentication Does Not Match!!")
+
+            return false
         }
     }
 
     const Logout = () => {
         console.log("Logout");
-        setUser({ name: "", email: ""});
+        setUser({ name: "", userName: ""});
     }
 
 
     return(
         <div className="Login">
-            {(user.email !== "") ? (
+            {(user.userName !== "") ? (
                 <div className="welcome">
                     <h2>welcome, <span>{user.name}</span></h2>
                     <button onClick={Logout}>Logout</button>
@@ -60,19 +69,19 @@ function Login() {
                             <input type="text" name="name" id="name"  onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="email">Email:</label>
-                            <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+                            <label htmlFor="userName">Username:</label>
+                            <input type="text" name="userName" id="userName" onChange={e => setDetails({...details, userName: e.target.value})} value={details.userName} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password:</label>
                             <input type="password" name="password" id="password" onChange={e => setDetails({...details,password: e.target.value})} value={details.password} />
                         </div>
-                        <Link to="/home">
                            <input type="submit" value="LOGIN" onClick={loginCheck} />
-                        </Link>   
                     </div>
                 </form>
             )}
+             {/* make a conditions of if loginSuccess is true then redirect to home */}
+            {loginSuccess &&  <Redirect to='/home' />}
         </div>
 
     )}     
