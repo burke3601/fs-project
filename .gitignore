@@ -1,5 +1,5 @@
 
-config.js
+
 sessions
 .env
 
@@ -27,7 +27,6 @@ yarn-error.log*
 
 yarn.lock
 .eslintcache
-package.json
-package-lock.json
+
 
 
