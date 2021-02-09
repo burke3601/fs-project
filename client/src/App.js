@@ -4,13 +4,15 @@ import './App.css';
 import Graph from './Graph'
 import axios from 'axios'
 import Home from './Home';
-import LoginForm from './LoginForm';
+import Login from './Login';
 import Map from './Map';
 import Navbar from './Navbar'
 import Api from './Api'
 import Dashboard from './Dashboard'
 import About from "./pages/About";
 import NavbarBootstrap from './NavbarBootstrap';
+
+
 
 
 
@@ -125,6 +127,9 @@ useEffect(()=>{
    
     <Router>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
+        <Route exact path="/">
+            <Login />
+          </Route>
         
        <div className='container'>
       <Switch>
@@ -145,9 +150,16 @@ useEffect(()=>{
 
           </Route>
 
-          <Route path="/home" exact> 
+          
+          
+          
+
+
+          <Route path="/home"> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>
+              <Home />
+              
              
               <Home 
               fetchWeather={fetchWeather}
