@@ -1,17 +1,22 @@
 import React from 'react';
 import Api from './Api'
+import{ useState, useEffect } from 'react';
 
 
 function Weather(props) {
-   
+   console.log(props)
   
     return(
         <div className="weather-container">
             <div className="info-container">
                 <div className="location-info">
                     <h3>
-                       Guatemala 
+                      {props && props.data && props.data.length>0?props.data[0].station: "Guatemala"},
                     </h3> 
+                    <div></div>
+                    <p>
+                        Departamento de {props && props.data && props.data.length>0?props.data[0].departamento: "Guatemala"}
+                    </p>
                 </div> 
                 <div className="image-icon">
                     <div

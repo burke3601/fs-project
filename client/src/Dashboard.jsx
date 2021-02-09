@@ -1,27 +1,37 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Graph from './Graph'
-import Map from './Map'
-import {useEffect} from 'react'
 
+import {useEffect} from 'react'
+import Api from './Api'
+import Weather from './Weather'
 
 function Dashboard(props){
+  console.log(props)
   //console.log(props)
     return(
         
         
         <div className='dashboard'>
-            
+
+
+<div >
+                <Weather 
+                  data = {props.data}
+                  fetchWeather = {props.fetchWeather}
+                  weather={props.weather}
+                />
+                </div>
                 <div className="mainGraph">
-                    {}
-                    <Graph data = {props.data}>
+                    
+                    <Graph 
+                    data = {props.data}
+                    >
 
                     </Graph>
-                   
+
                 </div>
-                {/* <Graph></Graph>
-                <Graph></Graph>
-                <Graph></Graph> */}
+                
             </div>
         
 

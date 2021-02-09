@@ -29,6 +29,5 @@ yarn.lock
 .eslintcache
 package.json
 package-lock.json
-.env
-package*
-.package*
+
+

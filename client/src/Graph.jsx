@@ -62,9 +62,9 @@ function Graph(props){
             label: sta,
             fill: true,
             lineTension: 0.5,
-            backgroundColor: `rgba(${color},.2)`,
-            borderColor: `rgba(${color},1)`,
-            borderWidth: 1,
+            backgroundColor: `rgba(${color},.1)`,
+            borderColor: `rgba(${color},2)`,
+            borderWidth: 2,
             data: levels[index]
           }
         }),

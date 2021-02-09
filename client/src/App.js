@@ -4,13 +4,15 @@ import './App.css';
 import Graph from './Graph'
 import axios from 'axios'
 import Home from './Home';
-import LoginForm from './LoginForm';
+import Login from './Login';
 import Map from './Map';
 import Navbar from './Navbar'
 import Api from './Api'
 import Dashboard from './Dashboard'
 import About from "./pages/About";
 import NavbarBootstrap from './NavbarBootstrap';
+
+
 
 
 
@@ -34,14 +36,48 @@ import Footer from './Footer';
 
 const api = {
     
-  url: `http://api.openweathermap.org/data/2.5/onecall?lat=14.365316&lon=-91.81191&units=metric&appid=${REACT_APP_API_KEY}`
+  url: `http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lng}&units=metric&appid=${REACT_APP_API_KEY}`
 }
   
  
+const location = [{
+  address: 'Pueblo Nuevo',
+  lat: 14.614766,
+  lng: -92.136641,
+},
+ {
+  address: 'La Virgen',
+  lat: 14.710178,
+  lng: -92.098644,
+
+},{
+  address: 'Sintana',
+  lat: 14.720622,
+  lng: -91.890944,
+},{
+  address: 'La Playa',
+  lat: 14.713706,
+  lng: -92.030361,
+},
+{
+  address: 'La Paz',
+  lat: 15.67485,
+  lng: -90.379311,
+},
+{
+  address: 'Rocja Pontila',
+  lat: 15.861075,
+  lng: -90.616494,
+},
+{
+  address: 'Entre Rios',
+  lat: 15.950753,
+  lng: -90.546267,
+}
+
+]
  
   
-
-
 
 
 
@@ -70,15 +106,15 @@ function App() {
     setData(resp.data)
   }
   
-  async function fetchWeather(lat,lon){
-  const response = await axios.get(`${api.url}`)
+  async function fetchWeather(lat,lng){
+  const response = await axios.get(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${REACT_APP_API_KEY}`)
   setWeather(response.data)
   //console.log(`**************`)
   //console.log(response.data)
 }
 
 useEffect(()=>{
-  fetchWeather()
+  fetchWeather(15.950753,-90.546267)
   //setInterval(fetchWeather,1000*60*30)
   // setInterval(()=>{
     getRocja()
@@ -91,6 +127,9 @@ useEffect(()=>{
    
     <Router>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
+        <Route exact path="/">
+            <Login />
+          </Route>
         
        <div className='container'>
       <Switch>
@@ -100,21 +139,33 @@ useEffect(()=>{
               <Sidebar
               getRocja = {getRocja}
               getNaranjo = {getNaranjo}
+              fetchWeather={fetchWeather}
               ></Sidebar>
               <Dashboard
               data = {data}
+              location = {location}
+              fetchWeather={fetchWeather}
+              weather = {weather}
               ></Dashboard>
 
           </Route>
 
-          <Route path="/home" exact> 
+          
+          
+          
+
+
+          <Route path="/home"> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>
+              <Home />
+              
              
               <Home 
               fetchWeather={fetchWeather}
               weather = {weather}
               getStation = {getStation}
+              location = {location}
               
               // getRocja = {getRocja}
               // getNaranjo = {getNaranjo}
