@@ -7,6 +7,7 @@ import locationIcon from '@iconify/icons-mdi/map-marker'
 import { Icon } from '@iconify/react'
 
 
+
 const LocationPin = ({ text, getStation, fetchWeather,location }) => (
   
     <div className="pin">
@@ -31,7 +32,8 @@ const LocationPin = ({ text, getStation, fetchWeather,location }) => (
   function Map ({center, location, zoomLevel, getStation, fetchWeather }) {
    
      
-
+      // console.log(location)
+      // console.log(location[0])
      
       return (
 
@@ -46,7 +48,7 @@ const LocationPin = ({ text, getStation, fetchWeather,location }) => (
           location = {location}
           defaultZoom={zoomLevel}
         >
-     
+            {/* {location &&<>  */}
             <LocationPin
              text = {location[0].address}
              lat = {location[0].lat}
@@ -102,7 +104,8 @@ const LocationPin = ({ text, getStation, fetchWeather,location }) => (
              getStation = {getStation}
              location = {location}
              fetchWeather = {fetchWeather}
-            />        
+            />      
+          {/* </>}   */}
           {/* <Link to='/graphs'> */}
             {/* <LocationPin */}
        

@@ -91,12 +91,12 @@ function App() {
   async function getStation(params) {
     console.log(params)
     const resp = await axios.get(`/api/getStation/${params}`);
-    // console.log(resp)
+    console.log(resp)
     setData(resp.data)
   }
   async function getRocja(){
     const resp = await axios.get(`/api/rocja`);
-    // console.log(resp)
+    console.log(resp)
     setData(resp.data)
   }
   async function getNaranjo(){
@@ -118,8 +118,8 @@ useEffect(()=>{
   //setInterval(fetchWeather,1000*60*30)
   // setInterval(()=>{
     getRocja()
-  //  getNaranjo()/
-   //getStation()
+   getNaranjo()
+   getStation()
   // },1000*60*15)
 },[])
 
@@ -158,7 +158,7 @@ useEffect(()=>{
           <Route path="/home"> 
               <Navbar></Navbar>
               <Sidebar></Sidebar>
-              <Home />
+              
               
              
               <Home 

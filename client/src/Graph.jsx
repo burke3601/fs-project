@@ -5,7 +5,7 @@ import './App.css';
 
 
 function Graph(props){
-        //console.log(props.data)
+        console.log(props)
         
         if (props){
           
