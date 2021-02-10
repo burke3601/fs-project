@@ -161,12 +161,12 @@ useEffect(()=>{
     <Router>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
-
             <Login />
-          </Route>
+        </Route>
         
-       <div className='container'>
+      
       <Switch>
+         <div className='container'>
           <Route path="/graphs" exact>
               <Navbar></Navbar>
               {/* <NavbarBootstrap></NavbarBootstrap> */}
@@ -216,9 +216,11 @@ useEffect(()=>{
             <Navbar />
             <About />
           </Route>
+          <Footer></Footer>
+         </div>  
       </Switch>
-      <Footer></Footer>
-      </div>
+      
+     
     </Router>
     
   );
