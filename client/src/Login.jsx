@@ -18,8 +18,8 @@ function Login() {
         password: "admin123"
 
     }
-    const [details, setDetails] = useState({name: "", userName: "", password: ""});
-    const [user, setUser] = useState({name: "", userName: ""});
+    const [details, setDetails] = useState({userName: "", password: ""});
+    const [user, setUser] = useState({userName: ""});
     const [error, setError] = useState("");
     const [loginSuccess, setLoginSuccess] = useState(false);
 
@@ -29,8 +29,8 @@ function Login() {
         if (details.userName === adminUser.userName && details.password === adminUser.password ){
             console.log("Logged in");
             setUser ({
-                name: details.name,
-                email: details.userName
+                
+                userName: details.userName
           
            
             });
@@ -45,7 +45,7 @@ function Login() {
 
     const Logout = () => {
         console.log("Logout");
-        setUser({ name: "", userName: ""});
+        setUser({userName: ""});
     }
 
 
@@ -64,10 +64,10 @@ function Login() {
                     <div className="form-inner">
                         <h2>Login</h2>
                         {(error !== "") ? ( <div className="error">{error}</div>) : ""}
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label htmlFor="name">Name:</label>
                             <input type="text" name="name" id="name"  onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <label htmlFor="userName">Username:</label>
                             <input type="text" name="userName" id="userName" onChange={e => setDetails({...details, userName: e.target.value})} value={details.userName} />
