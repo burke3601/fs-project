@@ -37,6 +37,7 @@ function Dashboard(props){
                 <div className="dashboardbuttons">
                   <div>
 
+
                     <h3>Mostrando ultimas:</h3>
                     <br/>
                     <Link>
@@ -88,6 +89,7 @@ function Dashboard(props){
                       text = {"Mes"}>
                     </TimeButton>
                   </Link>
+
 
                     </div>
                   </div>

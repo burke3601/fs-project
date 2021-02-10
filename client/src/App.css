@@ -8,13 +8,14 @@
   
  
 }
-.headernav{
+.headerNav{
   color:honeydew
 }
 .nav-center {
-  display: flex;
+  /* display: flex;
   justify-content: space-between; 
-  align-items:flex-end; 
+  align-items:flex-end;  */
+  
 
   width: var(--smallWidth);
   margin: 0 auto;
@@ -43,19 +44,19 @@
   width: 12rem;
 }
 .navbar {
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 
   flex-direction: row;
 
- 
+ justify-content: space-between;
 
   grid-column: 1/13;
   background: var(--mainWhite);
   /* height: 5rem; */
   display: flex;
   align-items: flex-end;
-  border: 1px solid rgba(158, 155, 155, 0.945);
-  background-color: #ea6a47;
+  border: 1px solid rgba(35, 33, 33, 0.945);
+  background-color: #5ea17b;
   font: white;
   font-family:  'Helvetica Neue', sans-serif;
 }
@@ -71,6 +72,12 @@ a{
 }
 .navbar a:hover {
   background-color: gray;
+}
+
+.satgal{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -192,7 +199,7 @@ ul{
 }
 .graph :hover{
   
-  border-radius: 1em;
+  border-radius: .25em;
 }
 .graphButtons{
   border:rgba(0, 0, 0, 0.2) solid;
@@ -205,7 +212,7 @@ ul{
   box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
   border-radius: 1em;
   border:#114c5f8f solid;
-  border-width: 3em;
+  border-width: .25em;
   border-radius: 1em;
   
 }
@@ -251,7 +258,7 @@ footer{
   width:auto ;
   height: 20vh;
   border:#114c5f8f solid;
-  border-width: 3em;
+  border-width: .5em;
   border-radius: 1em;
   box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
 
@@ -294,20 +301,22 @@ footer{
 }
  
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) { */
   .weather-container {
   background-color: #114B5F;
   color: white;
   display: flex;
   flex-direction: column; 
-  max-width: 35%;
+  /* max-width: 35%; */
   margin: 6%;
   border-radius: 1.5em;
   box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
   border: rgba(255, 255, 255, 0.783) solid;
+  grid-column: 4/6;
+  grid-row: 3/4;
  
   }
-}
+/* } */
 
 .info-container {
   border-radius: 2em;
@@ -321,6 +330,7 @@ footer{
 .info-container > div {
   border-radius: 1em;
   display: flex;
+
   flex-wrap: wrap;
   flex: 0 1 auto;
   padding: 0 0 2px 2px;
@@ -331,12 +341,15 @@ footer{
   background-color:#b1dadaf3;
   color: #114B5F;
   display: flex;
-  align-items: center;
+  
+}
 
-}
 .temp-details  {
-  padding-left: 20px ;
+  padding-left: 25%;
+  justify-content: flex-end;
+  
 }
+
 .img {
   height: 50%;
   object-fit: cover;
@@ -355,7 +368,11 @@ footer{
 
 .current-temp {
   padding-left: 10px;
-  margin-bottom: 50px;
+  padding-right: 10px;
+  
+  font-size: x-large ;
+  font-weight: bolder;
+  
 }
 .footer {
   text-align: center;

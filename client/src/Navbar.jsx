@@ -5,8 +5,17 @@ import {Link} from 'react-router-dom'
 function Navbar(){
     return(
 <nav className="navbar">
-    <div classname="headernav">
-        <h3>Sistema de Alerta Temprana</h3>
+    <div className="headerNav">
+        <div className="satgal">
+            <div className="satgal1">
+                <h1>SATGAL</h1>
+            </div>
+            <div className="satgal2">
+                <h5>Sistema de Alerta Temprana Galileo</h5>
+            </div>
+        </div>
+        
+        
     </div>
     <div className="nav-center">
         <Link to='/'>
