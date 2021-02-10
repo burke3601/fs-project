@@ -88,21 +88,38 @@ function App() {
   const [data,setData] = useState({results: []})
 
   const [weather, setWeather] = useState([])
-  async function getDay (params){
-    const resp = await axios.get(`/api/getStation/${params}`);
+  const [count, setCount] = useState(7)
+
+  async function addHour (count, station){
+    const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
     console.log(resp)
-    setData(resp.data)
+    if (resp.data.length > 0){setData(resp.data)}
+    setCount(count+1)
+    
   }
-  async function getWeek (params){
-    const resp = await axios.get(`/api/getStation/${params}`);
+  async function subtractHour (count, station){
+    const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
     console.log(resp)
-    setData(resp.data)
+    if (resp.data.length > 0){setData(resp.data)} 
+    setCount(count-1)
   }
-  async function getMonth (params){
-    const resp = await axios.get(`/api/getStation/${params}`);
+  
+  async function getDay (day, station){
+    const resp = await axios.get(`/api/getStationByPeriod/${day}/${station}`);
     console.log(resp)
-    setData(resp.data)
+    if (resp.data.length > 0){setData(resp.data)}
+    setCount(7)
   }
+  // async function getWeek (params){
+  //   const resp = await axios.get(`/api/getWeek/${params}`);
+  //   console.log(resp)
+  //   setData(resp.data)
+  // }
+  // async function getMonth (params){
+  //   const resp = await axios.get(`/api/getMonth/${params}`);
+  //   console.log(resp)
+  //   setData(resp.data)
+  // }
   async function getStation(params) {
     console.log(params)
     const resp = await axios.get(`/api/getStation/${params}`);
@@ -154,18 +171,22 @@ useEffect(()=>{
               <Navbar></Navbar>
               {/* <NavbarBootstrap></NavbarBootstrap> */}
               <Sidebar
+              
               getRocja = {getRocja}
               getNaranjo = {getNaranjo}
               fetchWeather={fetchWeather}
               ></Sidebar>
               <Dashboard
+              setCount = {setCount}
+              addHour = {addHour}
+              subtractHour = {subtractHour}
+              count = {count}
               data = {data}
               location = {location}
               fetchWeather={fetchWeather}
               weather = {weather}
               getDay ={getDay}
-              getWeek ={getWeek}
-              getMonth ={getMonth}
+             
               ></Dashboard>
 
           </Route>

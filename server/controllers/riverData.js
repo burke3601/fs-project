@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { Data } = require('../models')
+const { Op } = require('sequelize')
 
 const fullRiverData = async (req, res) =>{
     let river = ''
@@ -27,12 +28,53 @@ const stationData = async (req, res) =>{
         }
     })
     console.log('************')
-    console.log(data)
+    //console.log(data)
     res.json(data)
     
     
 }
+const stationDataByPeriod = async (req, res) =>{
+    console.log(typeof (req.params.period))
+    let hora = parseInt(req.params.period )
+    console.log(typeof hora)
+    console.log(req.params.period)
+    console.log(req.params.station)
+    let today = new Date().getTime()
+    let period = new Date().getTime()
+    
+    if(req.params.period ==="day"){
+        period = new Date(new Date().setDate(new Date().getDate() - 1));
+    }else if(req.params.period ==="week"){
+        period = new Date(new Date().setDate(new Date().getDate() - 7));
+    }else if (req.params.period ==="month"){
+        period = new Date(new Date().setDate(new Date().getDate() - 30));
+    }else if (typeof (hora) == 'number' && hora > 6){
+        let time = new Date();
+        period = time.setHours(time.getHours() - (hora) - 7 )
+    }else {
+        time = new Date();
+        period = time.setHours(time.getHours() - 7
+        )
+    }
+    console.log(period)
+    console.log(hora)
+    const data = await Data.findAll({
+        where: {
+            station: req.params.station,
+            timeStamp: {
+                [Op.between]: [period, today]
+            }
+            
+        }
+    }) 
+ 
+    console.log('************')
+    console.log(data.length)
+    res.json(data)
+}
+
 module.exports = {
     fullRiverData,
-    stationData
+    stationData,
+    stationDataByPeriod
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Line} from 'react-chartjs-2'
 import './App.css';
 
@@ -7,7 +7,7 @@ import './App.css';
 function Graph(props){
         console.log(props)
         
-        if (props){
+        if (props && props.data && props.data.map){
           
           let newDates =[]
           let dates = []
@@ -38,12 +38,19 @@ function Graph(props){
             }levels.push(lev)
             
           })
+          
+            
+          
+            
+        
+          
+        
           //console.log(levels)
          
     //     //console.log(newEst)
     //     //console.log(`here are the labels${est}`)
     //     //console.log(typeof(lab))
-    
+            
     
     const state = {
         
@@ -58,7 +65,17 @@ function Graph(props){
             const color  = [r,b,g]
             
             // console.log(newEst)
+            let alertColor = ''
+            if(levels[levels.length - 1] < 5){
+              alertColor = 'green' 
+              
+            }else if(levels[levels.length - 1] > 5 && levels[levels.length - 1] < 10){
+              alertColor = 'orange' 
+            }else if(levels[levels.length - 1] > 10){
+              alertColor = 'red' 
+            }
           return {
+            
             label: sta,
             fill: true,
             lineTension: 0.5,
@@ -69,9 +86,13 @@ function Graph(props){
           }
         }),
       }
+      
     
       return (
-        <div className="graph">
+        
+       
+       
+        <div className="graph" >
         
           <Line
             data={state}
@@ -92,9 +113,12 @@ function Graph(props){
 
           />
         </div>
+        
         )
+    }else{
+      return null
     }
-  }
+}
   
     
 
