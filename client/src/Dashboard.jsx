@@ -24,7 +24,7 @@ function Dashboard(props){
                   />
                 </div>
                   <div>
-                    <button  id={ "day"} value={props.data} className="graphButtons" onClick={props.getDay(props.data[0].station)}>Dia</button>
+                    <button  id={ "day"} value={props.data} className="graphButtons" onClick={props.getDay}>Dia</button>
                     <button id="week" className="graphButtons" onClick={props.getWeek}>Semana</button>
                     <button id="month" className="graphButtons" onClick={props.getMonth}>Mes</button>
                     </div>
