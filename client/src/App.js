@@ -1,4 +1,3 @@
-
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import Graph from './Graph'
@@ -12,12 +11,6 @@ import Dashboard from './Dashboard'
 import About from "./pages/About";
 import NavbarBootstrap from './NavbarBootstrap';
 
-
-
-
-
-
-
 import {useState, useEffect} from 'react'
 
 import { 
@@ -30,8 +23,6 @@ import {
 import Sidebar from './Sidebar';
 
 import {REACT_APP_API_KEY} from './config'
-
-
 
 import Footer from './Footer';
 
@@ -78,17 +69,15 @@ const location = [{
 
 ]
  
-  
-
-
-
-
 function App() {
  
   const [data,setData] = useState({results: []})
 
   const [weather, setWeather] = useState([])
   const [count, setCount] = useState(7)
+
+  const [user, setUser] = useState({userName: ""});  
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   async function addHour (count, station){
     const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
@@ -145,6 +134,17 @@ function App() {
   //console.log(response.data)
 }
 
+function doLogin() {
+  console.log('sweet you are logged in now, buddy');
+  setIsLoggedIn(true);
+}
+
+function doLogout() {
+  console.log('all logged out');
+  setUser({userName: ""});
+  setIsLoggedIn(false);
+}
+
 useEffect(()=>{
   fetchWeather(15.950753,-90.546267)
   //setInterval(fetchWeather,1000*60*30)
@@ -162,13 +162,19 @@ useEffect(()=>{
         {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
 
-            <Login />
+            <Login 
+                  doLogin={doLogin}
+                  setUser={setUser}
+            />
           </Route>
         
        <div className='container'>
       <Switch>
           <Route path="/graphs" exact>
-              <Navbar></Navbar>
+          <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    doLogout={doLogout}
+            />
               {/* <NavbarBootstrap></NavbarBootstrap> */}
               <Sidebar
               
@@ -191,17 +197,13 @@ useEffect(()=>{
 
           </Route>
 
-          
-          
-          
-
-
           <Route path="/home"> 
-              <Navbar></Navbar>
+          <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    doLogout={doLogout}
+            />
               <Sidebar></Sidebar>
               
-              
-             
               <Home 
               fetchWeather={fetchWeather}
               weather = {weather}
@@ -213,7 +215,10 @@ useEffect(()=>{
               ></Home>
           </Route>
           <Route path="/about">
-            <Navbar />
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    doLogout={doLogout}
+            />
             <About />
           </Route>
       </Switch>

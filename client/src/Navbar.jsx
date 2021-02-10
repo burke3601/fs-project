@@ -1,8 +1,10 @@
 import React from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 import {Link} from 'react-router-dom'
+import Logout from './Logout';
 
 
-function Navbar(){
+function Navbar(props){
     return(
 <nav className="navbar">
     <div className="headerNav">
@@ -32,6 +34,7 @@ function Navbar(){
         </ul>
      
     </div>
+<Logout doLogout={props.doLogout}/>
 </nav>
     )
 }
