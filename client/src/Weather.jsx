@@ -14,6 +14,7 @@ function Weather(props) {
                       {props && props.data && props.data.length>0?props.data[0].station: "Guatemala"},
                     </h3> 
                     <div></div>
+                    <br/>
                     <p>
                         Departamento de {props && props.data && props.data.length>0?props.data[0].departamento: "Guatemala"}
                     </p>
@@ -39,8 +40,8 @@ function Weather(props) {
                 </div> 
                 <div className="temp-details">
                     <ul>
-                        <h3>Details:</h3>
-                        <li>feels like: {props.weather && props.weather.current && props.weather.current.feels_like + "° C"}</li>
+                        <h3>Detalles:</h3>
+                        <li>{props.weather && props.weather.current && props.weather.current.feels_like + "° C"}</li>
                         <li>{props.weather && props.weather.current && props.weather.current.weather && props.weather.current.weather[0].description}</li>
                         <li>max temp: {props.weather && props.weather.daily && props.weather.daily[0].temp && props.weather.daily[0].temp.max + "° C" }</li>
                     </ul>
