@@ -1,5 +1,7 @@
 const http = require('http')
 const express = require ('express')
+const {getData , addData} = require('./utils')
+
 
  const fs = require('fs')
 
@@ -16,13 +18,18 @@ const logger = morgan('dev')
 
 const {
     riverControllers,
-    stationData
+    
 } = require('./controllers') 
+
+
+
 
 app.use('/api/rocja', riverControllers.fullRiverData)
 
 app.use('/api/getStation/:name',riverControllers.stationData)
     
+app.use('/api/getStationByPeriod/:period/:station',riverControllers.stationDataByPeriod)
+
 
 app.use('/api/naranjo', riverControllers.fullRiverData)
     
@@ -32,7 +39,12 @@ app.get('/api/picture', (req, res)=>{
         '/home/matt_linux/DigitalCraftsNew/express-api-demo/public'
     )
 })
-
+setInterval(()=>{
+    getData()
+    .then(addData)
+  },1000*60*15)
+  getData()
+  .then(addData)
 server.listen(4000, ()=>{
     console.log(`Express API listening on port 4000`)
 })
