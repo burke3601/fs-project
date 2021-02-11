@@ -1,0 +1,2 @@
+
+/home/webadmin/.nvm/versions/node/v14.15.4/bin/node /home/webadmin/fs-project/server/getData.js && /home/webadmin/.nvm/versions/node/v14.15.4/bin/node /home/webadmin/fs-project/server/addData.js

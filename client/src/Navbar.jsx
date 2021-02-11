@@ -5,6 +5,7 @@ import Logout from './Logout';
 
 
 function Navbar(props){
+
     return(
 <nav className="navbar">
     <div className="headerNav">
@@ -14,7 +15,9 @@ function Navbar(props){
             </div>
             <div className="satgal2">
                 <h5>Sistema de Alerta Temprana Galileo</h5>
+
             </div>
+            <button className="sidebar-button" onClick={()=>{props.setToggle(!props.toggle)}}>button</button>
         </div>
         
         

@@ -39,6 +39,7 @@ app.get('/api/picture', (req, res)=>{
         '/home/matt_linux/DigitalCraftsNew/express-api-demo/public'
     )
 })
+//commented out so it only runs on Matt's computer
 // setInterval(()=>{
 //     getData()
 //     .then(addData)

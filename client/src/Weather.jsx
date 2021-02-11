@@ -49,7 +49,7 @@ function Weather(props) {
              
             </div>
         
-            <footer className="footer">
+            <footer className="weatherfooter">
                     Clima
             </footer>
         </div>
