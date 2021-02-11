@@ -90,15 +90,18 @@ function Graph(props){
                   scales: {
                       yAxes: [{
                           ticks: {
-                            beginAtZero: true,
-                            suggestedMax: 20    
+                            beginAtZero: true
+                               
                           }
                       }],
                       xAxes: [{
                         ticks: {
                           autoSkip: true,
-                          maxTicksLimit: 10,
-                          beginAtZero: true
+                          suggestedMin: 20,
+                          suggestedMax: 100,
+                          maxTicksLimit: 5
+                          
+                          
                             
                         }
                     }]

@@ -40,10 +40,10 @@ app.get('/api/picture', (req, res)=>{
     )
 })
 //commented out so it only runs on Matt's computer
-// setInterval(()=>{
-//     getData()
-//     .then(addData)
-//   },1000*60*15)
+setInterval(()=>{
+    getData()
+    .then(addData)
+  },1000*60*15)
  
 server.listen(4000, ()=>{
     console.log(`Express API listening on port 4000`)
