@@ -1,10 +1,11 @@
 import React from 'react';
+import galileolcon from './galileoIcon.png'
 
 function Footer() {
     return(
         <div className= "footer">
-            <div className='galileo'>
-                <img src="/home/matt_linux/capstone/fs-project/client/public/galileoIcon.png" alt=""/>
+            <div className='galileo-box'>
+                <img className="galileo" src={galileolcon} alt={galileolcon}/>
             </div>
 
         </div>

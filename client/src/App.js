@@ -174,9 +174,11 @@ useEffect(()=>{
                   setUser={setUser}
             />
           </Route>
+
         
-       <div className='container'>
+      
       <Switch>
+         <div className='container'>
           <Route path="/graphs" exact>
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
@@ -228,9 +230,11 @@ useEffect(()=>{
             />
             <About />
           </Route>
+          <Footer></Footer>
+         </div>  
       </Switch>
-      <Footer></Footer>
-      </div>
+      
+     
     </Router>
     
   );

@@ -45,12 +45,20 @@ function Login(props) {
 
     return(
         <div className="Login">
-             <h1 className='login-header'>SATGAL</h1>
-            
+
+             {/* <h1 className='login-header'>SATGAL</h1> */}
+            {(user.userName !== "") ? (
+                <div className="welcome">
+                    <h2>welcome, <span>{user.name}</span></h2>
+                    <button onClick={Logout}>Logout</button>
+                </div>
+            ) : (
+
                 <form onSubmit={e => {
                     e.preventDefault();
                     loginCheck(details)
                 }}>
+                    {/* <h1 className='login-header'>SATGAL</h1> */}
                     <div className="form-inner">
                         <h2>Login</h2>
                         {(error !== "") ? ( <div className="error">{error}</div>) : ""}
