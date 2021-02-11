@@ -545,6 +545,14 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
   color: red;
  
 }
+.alert {
+  text-align: center;
+  align-content: center;
+  border: aliceblue solid;
+  border-radius: 5px;
+  padding: 4%;
+  margin: 2%;
+}
 
 
 

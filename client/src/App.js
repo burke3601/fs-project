@@ -88,27 +88,34 @@ function App() {
   const [data,setData] = useState({results: []})
 
   const [weather, setWeather] = useState([])
-  const [count, setCount] = useState(7)
+  const [count, setCount] = useState(0)
 
   async function addHour (count, station){
+    setCount(count+1)
     const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
     console.log(resp)
     if (resp.data.length > 0){setData(resp.data)}
-    setCount(count+1)
+    
     
   }
   async function subtractHour (count, station){
+    if (count > 1){
+      setCount(count-1)
+      }else{
+        setCount(count)
+      }
     const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
     console.log(resp)
     if (resp.data.length > 0){setData(resp.data)} 
-    setCount(count-1)
+    
   }
   
   async function getDay (day, station){
+    setCount(1)
     const resp = await axios.get(`/api/getStationByPeriod/${day}/${station}`);
     console.log(resp)
     if (resp.data.length > 0){setData(resp.data)}
-    setCount(7)
+    
   }
   // async function getWeek (params){
   //   const resp = await axios.get(`/api/getWeek/${params}`);
@@ -147,11 +154,11 @@ function App() {
 
 useEffect(()=>{
   fetchWeather(15.950753,-90.546267)
-  //setInterval(fetchWeather,1000*60*30)
-  // setInterval(()=>{
-    getRocja()
+  // setInterval(fetchWeather,1000*60*30)
+  //  setInterval(()=>{
+    //getRocja()
    getNaranjo()
-  //  getStation()
+  //getStation()
   //  getDay()
   // },1000*60*15)
 },[])

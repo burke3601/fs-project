@@ -8,14 +8,18 @@ function Graph(props){
         console.log(props)
         
         if (props && props.data && props.data.map){
-          
+          let filteredDates = []
           let newDates =[]
           let dates = []
           //gets times
           props.data.map(a=>{
             dates.push(a.timeStamp)
-            //console.log(dates)
-            newDates = dates.filter((val, index) => dates.indexOf(val) === index)
+            filteredDates = dates.filter((val, index) => dates.indexOf(val) === index)
+            })
+            filteredDates.map(a=>{
+              let b = a.slice(5,16)
+              let c = b.replace("T", " ")
+              newDates.push(c)
             })
           console.log(newDates)
           let est = []
@@ -39,32 +43,18 @@ function Graph(props){
             
           })
           
-            
-          
-            
-        
-          
-        
-          //console.log(levels)
-         
-    //     //console.log(newEst)
-    //     //console.log(`here are the labels${est}`)
-    //     //console.log(typeof(lab))
-            
-    
+   
     const state = {
         
         labels: newDates,
         datasets: newEst.map((sta, index) =>{
-          // console.log(sta)
-          // console.log(index)
+        
             const r = Math.floor(Math.random() * 256)
             const g = Math.floor(Math.random() * 256)
             const b = Math.floor(Math.random() * 256)
             
             const color  = [r,b,g]
-            
-            // console.log(newEst)
+          
             let alertColor = ''
             if(levels[levels.length - 1] < 5){
               alertColor = 'green' 
@@ -107,7 +97,14 @@ function Graph(props){
                             suggestedMax: 20
                               
                           }
-                      }]
+                      }],
+                      xAxes: [{
+                        ticks: {
+                          suggestedMin: 20,
+                          suggestedMax: 100
+                            
+                        }
+                    }]
                   }
               }}
 
