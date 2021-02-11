@@ -58,7 +58,9 @@ function Graph(props){
             
             const color  = [r,b,g]
           
+
            
+
           return {
             
             label: sta,
@@ -89,8 +91,7 @@ function Graph(props){
                       yAxes: [{
                           ticks: {
                             beginAtZero: true,
-                            suggestedMax: 20
-                              
+                            suggestedMax: 20    
                           }
                       }],
                       xAxes: [{
