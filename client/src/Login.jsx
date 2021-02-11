@@ -46,6 +46,7 @@
 //     return(
 //         <div className="Login">
 
+
 //              <h1 className='login-header'>SATGAL</h1>
 //             {(user.userName !== "") ? (
 //                 <div className="welcome">
@@ -81,9 +82,12 @@
 //              {/* make a conditions of if loginSuccess is true then redirect to home */}
 //             {loginSuccess &&  <Redirect to='/home' />}
 
+
            
 //         </div>
 
+
 //     )}     
+
 
 // export default Login

@@ -74,31 +74,39 @@ function App() {
   const [data,setData] = useState({results: []})
 
   const [weather, setWeather] = useState([])
-  const [count, setCount] = useState(0)
-
+  const [count, setCount] = useState(1)
+  const [station, setStation] = useState('')
   const [user, setUser] = useState({userName: ""});  
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-  async function addHour (count, station){
-    setCount(count+1)
-    const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
+  //adds one hour of data from backend
+  useEffect(()=>{
+    axios.get(`/api/getStationByPeriod/${count}/${station}`)
+    .then(resp=>{
     console.log(resp)
     if (resp.data.length > 0){setData(resp.data)}
+
+    })
     
-    
+  },[count])
+  async function addHour ( station){
+    setStation(station)
+    setCount(count+1)
+   
   }
-  async function subtractHour (count, station){
+  //subtracts one hour of data from backend
+  async function subtractHour ( station){
+    setStation(station)
     if (count > 1){
       setCount(count-1)
       }else{
         setCount(count)
       }
-    const resp = await axios.get(`/api/getStationByPeriod/${count}/${station}`);
-    console.log(resp)
-    if (resp.data.length > 0){setData(resp.data)} 
-    
+   
   }
-  
+  //needs to be renamed for clarification
+  //gets data by day/week/month from buttons on dashboard
+  //day = the period station = the station or the river
+  //sets the hour count at one but shows period specified(day, week, month)
   async function getDay (day, station){
     setCount(1)
     const resp = await axios.get(`/api/getStationByPeriod/${day}/${station}`);
@@ -106,52 +114,47 @@ function App() {
     if (resp.data.length > 0){setData(resp.data)}
     
   }
-  // async function getWeek (params){
-  //   const resp = await axios.get(`/api/getWeek/${params}`);
-  //   console.log(resp)
-  //   setData(resp.data)
-  // }
-  // async function getMonth (params){
-  //   const resp = await axios.get(`/api/getMonth/${params}`);
-  //   console.log(resp)
-  //   setData(resp.data)
-  // }
+  //this function is called from the 'map' (home) page only when the map icons are clicked
   async function getStation(params) {
     console.log(params)
     const resp = await axios.get(`/api/getStation/${params}`);
     console.log(resp)
     setData(resp.data)
   }
+  //from the sidebar
+  //gets the data for rocja river
   async function getRocja(){
     const resp = await axios.get(`/api/rocja`);
     console.log(resp)
     setData(resp.data)
   }
+  //from the sidebar
+  //gets the data for naranjo river
   async function getNaranjo(){
     const resp = await axios.get(`/api/naranjo`);
     console.log(`**************`)
     console.log(resp)
     setData(resp.data)
   }
-  
+  //fetches weather data--- called at home and dashboard
+  //displays data for specific station location in dashboard
+  //displays data for guatemala city as default when map is displayed
   async function fetchWeather(lat,lng){
   const response = await axios.get(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${REACT_APP_API_KEY}`)
   setWeather(response.data)
-  //console.log(`**************`)
-  //console.log(response.data)
 }
-
+//executes login
 function doLogin() {
   console.log('sweet you are logged in now, buddy');
   setIsLoggedIn(true);
 }
-
+//executes logout from logout button in navbar
 function doLogout() {
   console.log('all logged out');
   setUser({userName: ""});
   setIsLoggedIn(false);
 }
-
+//fetches initial data for weather and Naranjo river by default
 useEffect(()=>{
   fetchWeather(15.950753,-90.546267)
   // setInterval(fetchWeather,1000*60*30)
@@ -185,8 +188,8 @@ useEffect(()=>{
                     doLogout={doLogout}
             />
               {/* <NavbarBootstrap></NavbarBootstrap> */}
+             
               <Sidebar
-              
               getRocja = {getRocja}
               getNaranjo = {getNaranjo}
               fetchWeather={fetchWeather}
@@ -201,6 +204,7 @@ useEffect(()=>{
               fetchWeather={fetchWeather}
               weather = {weather}
               getDay ={getDay}
+              
              
               ></Dashboard>
 
@@ -218,9 +222,6 @@ useEffect(()=>{
               weather = {weather}
               getStation = {getStation}
               location = {location}
-              
-              // getRocja = {getRocja}
-              // getNaranjo = {getNaranjo}
               ></Home>
           </Route>
           <Route path="/about">
