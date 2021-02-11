@@ -6,6 +6,7 @@ import './App.css';
 
 function Graph(props){
         console.log(props)
+        console.log(props.data)
         
         if (props && props.data && props.data.map){
           
@@ -14,9 +15,11 @@ function Graph(props){
           //gets times
           props.data.map(a=>{
             dates.push(a.timeStamp)
-            //console.log(dates)
+            console.log(dates)
             newDates = dates.filter((val, index) => dates.indexOf(val) === index)
-            })
+            console.log(newDates)  
+          })
+
           console.log(newDates)
           let est = []
           let newEst = []
@@ -36,6 +39,7 @@ function Graph(props){
                 lev.push(props.data[i].level)
               }
             }levels.push(lev)
+            console.log(levels)
             
           })
           
