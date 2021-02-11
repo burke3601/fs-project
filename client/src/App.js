@@ -165,7 +165,7 @@ useEffect(()=>{
   //  getDay()
   // },1000*60*15)
 },[])
-
+const [toggle, setToggle]= useState(true)
   return (
    
     <Router>
@@ -186,6 +186,8 @@ useEffect(()=>{
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
             />
               {/* <NavbarBootstrap></NavbarBootstrap> */}
              
@@ -193,8 +195,10 @@ useEffect(()=>{
               getRocja = {getRocja}
               getNaranjo = {getNaranjo}
               fetchWeather={fetchWeather}
+              toggle = {toggle}
               ></Sidebar>
               <Dashboard
+              toggle = {toggle}
               setCount = {setCount}
               addHour = {addHour}
               subtractHour = {subtractHour}
@@ -214,10 +218,17 @@ useEffect(()=>{
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
             />
-              <Sidebar></Sidebar>
+              <Sidebar
+                toggle = {toggle}
+                setToggle = {setToggle}
+              ></Sidebar>
               
               <Home 
+              toggle = {toggle}
+              setToggle = {setToggle}
               fetchWeather={fetchWeather}
               weather = {weather}
               getStation = {getStation}
@@ -228,6 +239,8 @@ useEffect(()=>{
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
             />
             <About />
           </Route>

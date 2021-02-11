@@ -40,7 +40,7 @@ function Dashboard(props){
   return(
         
         
-        <div className='dashboard'>
+        <div className='dashboard' style={props.toggle ? {gridColumn: '4/13'}:{gridColumn: '1/13'}}>
 
 
                 <div >
@@ -87,7 +87,7 @@ function Dashboard(props){
                     </Link>
                     <br/>
                     <h3>horas</h3>
-                  </div>
+                  
                   <div className = "extendedperiodbuttons">
                       <Link to='/graphs'>
                         <TimeButton 
@@ -119,11 +119,12 @@ function Dashboard(props){
                         </TimeButton>
                       </Link>
 
-
+                              </div>
                     </div>
-
-                  </div>
-
+                    
+                 
+                  
+                  
 
                 <div className="mainGraph">
                     
@@ -134,15 +135,15 @@ function Dashboard(props){
                     </Graph>
                     
                 </div>
-                
-            </div>
-        
+              </div>
+         
+                  
 
     )
                       
   }else{
     return(
-    <div className='dashboard'>
+    <div className='dashboard' style={props.toggle ? {gridColumn: '4/13'}:{gridColumn: '1/13'}}>
   <div >
     <Weather 
       data = {props.data}
