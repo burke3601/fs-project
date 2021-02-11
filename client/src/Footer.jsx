@@ -7,6 +7,7 @@ function Footer() {
             <div className='galileo-box'>
                 <img className="galileo" src={galileolcon} alt={galileolcon}/>
             </div>
+           
 
         </div>
     )

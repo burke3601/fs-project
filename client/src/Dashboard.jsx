@@ -50,9 +50,11 @@ function Dashboard(props){
                 </div>
                 <div className="dashboardbuttons">
                   <div>
-                    <h3  className="alert" style={{backgroundColor: alertColor}}>
-                      {alertMessage}
-                    </h3>
+                    <div  className="alert">
+                      <h3 classname="alertMessage" style={{backgroundColor: alertColor}}>
+                        {alertMessage}
+                      </h3>
+                    </div>
                     <h3>Mostrando ultimas:  </h3>   
                     <br/>
                     <Link>
@@ -78,35 +80,35 @@ function Dashboard(props){
                     <h3>horas</h3>
                   </div>
                   <div className = "extendedperiodbuttons">
-                  <Link to='/graphs'>
-                    <TimeButton 
-                      data = {props.data}
-                      handleClick = {(e) => {
-                        props.setCount(1)
-                        props.getDay("day", props.data[0].station)
-                        }}
-                      count = {props.count}
-                      text = {"Dia"}>
-                    </TimeButton>
-                    <TimeButton 
-                      data = {props.data}
-                      handleClick = {(e) => {
-                        props.setCount(1)
-                        props.getDay("week", props.data[0].station)
-                        }}
-                      count = {props.count}
-                      text = {"Semana"}>
-                    </TimeButton>
-                    <TimeButton 
-                      data = {props.data}
-                      handleClick = {(e) => {
-                        props.setCount(1)
-                        props.getDay("month", props.data[0].station)
-                        }}
-                      count = {props.count}
-                      text = {"Mes"}>
-                    </TimeButton>
-                  </Link>
+                      <Link to='/graphs'>
+                        <TimeButton 
+                          data = {props.data}
+                          handleClick = {(e) => {
+                            props.setCount(1)
+                            props.getDay("day", props.data[0].station)
+                            }}
+                          count = {props.count}
+                          text = {"Dia"}>
+                        </TimeButton>
+                        <TimeButton 
+                          data = {props.data}
+                          handleClick = {(e) => {
+                            props.setCount(1)
+                            props.getDay("week", props.data[0].station)
+                            }}
+                          count = {props.count}
+                          text = {"Semana"}>
+                        </TimeButton>
+                        <TimeButton 
+                          data = {props.data}
+                          handleClick = {(e) => {
+                            props.setCount(1)
+                            props.getDay("month", props.data[0].station)
+                            }}
+                          count = {props.count}
+                          text = {"Mes"}>
+                        </TimeButton>
+                      </Link>
 
 
                     </div>

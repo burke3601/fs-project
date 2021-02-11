@@ -58,15 +58,15 @@ function Graph(props){
             
             const color  = [r,b,g]
           
-            let alertColor = ''
-            if(levels[levels.length - 1] < 5){
-              alertColor = 'green' 
+            // let alertColor = ''
+            // if(levels[levels.length - 1] < 5){
+            //   alertColor = 'green' 
               
-            }else if(levels[levels.length - 1] > 5 && levels[levels.length - 1] < 10){
-              alertColor = 'orange' 
-            }else if(levels[levels.length - 1] > 10){
-              alertColor = 'red' 
-            }
+            // }else if(levels[levels.length - 1] > 5 && levels[levels.length - 1] < 10){
+            //   alertColor = 'orange' 
+            // }else if(levels[levels.length - 1] > 10){
+            //   alertColor = 'red' 
+            // }
           return {
             
             label: sta,
@@ -92,19 +92,19 @@ function Graph(props){
             height={400}
             width={600}
               options={{
-                  maintainAspectRatio: false,
+                  maintainAspectRatio: true,
                   scales: {
                       yAxes: [{
                           ticks: {
-                            suggestedMin: 0,
-                            suggestedMax: 20
+                            beginAtZero: true,
                               
                           }
                       }],
                       xAxes: [{
                         ticks: {
-                          suggestedMin: 20,
-                          suggestedMax: 100
+                          autoSkip: true,
+                          maxTicksLimit: 10,
+                          beginAtZero: true
                             
                         }
                     }]
