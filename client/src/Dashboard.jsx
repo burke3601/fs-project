@@ -39,6 +39,8 @@ function Dashboard(props){
         
         
         <div className='dashboard'>
+
+
                 <div >
                   <Weather 
                     data = {props.data}
@@ -47,9 +49,7 @@ function Dashboard(props){
                   />
                 </div>
                 <div className="dashboardbuttons">
-                 
                   <div>
-
                     <h3  className="alert" style={{backgroundColor: alertColor}}>
                       {alertMessage}
                     </h3>
@@ -110,7 +110,10 @@ function Dashboard(props){
 
 
                     </div>
+
                   </div>
+
+
                 <div className="mainGraph">
                     
                     <Graph 
