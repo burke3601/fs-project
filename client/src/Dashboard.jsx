@@ -17,6 +17,8 @@ import TimeButton from './TimeButton'
 
 
 function Dashboard(props){
+
+  let num = parseInt(props.count)
   console.log(props.data)
   let alertColor = ''
   let alertMessage = ''
@@ -51,25 +53,29 @@ function Dashboard(props){
                 <div className="dashboardbuttons">
                   <div>
                     <h3  className="alert" style={{backgroundColor: alertColor}}>
-                      {alertMessage}
-                    </h3>
-                    <h3>Mostrando ultimas:  </h3>   
+                      {alertMessage} nivel: {props.data[props.data.length - 1].level}
+                    </h3><h3>Estacion: {props.data[0].station}</h3>
+                    <h3>Mostrando ultimas:  </h3>  
                     <br/>
                     <Link>
                       <TimeButton 
                         data = {props.data}
-                        handleClick = {(e) => {props.addHour(props.count, props.data[0].station)}}
-                        count = {props.count}
+                        handleClick = {(e) => {
+                          props.addHour(props.data[0].station)
+                        }}
+                        //count = {props.count}
                         text = {"+"}>
                       </TimeButton>
                     </Link>
                     <h2>
-                      {props.count}
+                      {num}
                     </h2>
                     <Link to='/graphs'>
                       <TimeButton 
                         data = {props.data}
-                        handleClick = {(e) => {props.subtractHour(props.count, props.data[0].station)}}
+                        handleClick = {(e) => {
+                          props.subtractHour(props.count, props.data[0].station)
+                        }}
                         count = {props.count}
                         text = {"-"}>
                       </TimeButton>

@@ -47,10 +47,10 @@ function Login(props) {
         <div className="Login">
 
              {/* <h1 className='login-header'>SATGAL</h1> */}
-            {(user.userName !== "") ? (
+            {(props.user.userName !== "") ? (
                 <div className="welcome">
-                    <h2>welcome, <span>{user.name}</span></h2>
-                    <button onClick={Logout}>Logout</button>
+                    <h2>welcome, <span>{props.user.name}</span></h2>
+                    <button onClick={props.Logout}>Logout</button>
                 </div>
             ) : (
 
@@ -77,13 +77,15 @@ function Login(props) {
                            <input type="submit" value="LOGIN" onClick={loginCheck} />
                     </div>
                 </form>
-            )
-             {/* make a conditions of if loginSuccess is true then redirect to home */}
-            {loginSuccess &&  <Redirect to='/home' />}
 
+            )
+                     } //   {/* make a conditions of if loginSuccess is true then redirect to home */}
+            {loginSuccess &&  <Redirect to='/home' />}
+                    
            
         </div>
 
-    )}     
+    )} 
+        
 
 export default Login
