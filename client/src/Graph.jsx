@@ -15,9 +15,9 @@ function Graph(props){
           props.data.map(a=>{
             dates.push(a.timeStamp)
 
-            filteredDates = dates.filter((val, index) => dates.indexOf(val) === index)
+            // filteredDates = dates.filter((val, index) => dates.indexOf(val) === index)
             })
-            filteredDates.map(a=>{
+            dates.map(a=>{
               let b = a.slice(5,16)
               let c = b.replace("T", " ")
               newDates.push(c)
@@ -58,15 +58,7 @@ function Graph(props){
             
             const color  = [r,b,g]
           
-            let alertColor = ''
-            if(levels[levels.length - 1] < 5){
-              alertColor = 'green' 
-              
-            }else if(levels[levels.length - 1] > 5 && levels[levels.length - 1] < 10){
-              alertColor = 'orange' 
-            }else if(levels[levels.length - 1] > 10){
-              alertColor = 'red' 
-            }
+           
           return {
             
             label: sta,
@@ -92,19 +84,20 @@ function Graph(props){
             height={400}
             width={600}
               options={{
-                  maintainAspectRatio: false,
+                  maintainAspectRatio: true,
                   scales: {
                       yAxes: [{
                           ticks: {
-                            suggestedMin: 0,
+                            beginAtZero: true,
                             suggestedMax: 20
                               
                           }
                       }],
                       xAxes: [{
                         ticks: {
-                          suggestedMin: 20,
-                          suggestedMax: 100
+                          autoSkip: true,
+                          maxTicksLimit: 10,
+                          beginAtZero: true
                             
                         }
                     }]
