@@ -15,7 +15,7 @@ function Home(props){
   //useEffect(()=>props.fetchWeather(15.4651,-90.3843),[])
     console.log(props.location)
     return(
-        <div className="map">
+        <div className="dashboard" style={props.toggle ? {gridColumn: '4/13'}:{gridColumn: '1/13'}}>
 
 
             <Weather 

@@ -1,14 +1,20 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 const center = {
     lat: 15.4651,
     lng: -90.3843
   }
 function Sidebar(props){
+
+    
+    
+
     return(
-        <div className='sidebar'>
+        <>
+        <div className={props.toggle ? 'sidebar': 'sidebar hidden'}>
             <div className = 'sidebarLinks'>
+                
                     <Link to='/home'onClick={props.fetchWeather}
                       >
                         <div className="sidebarItem">  
@@ -34,6 +40,7 @@ function Sidebar(props){
                 </div>
 
         </div>
+        </>
     )
 }
 
