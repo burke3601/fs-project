@@ -12,14 +12,13 @@ import { render } from '@testing-library/react';
 
 
 
-function Login() {
+function Login(props) {
     const adminUser = {
         userName: "admin",
         password: "admin123"
 
     }
     const [details, setDetails] = useState({userName: "", password: ""});
-    const [user, setUser] = useState({userName: ""});
     const [error, setError] = useState("");
     const [loginSuccess, setLoginSuccess] = useState(false);
 
@@ -28,13 +27,14 @@ function Login() {
 
         if (details.userName === adminUser.userName && details.password === adminUser.password ){
             console.log("Logged in");
-            setUser ({
+            props.setUser ({
                 
                 userName: details.userName
           
            
             });
            setLoginSuccess (true)
+           props.doLogin() 
         } else {
             console.log("Authentication Does Not Match!!")
             setError("Authentication Does Not Match!!")
@@ -43,25 +43,22 @@ function Login() {
         }
     }
 
-    const Logout = () => {
-        console.log("Logout");
-        setUser({userName: ""});
-    }
-
-
     return(
         <div className="Login">
-             <h1 className='login-header'>SATGAL</h1>
+
+             {/* <h1 className='login-header'>SATGAL</h1> */}
             {(user.userName !== "") ? (
                 <div className="welcome">
                     <h2>welcome, <span>{user.name}</span></h2>
                     <button onClick={Logout}>Logout</button>
                 </div>
             ) : (
+
                 <form onSubmit={e => {
                     e.preventDefault();
                     loginCheck(details)
                 }}>
+                    {/* <h1 className='login-header'>SATGAL</h1> */}
                     <div className="form-inner">
                         <h2>Login</h2>
                         {(error !== "") ? ( <div className="error">{error}</div>) : ""}
@@ -80,7 +77,7 @@ function Login() {
                            <input type="submit" value="LOGIN" onClick={loginCheck} />
                     </div>
                 </form>
-            )}
+            )
              {/* make a conditions of if loginSuccess is true then redirect to home */}
             {loginSuccess &&  <Redirect to='/home' />}
 
@@ -88,11 +85,5 @@ function Login() {
         </div>
 
     )}     
-        
-    
-            
-       
-    
-
 
 export default Login
