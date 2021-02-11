@@ -39,20 +39,12 @@ app.get('/api/picture', (req, res)=>{
         '/home/matt_linux/DigitalCraftsNew/express-api-demo/public'
     )
 })
-<<<<<<< HEAD
 // setInterval(()=>{
 //     getData()
 //     .then(addData)
 //   },1000*60*15)
 //   getData()
 //   .then(addData)
-=======
-setInterval(()=>{
-    getData()
-    .then(addData)
-  },1000*60*15)
- 
->>>>>>> f7d025523ddc0c720f48b88b7383a3f3dbd3adaf
 server.listen(4000, ()=>{
     console.log(`Express API listening on port 4000`)
 })

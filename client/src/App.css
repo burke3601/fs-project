@@ -429,11 +429,11 @@ input, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #53565A; 
-  /* background-image: url("https://geology.com/world/guatemala-map.gif");
+  /* background-color: #53565A;  */
+  background-image: url("https://geology.com/world/guatemala-map.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  */
+ 
 }
 
  form{

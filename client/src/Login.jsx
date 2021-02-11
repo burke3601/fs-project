@@ -12,13 +12,14 @@ import { render } from '@testing-library/react';
 
 
 
-function Login(props) {
+function Login() {
     const adminUser = {
         userName: "admin",
         password: "admin123"
 
     }
     const [details, setDetails] = useState({userName: "", password: ""});
+    const [user, setUser] = useState({userName: ""});
     const [error, setError] = useState("");
     const [loginSuccess, setLoginSuccess] = useState(false);
 
@@ -27,14 +28,13 @@ function Login(props) {
 
         if (details.userName === adminUser.userName && details.password === adminUser.password ){
             console.log("Logged in");
-            props.setUser ({
+            setUser ({
                 
                 userName: details.userName
           
            
             });
            setLoginSuccess (true)
-           props.doLogin() 
         } else {
             console.log("Authentication Does Not Match!!")
             setError("Authentication Does Not Match!!")
@@ -43,9 +43,14 @@ function Login(props) {
         }
     }
 
+    const Logout = () => {
+        console.log("Logout");
+        setUser({userName: ""});
+    }
+
+
     return(
         <div className="Login">
-
              {/* <h1 className='login-header'>SATGAL</h1> */}
             {(user.userName !== "") ? (
                 <div className="welcome">
@@ -53,7 +58,6 @@ function Login(props) {
                     <button onClick={Logout}>Logout</button>
                 </div>
             ) : (
-
                 <form onSubmit={e => {
                     e.preventDefault();
                     loginCheck(details)
@@ -77,7 +81,7 @@ function Login(props) {
                            <input type="submit" value="LOGIN" onClick={loginCheck} />
                     </div>
                 </form>
-            )
+            )}
              {/* make a conditions of if loginSuccess is true then redirect to home */}
             {loginSuccess &&  <Redirect to='/home' />}
 
@@ -85,5 +89,11 @@ function Login(props) {
         </div>
 
     )}     
+        
+    
+            
+       
+    
+
 
 export default Login
