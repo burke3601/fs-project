@@ -136,7 +136,7 @@ function App() {
   async function getNaranjo(){
     const resp = await axios.get(`/api/naranjo`);
     console.log(`**************`)
-    console.log(resp)
+    console.log(resp,'139')
     setData(resp.data)
   }
   //fetches weather data--- called at home and dashboard
@@ -155,7 +155,7 @@ async function doLogin(name, password) {
   console.log(response);
  
   setIsLoggedIn(true);
-  <Redirect to="/home" />
+ 
 
 }
 //executes logout from logout button in navbar
@@ -197,15 +197,18 @@ const [toggle, setToggle]= useState(true)
       <Switch>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
-
-            <Login 
+        {/* {setIsLoggedIn(true),
+        <Redirect to='/home' />} */}
+        {isLoggedIn ?  <Redirect to='/home' />: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
                   setPassword={setPassword}
                   password={password}
                   // setUser={setUser}
-            />
+                  
+            /> }
+           
           </Route>
 
         
