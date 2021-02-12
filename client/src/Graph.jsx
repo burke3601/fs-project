@@ -25,6 +25,7 @@ function Graph(props){
 
           let filteredDates = []
           let newDates =[]
+          let displayDates =[]
           let dates = []
           //gets times
           props.data.map(a=>{
@@ -38,11 +39,14 @@ function Graph(props){
               newDates.push(c)
             })
 
+            
+              displayDates = newDates.filter((val, index) => newDates.indexOf(val) === index)
+            
+
           console.log(newDates)
           console.log(newDates.length)
 
-          let cutDates = newDates.slice(-20)
-          console.log(cutDates)
+         
           let est = []
           let newEst = []
           //gets stations
@@ -57,7 +61,7 @@ function Graph(props){
             let lev = []
             for(let i=0; i < props.data.length; i++){
               
-              if(props.data[i].station == el){
+              if(props.data[i].station === el){
                 lev.push(props.data[i].level)
               }
             }levels.push(lev)
@@ -68,7 +72,7 @@ function Graph(props){
    
     const state = {
         
-        labels: cutDates,
+        labels: displayDates,
         datasets: newEst.map((sta, index) =>{
         
             const r = Math.floor(Math.random() * 256)
@@ -120,7 +124,7 @@ function Graph(props){
                           autoSkip: true,
                           
                           
-                          maxTicksLimit: 100
+                          maxTicksLimit: 30
                           
                           
                             

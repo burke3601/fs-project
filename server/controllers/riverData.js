@@ -5,17 +5,26 @@ const { Op } = require('sequelize')
 const fullRiverData = async (req, res) =>{
     let river = ''
     console.log(req.baseUrl)
+    let time = new Date();
+    let today = time.setHours(time.getHours() - 6)
+    let period = time.setHours(time.getHours() - (1))
+    
     if(req.baseUrl == '/api/rocja'){
         river = 'Rio Rocja Pontila'
     }else if(req.baseUrl == '/api/naranjo'){
         river = 'Rio Naranjo'
     }
     const data = await Data.findAll({
-        limit: 200,
+        limit: 48,
         where: {
-            river: river
+            river: river,
+            timeStamp: {
+                [Op.between]: [period, today]
+            }
         }
+
     })
+    console.log('river length')
     console.log(data.length)
     res.json(data)
 

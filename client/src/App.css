@@ -91,7 +91,7 @@ a{
   margin-left: 2%;
   
   padding: 5%;
-  grid-row: 2/13;
+  grid-row: 2/11;
   /* grid-column: 4/13;  */
   background-color:#e4e1e1;
   display: flex;
@@ -190,6 +190,13 @@ ul{
   vertical-align: middle;
 }
 
+.weatherAndButtons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 
 /* GRAPHS */
 .canvas{
@@ -244,7 +251,7 @@ ul{
 .footer{
    grid-column: 1/13;
    align-items: center;
-  
+    
 }
 
 

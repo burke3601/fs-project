@@ -160,9 +160,9 @@ useEffect(()=>{
   // setInterval(fetchWeather,1000*60*30)
   //  setInterval(()=>{
   getRocja()
-   getNaranjo()
+  //getNaranjo()
   //getStation()
-  //  getDay()
+    //getDay(count, "Rio Rocja Ponitlla")
   // },1000*60*15)
 },[])
 const [toggle, setToggle]= useState(true)
@@ -196,6 +196,10 @@ const [toggle, setToggle]= useState(true)
               getNaranjo = {getNaranjo}
               fetchWeather={fetchWeather}
               toggle = {toggle}
+              count = {count}
+              subtractHour = {subtractHour}
+              setCount = {setCount}
+
               ></Sidebar>
               <Dashboard
               toggle = {toggle}
@@ -224,6 +228,9 @@ const [toggle, setToggle]= useState(true)
               <Sidebar
                 toggle = {toggle}
                 setToggle = {setToggle}
+                count = {count}
+                setCount = {setCount}
+                subtractHour = {subtractHour}
               ></Sidebar>
               
               <Home 
