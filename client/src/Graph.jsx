@@ -110,7 +110,7 @@ function Graph(props){
             width={600}
             
               options={{
-                  maintainAspectRatio: true,
+                  maintainAspectRatio: false,
                   scales: {
                       yAxes: [{
                           ticks: {

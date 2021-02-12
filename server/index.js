@@ -61,6 +61,13 @@ app.get('/api/picture', (req, res)=>{
         '/home/matt_linux/DigitalCraftsNew/express-api-demo/public'
     )
 })
+app.get('/api/users/login-status', (req, res)=>{
+    if (req.session.user){
+        res.status(200).send('ok')
+    }else{
+        res.status(400).send('not ok')
+    }
+})
 
 app.post("/api/logout", userController.processLogout)
 //commented out so it only runs on Matt's computer
