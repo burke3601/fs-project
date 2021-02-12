@@ -18,7 +18,7 @@ function Dashboard(props){
   console.log(props.data)
   let alertColor = ''
   let alertMessage = ''
-  if(props && props.data && props.data[0].station=== (props.data[1].station)){
+  if(props && props.data && props.data.length > 0 && props.data[0].station=== (props.data[1].station)){
     console.log(props.data[props.data.length - 1].level)
     if(props.data[props.data.length - 1].level <= 7){
        alertColor = "green"

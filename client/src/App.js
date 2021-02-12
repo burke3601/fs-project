@@ -71,7 +71,7 @@ const location = [{
 ]
  
 function App() {
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [data,setData] = useState({results: []})
@@ -81,7 +81,7 @@ function App() {
   const [count, setCount] = useState(1)
   const [station, setStation] = useState('')
   const [user, setUser] = useState({userName: ""});  
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  
   //adds one hour of data from backend
   useEffect(()=>{
     axios.get(`/api/getStationByPeriod/${count}/${station}`)
@@ -153,7 +153,7 @@ async function doLogin(name, password) {
   const loginDetails= {name, password}
   const response = await axios.post(`/api/user/login`,loginDetails)
   console.log('sweet you are logged in now, buddy');
-  console.log(response);
+  
  
   setIsLoggedIn(true);
  
@@ -187,7 +187,7 @@ useEffect(()=>{
     //getDay(count, "Rio Rocja Ponitlla")
   // },1000*60*15)
 },[])
-const [toggle, setToggle]= useState(true)
+const [toggle, setToggle]= useState(false)
   return (
    
     <Router>
@@ -196,7 +196,41 @@ const [toggle, setToggle]= useState(true)
         <Route exact path="/">
         {/* {setIsLoggedIn(true),
         <Redirect to='/home' />} */}
-        {isLoggedIn ?  <Redirect to='/home' />: <Login 
+        {isLoggedIn ?  <>
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    doLogout={doLogout}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
+            />
+              {/* <NavbarBootstrap></NavbarBootstrap> */}
+             
+              <Sidebar
+              getRocja = {getRocja}
+              getNaranjo = {getNaranjo}
+              fetchWeather={fetchWeather}
+              toggle = {toggle}
+              count = {count}
+              subtractHour = {subtractHour}
+              setCount = {setCount}
+
+              ></Sidebar>
+              <Dashboard
+              toggle = {toggle}
+              setCount = {setCount}
+              addHour = {addHour}
+              subtractHour = {subtractHour}
+              count = {count}
+              data = {data}
+              location = {location}
+              fetchWeather={fetchWeather}
+              weather = {weather}
+              getDay ={getDay}
+              
+             
+              ></Dashboard>
+          
+          </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
@@ -213,16 +247,8 @@ const [toggle, setToggle]= useState(true)
       
          <div className='container'>
           <Route path="/graphs" exact>
-          {isLoggedIn ?  <Redirect to='/graphs' />: <Login 
-                  doLogin={doLogin}
-                  setUsername={setUsername}
-                  username={username}
-                  setPassword={setPassword}
-                  password={password}
-                  // setUser={setUser}
-                  
-            /> }
-          <Navbar 
+          {isLoggedIn ? <>
+            <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={()=>doLogout(history)}
                     toggle = {toggle}
@@ -254,11 +280,8 @@ const [toggle, setToggle]= useState(true)
               
              
               ></Dashboard>
-
-          </Route>
-
-          <Route path="/home">
-          {isLoggedIn ?  <Redirect to='/home' />: <Login 
+          
+          </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
@@ -266,8 +289,14 @@ const [toggle, setToggle]= useState(true)
                   password={password}
                   // setUser={setUser}
                   
-            /> } 
-          <Navbar 
+            /> }
+         <Footer></Footer>
+
+          </Route>
+
+          <Route path="/home">
+          {isLoggedIn ?  <>
+            <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={()=>doLogout(history)}
                     toggle = {toggle}
@@ -289,9 +318,28 @@ const [toggle, setToggle]= useState(true)
               getStation = {getStation}
               location = {location}
               ></Home>
+              <Footer></Footer></>: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> } 
+          
           </Route>
           <Route path="/about">
-          {isLoggedIn ?  <Redirect to='/about' />: <Login 
+          {isLoggedIn ?  <>
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    doLogout={()=>doLogout(history)}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
+            />
+            <About />
+            <Footer></Footer>
+          </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
@@ -300,15 +348,9 @@ const [toggle, setToggle]= useState(true)
                   // setUser={setUser}
                   
             /> }
-            <Navbar 
-                    isLoggedIn={setIsLoggedIn}
-                    doLogout={()=>doLogout(history)}
-                    toggle = {toggle}
-                    setToggle = {setToggle}
-            />
-            <About />
+           
           </Route>
-          <Footer></Footer>
+          
          </div>  
         
       </Switch>

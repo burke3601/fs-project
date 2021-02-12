@@ -12,7 +12,7 @@ function Logout(props) {
   return (
     <Link to="/" >
         <button onClick={onClick}>
-        Logout
+        
         </button>
     </Link>
   );
