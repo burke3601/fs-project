@@ -177,6 +177,11 @@ ul{
   
 }
 
+.alertBox{
+  display: flex;
+  flex-direction: column;
+}
+
 /* BUTTONS ON DASHBOARD */
 .dashboardbuttons {
   justify-content: center;
@@ -226,29 +231,37 @@ ul{
 
 
 /* GRAPHS */
+@media screen and (min-width: 373px){
+  .graph{
+  
+    overflow-x: scroll;
+    box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+    border-radius: 1em;
+    border:#114c5f8f solid;
+    border-width: .25em;
+    border-radius: 1em;
+    
+  }
+  .mainGraph{
+    max-width: 100%;
+    /* margin-left:3% ;
+    margin-right: 3%;
+    margin-bottom: 5%; */
+    border: #456990 solid;
+    border-radius: 1em;
+    background-color: white;
+  }
+  .canvas{
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+}
 .canvas{
   max-width: 100%;
   max-height: 100%;
 }
-.thumbnailGraph1{
-  margin: 5%;
-  border: #456990 solid;
-  border-radius: 1em;
-  background-color: white;
-  flex-shrink: 3;
-}
-.thumbnailGraph2{
-  margin: 5%;
-  border: #456990 solid;
-  border-radius: 1em;
-  background-color: white;
-}
-.thumbnailGraph3{
-  margin: 5%;
-  border: #456990 solid;
-  border-radius: 1em;
-  background-color: white;
-}
+
 .graph :hover{
   
   border-radius: .25em;
@@ -497,7 +510,7 @@ ul{
   width: 100%;
   
 }
-@media screen and (min-width: 414px){
+@media screen and (min-width: 373px){
   .container .footer{
     width: 100%;
     width: 100%;
@@ -532,7 +545,7 @@ ul{
   }
 }
 
-@media screen and (min-width: 414px) {
+@media screen and (min-width: 373px) {
   .google-map {
     height: 50vh;
     margin-right: 0;
@@ -712,7 +725,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
 }
 
 .alertMessage {
-  border-radius: 50px;
+  
   font-weight: bolder;
 }
 

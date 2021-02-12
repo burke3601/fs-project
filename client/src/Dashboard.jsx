@@ -49,41 +49,51 @@ function Dashboard(props){
                 <div className="dashboardbuttons">
                
 
-                    <div  className="alertBox">
+                    <div  className="dashBox1">
                       
-
-                    <h3  className="alert" style={{backgroundColor: alertColor}}>
-                      {alertMessage} nivel: {props.data[props.data.length - 1].level}
-                    </h3><h3>Estacion: {props.data[0].station}</h3>
-                    <h3>Mostrando ultimas:  </h3>  
+                      <div className="alertbox1">
+                      <p   style={{backgroundColor: alertColor}}>
+                        {alertMessage} Nivel: {props.data[props.data.length - 1].level}
+                      </p>
+                      </div>
+                    
+                    <div className="alertbox2">
+                    <p>Estacion: {props.data[0].station}</p>
+                     
                   </div>
-                    <br/>
-                    <Link>
-                      <TimeButton 
-                        data = {props.data}
-                        handleClick = {(e) => {
-                          props.addHour(props.data[0].station)
-                        }}
-                        //count = {props.count}
-                        text = {"+"}>
-                      </TimeButton>
-                    </Link>
-                    <h2>
-                      {num}
-                    </h2>
-                    <Link to='/graphs'>
-                      <TimeButton 
-                        data = {props.data}
-                        handleClick = {(e) => {
-                          props.subtractHour(props.data[0].station)
-                        }}
-                        // count = {props.count}
-                        text = {"-"}>
-                      </TimeButton>
-                    </Link>
-                    <br/>
-                    <h3>horas</h3>
-                  
+                  </div>
+                  <div className="dashBox2">
+                  <div className="alertbox3">
+                    <p>Mostrando ultimas:  </p> 
+                      <br/>
+                      <Link>
+                        <TimeButton 
+                          data = {props.data}
+                          handleClick = {(e) => {
+                            props.addHour(props.data[0].station)
+                          }}
+                          //count = {props.count}
+                          text = {"+"}>
+                        </TimeButton>
+                      </Link>
+                      <h2>
+                        {num}
+                      </h2>
+                      <Link to='/graphs'>
+                        <TimeButton 
+                          data = {props.data}
+                          handleClick = {(e) => {
+                            props.subtractHour(props.data[0].station)
+                          }}
+                          // count = {props.count}
+                          text = {"-"}>
+                        </TimeButton>
+                      </Link>
+                      <br/>
+                      <p>horas</p>
+                    </div>
+                    </div>
+                  <div></div>
                   <div className = "extendedperiodbuttons">
                       <Link to='/graphs'>
                         <TimeButton 
