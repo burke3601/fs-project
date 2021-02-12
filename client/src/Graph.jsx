@@ -5,11 +5,27 @@ import './App.css';
 
 
 function Graph(props){
-        console.log(props)
-        console.log(props.data)
+        //console.log(props)
+      
+     
+       
         if (props && props.data && props.data.map){
+
+          //filter try
+
+          console.log(props.data.sort(function(a,b){
+            return a.id - b.id
+          })
+          )
+          // let newIds
+          // props.data.map(a=>{ 
+          //   est.push(a.ID)
+          //   filterIds = est.filter((val, index) => est.indexOf(val) === index)
+
+
           let filteredDates = []
           let newDates =[]
+          let displayDates =[]
           let dates = []
           //gets times
           props.data.map(a=>{
@@ -23,7 +39,14 @@ function Graph(props){
               newDates.push(c)
             })
 
+            
+              displayDates = newDates.filter((val, index) => newDates.indexOf(val) === index)
+            
+
           console.log(newDates)
+          console.log(newDates.length)
+
+         
           let est = []
           let newEst = []
           //gets stations
@@ -38,7 +61,7 @@ function Graph(props){
             let lev = []
             for(let i=0; i < props.data.length; i++){
               
-              if(props.data[i].station == el){
+              if(props.data[i].station === el){
                 lev.push(props.data[i].level)
               }
             }levels.push(lev)
@@ -49,7 +72,7 @@ function Graph(props){
    
     const state = {
         
-        labels: newDates,
+        labels: displayDates,
         datasets: newEst.map((sta, index) =>{
         
             const r = Math.floor(Math.random() * 256)
@@ -85,21 +108,27 @@ function Graph(props){
             data={state}
             height={400}
             width={600}
+            
               options={{
                   maintainAspectRatio: true,
                   scales: {
                       yAxes: [{
                           ticks: {
-                            beginAtZero: true,
-                            suggestedMax: 20    
+                            
+                            
+                               
                           }
                       }],
                       xAxes: [{
                         ticks: {
                           autoSkip: true,
-                          suggestedMax: 10, 
-                          beginAtZero: true,
-                          stacked: false
+
+                          
+                          maxTicksLimit: 30
+                          
+                          
+                            
+
                         }
                     }]
                   }

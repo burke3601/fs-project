@@ -18,7 +18,8 @@ import {
   Link,
   Switch,
   Route,
-  Redirect
+  Redirect,
+  useHistory
 } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
@@ -70,8 +71,11 @@ const location = [{
 ]
  
 function App() {
- 
-  const [data,setData] = useState( [])
+
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [data,setData] = useState({results: []})
+  const history = useHistory()
 
   const [weather, setWeather] = useState([])
   const [count, setCount] = useState(1)
@@ -133,7 +137,7 @@ function App() {
   async function getNaranjo(){
     const resp = await axios.get(`/api/naranjo`);
     console.log(`**************`)
-    console.log(resp)
+    console.log(resp,'139')
     setData(resp.data)
   }
   //fetches weather data--- called at home and dashboard
@@ -144,45 +148,84 @@ function App() {
   setWeather(response.data)
 }
 //executes login
-function doLogin() {
+async function doLogin(name, password) {
+  console.log(name, password);
+  const loginDetails= {name, password}
+  const response = await axios.post(`/api/user/login`,loginDetails)
   console.log('sweet you are logged in now, buddy');
+  console.log(response);
+ 
   setIsLoggedIn(true);
+ 
+
 }
 //executes logout from logout button in navbar
-function doLogout() {
+async function doLogout() {
+  const logginout = await axios.post("/api/logout")
   console.log('all logged out');
-  setUser({userName: ""});
-  setIsLoggedIn(false);
+history.push("/")
 }
+useEffect(() => {
+  async function checkLogin() {
+    // see if we're logged in
+    try {      
+      const resp = await axios.get('/api/users/login-status');
+      console.log('you are logged in already');
+      setIsLoggedIn(true);
+    } catch (e) {
+      // an error means that we're not logged in
+      console.log('error means not logged in');
+      setIsLoggedIn(false);
+    }
+  }
+  checkLogin();    
+}, []);
 //fetches initial data for weather and Naranjo river by default
 useEffect(()=>{
   fetchWeather(15.950753,-90.546267)
   // setInterval(fetchWeather,1000*60*30)
   //  setInterval(()=>{
-    //getRocja()
-   getNaranjo()
+  getRocja()
+  //getNaranjo()
   //getStation()
-  //  getDay()
+    //getDay(count, "Rio Rocja Ponitlla")
   // },1000*60*15)
 },[])
 const [toggle, setToggle]= useState(true)
   return (
    
     <Router>
+      <Switch>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
-
-            <Login 
+        {/* {setIsLoggedIn(true),
+        <Redirect to='/home' />} */}
+        {isLoggedIn ?  <Redirect to='/home' />: <Login 
                   doLogin={doLogin}
-                  setUser={setUser}
-            />
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> }
+           
           </Route>
 
         
       
-      <Switch>
+      
          <div className='container'>
           <Route path="/graphs" exact>
+          {isLoggedIn ?  <Redirect to='/graphs' />: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> }
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
@@ -196,6 +239,10 @@ const [toggle, setToggle]= useState(true)
               getNaranjo = {getNaranjo}
               fetchWeather={fetchWeather}
               toggle = {toggle}
+              count = {count}
+              subtractHour = {subtractHour}
+              setCount = {setCount}
+
               ></Sidebar>
               <Dashboard
               toggle = {toggle}
@@ -214,7 +261,16 @@ const [toggle, setToggle]= useState(true)
 
           </Route>
 
-          <Route path="/home"> 
+          <Route path="/home">
+          {isLoggedIn ?  <Redirect to='/home' />: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> } 
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
@@ -224,6 +280,9 @@ const [toggle, setToggle]= useState(true)
               <Sidebar
                 toggle = {toggle}
                 setToggle = {setToggle}
+                count = {count}
+                setCount = {setCount}
+                subtractHour = {subtractHour}
               ></Sidebar>
               
               <Home 
@@ -236,6 +295,15 @@ const [toggle, setToggle]= useState(true)
               ></Home>
           </Route>
           <Route path="/about">
+          {isLoggedIn ?  <Redirect to='/about' />: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> }
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}

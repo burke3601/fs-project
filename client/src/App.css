@@ -90,9 +90,7 @@ a{
 
 .dashboard{
   transition-timing-function: ease-in-out;
-  
   /* padding: 5%; */
-  
   grid-column: 1/13; 
   background-color:#80D1E7;
   display: flex;
@@ -208,6 +206,13 @@ ul{
   vertical-align: middle;
 }
 
+.weatherAndButtons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 
 /* GRAPHS */
 .canvas{
@@ -264,8 +269,10 @@ ul{
 .footer{
    grid-column: 1/13;
    align-items: center;
+
    grid-row: 12/13;
   
+
 }
 
 
@@ -539,11 +546,11 @@ input, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #53565A; 
-  /* background-image: url("https://geology.com/world/guatemala-map.gif");
+  /* background-color: #53565A;  */
+  background-image: url("https://geology.com/world/guatemala-map.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  */
+ 
 }
 
  form{

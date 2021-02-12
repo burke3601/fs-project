@@ -1,13 +1,9 @@
 import React from 'react'
-import Sidebar from './Sidebar'
 import Graph from './Graph'
-
-import {useState, useEffect} from 'react'
-import Api from './Api'
 import Weather from './Weather'
 
 import { 
-   
+
   Link,
  
 } from 'react-router-dom';
@@ -22,7 +18,7 @@ function Dashboard(props){
   console.log(props.data)
   let alertColor = ''
   let alertMessage = ''
-  if(props && props.data && props.data[0].station === (props.data[1].station)){
+  if(props && props.data && props.data[0].station=== (props.data[1].station)){
     console.log(props.data[props.data.length - 1].level)
     if(props.data[props.data.length - 1].level <= 7){
        alertColor = "green"
@@ -30,7 +26,7 @@ function Dashboard(props){
     } else if (props.data[props.data.length - 1].level > 7 && props.data[props.data.length - 1].level <= 14){
       alertColor = "orange"
       alertMessage = "Alerta NARANJA"
-    }else if (props.data[props.data.length - 1].level > 20){
+    }else if (props.data[props.data.length - 1].level > 14){
       alertColor = "red"
       alertMessage = "Alerta ROJA"
     }
@@ -42,7 +38,7 @@ function Dashboard(props){
         
         <div className='dashboard' style={props.toggle ? {gridRow: '4/13'}:{gridRow: '2/13'}}>
 
-
+            <div className='weatherAndButtons'>
                 <div >
                   <Weather 
                     data = {props.data}
@@ -79,9 +75,9 @@ function Dashboard(props){
                       <TimeButton 
                         data = {props.data}
                         handleClick = {(e) => {
-                          props.subtractHour(props.count, props.data[0].station)
+                          props.subtractHour(props.data[0].station)
                         }}
-                        count = {props.count}
+                        // count = {props.count}
                         text = {"-"}>
                       </TimeButton>
                     </Link>
@@ -125,7 +121,7 @@ function Dashboard(props){
                  
                   
                   
-
+              </div>
                 <div className="mainGraph">
                     
                     <Graph 
@@ -144,6 +140,8 @@ function Dashboard(props){
   }else{
     return(
     <div className='dashboard' style={props.toggle ? {gridColumn: '4/13'}:{gridColumn: '1/13'}}>
+  
+  <div className='weatherAndButtons'>
   <div >
     <Weather 
       data = {props.data}
@@ -161,19 +159,19 @@ function Dashboard(props){
       <Link>
         <TimeButton 
           data = {props.data}
-          handleClick = {(e) => {props.addHour(props.count, props.data[0].river)}}
-          count = {props.count}
+          handleClick = {(e) => {props.addHour(props.data[0].river)}}
+          
           text = {"+"}>
         </TimeButton>
       </Link>
       <h2>
-        {props.count}
+        {num}
       </h2>
       <Link to='/graphs'>
         <TimeButton 
           data = {props.data}
-          handleClick = {(e) => {props.subtractHour(props.count, props.data[0].river)}}
-          count = {props.count}
+          handleClick = {(e) => {props.subtractHour( props.data[0].river)}}
+          
           text = {"-"}>
         </TimeButton>
       </Link>
@@ -214,6 +212,8 @@ function Dashboard(props){
 
       </div>
     </div>
+
+    </div> 
   <div className="mainGraph">
       
       <Graph 

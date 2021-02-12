@@ -23,7 +23,11 @@ function Sidebar(props){
                         </div>
                     </Link>
                     <br/>
-                    <Link to='/graphs'onClick={props.getRocja}>
+                    <Link to='/graphs' onClick={props.getRocja}
+                    
+                                        
+                    
+                    >
                         <div className="sidebarItem">   
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
                             <p>Rio Rocja 

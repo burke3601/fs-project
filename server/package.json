@@ -10,15 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "basic-ftp": "^4.6.3",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "ftp": "^0.3.10",
     "helmet": "^4.4.1",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.5.0",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "session-file-store": "^1.5.0"
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
