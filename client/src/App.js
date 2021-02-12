@@ -159,7 +159,7 @@ useEffect(()=>{
   fetchWeather(15.950753,-90.546267)
   // setInterval(fetchWeather,1000*60*30)
   //  setInterval(()=>{
-    //getRocja()
+  getRocja()
    getNaranjo()
   //getStation()
   //  getDay()

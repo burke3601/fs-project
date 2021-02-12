@@ -5,9 +5,24 @@ import './App.css';
 
 
 function Graph(props){
-        console.log(props)
-        console.log(props.data)
+        //console.log(props)
+      
+     
+       
         if (props && props.data && props.data.map){
+
+          //filter try
+
+          console.log(props.data.sort(function(a,b){
+            return a.id - b.id
+          })
+          )
+          // let newIds
+          // props.data.map(a=>{ 
+          //   est.push(a.ID)
+          //   filterIds = est.filter((val, index) => est.indexOf(val) === index)
+
+
           let filteredDates = []
           let newDates =[]
           let dates = []
@@ -24,6 +39,10 @@ function Graph(props){
             })
 
           console.log(newDates)
+          console.log(newDates.length)
+
+          let cutDates = newDates.slice(-20)
+          console.log(cutDates)
           let est = []
           let newEst = []
           //gets stations
@@ -49,7 +68,7 @@ function Graph(props){
    
     const state = {
         
-        labels: newDates,
+        labels: cutDates,
         datasets: newEst.map((sta, index) =>{
         
             const r = Math.floor(Math.random() * 256)
@@ -85,21 +104,23 @@ function Graph(props){
             data={state}
             height={400}
             width={600}
+            
               options={{
                   maintainAspectRatio: true,
                   scales: {
                       yAxes: [{
                           ticks: {
-                            beginAtZero: true
+                            
+                            
                                
                           }
                       }],
                       xAxes: [{
                         ticks: {
                           autoSkip: true,
-                          suggestedMin: 20,
-                          suggestedMax: 100,
-                          maxTicksLimit: 5
+                          
+                          
+                          maxTicksLimit: 100
                           
                           
                             

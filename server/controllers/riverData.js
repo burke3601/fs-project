@@ -11,7 +11,7 @@ const fullRiverData = async (req, res) =>{
         river = 'Rio Naranjo'
     }
     const data = await Data.findAll({
-        limit: 400,
+        limit: 200,
         where: {
             river: river
         }
@@ -25,6 +25,7 @@ const stationData = async (req, res) =>{
     console.log(req.params)
    
     const data = await Data.findAll({
+        limit: 50,
         where: {
             station: req.params.name
         }
