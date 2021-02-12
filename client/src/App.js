@@ -75,7 +75,7 @@ function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [data,setData] = useState({results: []})
-  const history = useHistory()
+ 
 
   const [weather, setWeather] = useState([])
   const [count, setCount] = useState(1)
@@ -159,12 +159,8 @@ async function doLogin(name, password) {
  
 
 }
-//executes logout from logout button in navbar
-async function doLogout() {
-  const logginout = await axios.post("/api/logout")
-  console.log('all logged out');
-history.push("/")
-}
+
+
 useEffect(() => {
   async function checkLogin() {
     // see if we're logged in
@@ -228,7 +224,7 @@ const [toggle, setToggle]= useState(true)
             /> }
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={doLogout}
+                    doLogout={()=>doLogout(history)}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
@@ -273,7 +269,7 @@ const [toggle, setToggle]= useState(true)
             /> } 
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={doLogout}
+                    doLogout={()=>doLogout(history)}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
@@ -306,7 +302,7 @@ const [toggle, setToggle]= useState(true)
             /> }
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={doLogout}
+                    doLogout={()=>doLogout(history)}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
