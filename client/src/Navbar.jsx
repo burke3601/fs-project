@@ -4,9 +4,20 @@ import {Link} from 'react-router-dom'
 import Logout from './Logout';
 import buttonIcon from './images/buttonIcon.png'
 import logoutIcon from './images/logoutIcon.png'
+import {useHistory} from 'react-router-dom';
+import axios from 'axios'
 
 function Navbar(props){
-
+    const history = useHistory();
+    async function doLogout() {
+        //executes logout from logout button in navbar
+        const logginout = await axios.post("/api/logout")
+        console.log('all logged out'); 
+        console.log({history}); 
+        //set state to false
+        props.isLoggedIn(false)
+        history.push("/")
+      }
     return(
 
         <nav className="navbar">
@@ -26,9 +37,10 @@ function Navbar(props){
                 <div className="sidebar-button-container">
                     <img className="sidebar-button" onClick={()=>{props.setToggle(!props.toggle)}} src={logoutIcon}/>
                 </div>
-                    {/* <Logout doLogout={props.doLogout}/> */}
+                   <Logout doLogout={doLogout}/>
             </div>
         </nav>
+
     )
 }
 
