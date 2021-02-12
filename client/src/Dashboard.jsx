@@ -36,7 +36,7 @@ function Dashboard(props){
   return(
         
         
-        <div className='dashboard' style={props.toggle ? {gridColumn: '4/13'}:{gridColumn: '1/13'}}>
+        <div className='dashboard' style={props.toggle ? {gridRow: '4/13'}:{gridRow: '2/13'}}>
 
             <div className='weatherAndButtons'>
                 <div >

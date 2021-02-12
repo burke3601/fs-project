@@ -1,6 +1,6 @@
 .container{
-  background-color:#e4e1e100 ;
-  display: grid;
+  background-color: #80D1E7 ;
+  display: block;
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns:repeat(12, 1fr);
   align-items: stretch;
@@ -44,7 +44,7 @@
   width: 12rem;
 }
 .navbar {
-  margin-bottom: 1%;
+  
 
   flex-direction: row;
 
@@ -55,8 +55,8 @@
   /* height: 5rem; */
   display: flex;
   align-items: flex-end;
-  border: 1px solid rgba(35, 33, 33, 0.945);
-  background-color: #5ea17b;
+  border-bottom: 1em  #CB3D70 solid;
+  background-color: #211823;
   font: white;
   font-family:  'Helvetica Neue', sans-serif;
 }
@@ -82,18 +82,17 @@ a{
 
 
 .container .sidebar-button{
+  
   z-index: +1;
+  size: 5%;
 }
 
 
 .dashboard{
-  border: #494445 solid ;
-  margin-left: 2%;
-  
-  padding: 5%;
-  grid-row: 2/11;
-  /* grid-column: 4/13;  */
-  background-color:#e4e1e1;
+  transition-timing-function: ease-in-out;
+  /* padding: 5%; */
+  grid-column: 1/13; 
+  background-color:#80D1E7;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -101,23 +100,40 @@ a{
 }
 .hidden {
   display: none;
+  
 }
 .sidebar{
+  transition-timing-function: ease-in-out;
+  height: auto;
+  align-items: center;
+  z-index: +1;
   left: 0;
   top: 0;
-  padding-top: 20%;
+  margin-top: 5%;
+  /* padding-top: 10%; */
   font-family:  'Helvetica Neue', sans-serif;
   font-size:medium;
   padding-right: 1%;
   padding-left:1% ;
-  grid-row:2/13;
-  grid-column: 1/4;
-  background-color: #0091d5;
-  border: #456990 solid;
+  grid-row:2/4;
+  grid-column: 1/2;
+  max-width: 80%;
+  background-color: #CB3D70;
+  border-bottom:white solid;
+  border-top:  white solid;
+  border-right: white solid;
+  border-width: .3em;
+  border-top-right-radius: 2em ;
+  border-bottom-right-radius: 2em;
  
 }
 .sidebarLinks{
-  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 5em;
+  align-content: center;
+  justify-content: space-between;
+  
 }
 .sidebar a{
   text-decoration: none;
@@ -233,7 +249,7 @@ ul{
 }
 .graph{
   
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
   border-radius: 1em;
   border:#114c5f8f solid;
@@ -242,8 +258,10 @@ ul{
   
 }
 .mainGraph{
-
-  margin: 5%;
+  max-width: 75%;
+  margin-left:3% ;
+  margin-right: 3%;
+  margin-bottom: 5%;
   border: #456990 solid;
   border-radius: 1em;
   background-color: white;
@@ -251,7 +269,10 @@ ul{
 .footer{
    grid-column: 1/13;
    align-items: center;
-    
+
+   grid-row: 12/13;
+  
+
 }
 
 
@@ -263,8 +284,8 @@ ul{
   margin-left: 2%;
   
   padding: 5%;
-  grid-row: 2/13;
-  grid-column: 4/13;
+  /* grid-row: 2/13;
+  grid-column: 4/13; */
   background-color: rgb(171, 169, 169);
   
 }
@@ -283,8 +304,11 @@ ul{
   color:#114c5f ;
 }
 .google-map {
-  width:auto ;
-  height: 35vh;
+  /* width:auto ; */
+  margin-right: 15%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  height: 20vh;
   border:#114c5f8f solid;
   border-width: 1em;
   border-radius: 1em;
@@ -330,7 +354,24 @@ ul{
  
 
 /* @media (min-width: 700px) { */
+  @media screen and (min-width: 414px){
+    .weather-container {
+      max-width: 90%;
+    background-color: #114B5F;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    /* max-width: 50%; */
+    /* margin: 6%; */
+    border-radius: 1.5em;
+    box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+    border: rgba(255, 255, 255, 0.783) solid;
+    margin-left: 5%;
+    margin-right: 5%;
+    }
+  }
   .weather-container {
+    max-width: 50%;
   background-color: #114B5F;
   color: white;
   display: flex;
@@ -340,6 +381,9 @@ ul{
   border-radius: 1.5em;
   box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
   border: rgba(255, 255, 255, 0.783) solid;
+  margin-left: 25%;
+  margin-right: 25%;
+  
   /* grid-column: 4/6;
   grid-row: 3/4; */
  
@@ -408,31 +452,37 @@ ul{
   background-color: #456990;
 }
 .container .footer{
-  /* .galileo {
-    max-width:100% ;
-    max-height:100%;
-    border: rgba(94, 11, 43, 0.502) solid;
-    border-radius: 30%;
-  }
-  
-  .galileo-box {
-    max-width: 100px;
-    max-height: 100px;
-    padding: 2px;
-    
-  } */
+  width: 100%;
+  border-top: #211823 solid ;
+  border-width: 4%;
+  align-content: center;
+  justify-content: center;
+  max-height: fit-content;
+ 
   display: flex;
   /* width: 100%; */
 }
 .container .footer > div{
   width: 20%;
+  /* max-height: 5em; */
+
+
 
 }
 .container .footer div > img {
   width: 100%;
+  
 }
 @media screen and (min-width: 414px){
   .container .footer{
+    width: 100%;
+    width: 100%;
+    background-color: white;
+    border: #211823 solid;
+    padding: 2%;
+    border-width: 2%;
+    align-content: center;
+    justify-content: center;
     /* .galileo {
       max-width:100% ;
       max-height:100%;
@@ -460,7 +510,9 @@ ul{
 
 @media screen and (min-width: 414px) {
   .google-map {
-    height: 80vh;
+    height: 50vh;
+    margin-right: 0;
+    margin-left: 0;
   }
   .map-h2 {
     font-size: 1.3rem;

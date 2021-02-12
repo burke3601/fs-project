@@ -122,12 +122,13 @@ function Graph(props){
                       xAxes: [{
                         ticks: {
                           autoSkip: true,
-                          
+
                           
                           maxTicksLimit: 30
                           
                           
                             
+
                         }
                     }]
                   }

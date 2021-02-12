@@ -71,11 +71,12 @@ const location = [{
 ]
  
 function App() {
-  
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [data,setData] = useState({results: []})
   const history = useHistory()
+
   const [weather, setWeather] = useState([])
   const [count, setCount] = useState(1)
   const [station, setStation] = useState('')
@@ -313,6 +314,7 @@ const [toggle, setToggle]= useState(true)
           </Route>
           <Footer></Footer>
          </div>  
+        
       </Switch>
       
      
