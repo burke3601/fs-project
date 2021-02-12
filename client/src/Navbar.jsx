@@ -2,6 +2,7 @@ import React from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import {Link} from 'react-router-dom'
 import Logout from './Logout';
+import buttonIcon from './images/buttonIcon.png'
 
 
 function Navbar(props){
@@ -17,7 +18,9 @@ function Navbar(props){
                 <h5>Sistema de Alerta Temprana Galileo</h5>
 
             </div>
-            <button className="sidebar-button" onClick={()=>{props.setToggle(!props.toggle)}}>button</button>
+            <div className="sidebar-button-container">
+            <img className="sidebar-button" onClick={()=>{props.setToggle(!props.toggle)}} src={buttonIcon}/>
+            </div>
         </div>
         
         

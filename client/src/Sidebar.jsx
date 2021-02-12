@@ -19,22 +19,22 @@ function Sidebar(props){
                       >
                         <div className="sidebarItem">  
                             <img className="icon" src="https://img.icons8.com/ios/20/000000/brittany-map.png"/>
-                            View Map
+                           <p>View Map</p> 
                         </div>
                     </Link>
                     <br/>
                     <Link to='/graphs'onClick={props.getRocja}>
                         <div className="sidebarItem">   
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
-                            Rio Rocja 
-                            Pontila
+                            <p>Rio Rocja 
+                            Pontila</p> 
                         </div> 
                     </Link>
                     <br/>
                     <Link to='/graphs' onClick={props.getNaranjo}>
                         <div className="sidebarItem">  
                             <img className="icon" src="https://img.icons8.com/ios-glyphs/20/000000/rope-bridge.png"/>
-                           Rio Naranjo 
+                          <p>Rio Naranjo</p>  
                         </div>
                     </Link>
                 </div>

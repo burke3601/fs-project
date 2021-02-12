@@ -71,7 +71,7 @@ const location = [{
  
 function App() {
  
-  const [data,setData] = useState({results: []})
+  const [data,setData] = useState( [])
 
   const [weather, setWeather] = useState([])
   const [count, setCount] = useState(1)
@@ -246,6 +246,7 @@ const [toggle, setToggle]= useState(true)
           </Route>
           <Footer></Footer>
          </div>  
+        
       </Switch>
       
      

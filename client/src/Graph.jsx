@@ -97,9 +97,9 @@ function Graph(props){
                       xAxes: [{
                         ticks: {
                           autoSkip: true,
-                          maxTicksLimit: 10,
-                          beginAtZero: true
-                            
+                          suggestedMax: 10, 
+                          beginAtZero: true,
+                          stacked: false
                         }
                     }]
                   }
