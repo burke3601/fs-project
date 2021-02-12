@@ -3,7 +3,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 import {Link} from 'react-router-dom'
 import Logout from './Logout';
 import buttonIcon from './images/buttonIcon.png'
-import logoutIcon from './images/logoutIcon.png'
+
 import {useHistory} from 'react-router-dom';
 import axios from 'axios'
 
@@ -35,9 +35,9 @@ function Navbar(props){
                 <Link to='/about'>about</Link>
             
                 <div className="sidebar-button-container">
-                    <img className="sidebar-button" onClick={()=>{props.setToggle(!props.toggle)}} src={logoutIcon}/>
+                <Logout doLogout={doLogout}/>
                 </div>
-                   <Logout doLogout={doLogout}/>
+                   
             </div>
         </nav>
 

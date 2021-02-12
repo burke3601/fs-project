@@ -4,6 +4,7 @@ import Graph from './Graph'
 import axios from 'axios'
 import Home from './Home';
 import Login from './Login';
+import Logout from './Logout'
 import Map from './Map';
 import Navbar from './Navbar'
 import Api from './Api'
@@ -149,7 +150,7 @@ function App() {
 }
 //executes login
 async function doLogin(name, password) {
-  console.log(name, password);
+  
   const loginDetails= {name, password}
   const response = await axios.post(`/api/user/login`,loginDetails)
   console.log('sweet you are logged in now, buddy');
@@ -199,7 +200,7 @@ const [toggle, setToggle]= useState(false)
         {isLoggedIn ?  <>
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={doLogout}
+                    // doLogout={doLogout}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
@@ -250,7 +251,7 @@ const [toggle, setToggle]= useState(false)
           {isLoggedIn ? <>
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={()=>doLogout(history)}
+                    // doLogout={()=>doLogout(history)}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
@@ -298,7 +299,7 @@ const [toggle, setToggle]= useState(false)
           {isLoggedIn ?  <>
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={()=>doLogout(history)}
+                    // doLogout={()=>doLogout(history)}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
@@ -333,7 +334,7 @@ const [toggle, setToggle]= useState(false)
           {isLoggedIn ?  <>
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
-                    doLogout={()=>doLogout(history)}
+                    // doLogout={()=>doLogout(history)}
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
