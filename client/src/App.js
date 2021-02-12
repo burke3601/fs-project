@@ -216,6 +216,15 @@ const [toggle, setToggle]= useState(true)
       
          <div className='container'>
           <Route path="/graphs" exact>
+          {isLoggedIn ?  <Redirect to='/graphs' />: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> }
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
@@ -247,7 +256,16 @@ const [toggle, setToggle]= useState(true)
 
           </Route>
 
-          <Route path="/home"> 
+          <Route path="/home">
+          {isLoggedIn ?  <Redirect to='/home' />: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> } 
           <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
@@ -269,6 +287,15 @@ const [toggle, setToggle]= useState(true)
               ></Home>
           </Route>
           <Route path="/about">
+          {isLoggedIn ?  <Redirect to='/about' />: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> }
             <Navbar 
                     isLoggedIn={setIsLoggedIn}
                     doLogout={doLogout}
