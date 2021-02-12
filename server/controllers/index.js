@@ -1,3 +1,4 @@
 module.exports = {
-    riverControllers: require('./riverData')
+    riverControllers: require('./riverData'),
+    userController: require('./userController')
 }
