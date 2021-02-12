@@ -124,7 +124,7 @@ function Graph(props){
                           autoSkip: true,
 
                           
-                          maxTicksLimit: 30
+                          maxTicksLimit: 15
                           
                           
                             

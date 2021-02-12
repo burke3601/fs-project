@@ -153,7 +153,7 @@ async function doLogin(name, password) {
   const loginDetails= {name, password}
   const response = await axios.post(`/api/user/login`,loginDetails)
   console.log('sweet you are logged in now, buddy');
-  console.log(response);
+  
  
   setIsLoggedIn(true);
  

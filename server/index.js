@@ -65,12 +65,12 @@ app.get('/api/picture', (req, res)=>{
 app.post("/api/logout", userController.processLogout)
 //commented out so it only runs on Matt's computer
 
-// setInterval(()=>{
-//     getData()
-//     .then(addData)
-//   },1000*60*15)
-//   getData()
-//   .then(addData)
+setInterval(()=>{
+    getData()
+    .then(addData)
+  },1000*60*15)
+  getData()
+  .then(addData)
 
 server.listen(4000, ()=>{
     console.log(`Express API listening on port 4000`)
