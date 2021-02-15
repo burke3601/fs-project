@@ -15,7 +15,8 @@ import subtractIcon from './images/subtractIcon.png'
 
 
 function Dashboard(props){
-
+  console.log(props.count)
+  console.log(props.data)
   let num = parseInt(props.count)
   let alertColor = ''
   let alertMessage = ''

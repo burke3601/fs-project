@@ -20,19 +20,26 @@ function Sidebar(props){
            
             <div className = 'sidebarLinks'>
                 
-                    <Link  to='/home'onClick={props.fetchWeather}
-                      >
-                         <span onClick={props.toggle ? 'sidebar': 'sidebar hidden'}>View <br/>
+                    <Link  to='/home' onClick={()=>{
+                        props.fetchWeather()
+                        props.setToggle(false)
+                    }}>
+                         <span> View <br/>
                            Map</span> 
                     </Link>
                   
-                    <Link   to='/graphs' onClick={props.getRocja}
-                    >
-                        <span onClick={props.toggle ? 'sidebar': 'sidebar hidden'}>Rio Rocja Pontila</span> 
+                    <Link   to='/graphs' onClick={()=>{
+                        props.getRocja()
+                        props.setToggle(false)
+                    }}>
+                        <span>Rio Rocja Pontila</span> 
                     </Link>
                 
-                    <Link  to='/graphs' onClick={props.getNaranjo}>
-                        <span onClick={props.toggle ? 'sidebar': 'sidebar hidden'}>Rio Naranjo</span>  
+                    <Link  to='/graphs' onClick={()=>{
+                        props.getNaranjo()
+                        props.setToggle(false)
+                    }}>
+                        <span>Rio Naranjo</span>  
                     </Link>
                     
             </div>
