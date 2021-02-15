@@ -72,10 +72,11 @@ const location = [{
 ]
  
 function App() {
+  const [data,setData] = useState({results: []})
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [data,setData] = useState({results: []})
+  
  
 
   const [weather, setWeather] = useState([])
@@ -311,6 +312,9 @@ const [alertColor, setAlertColor]=useState('')
                 count = {count}
                 setCount = {setCount}
                 subtractHour = {subtractHour}
+                getRocja = {getRocja}
+                getNaranjo = {getNaranjo}
+                fetchWeather={fetchWeather}
               ></Sidebar>
               
               <Home 
