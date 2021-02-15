@@ -13,7 +13,6 @@
   font-family: sans-serif;
  
   display: flex;
-<<<<<<< HEAD
   align-items: flex-end;
   border-bottom: 1em  #CB3D70 solid;
   background-color: #211823;
@@ -22,16 +21,6 @@
 }
 
 a{
-=======
-  flex:stretch;
-  flex-direction: row;
-  background-color: black;
-  color:white;
-  padding: 2%;
-  justify-content: space-between;
-}
-.topnav a{
->>>>>>> main
   color: white;
   text-decoration: none;
 }
