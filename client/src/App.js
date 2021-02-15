@@ -221,6 +221,17 @@ const [toggle, setToggle]= useState(false)
                     setCount = {setCount}
                     subtractHour = {subtractHour}
                 />
+                 
+                  
+                  <Home 
+                  toggle = {toggle}
+                  setToggle = {setToggle}
+                  fetchWeather={fetchWeather}
+                  weather = {weather}
+                  getStation = {getStation}
+                  location = {location}
+                  ></Home>
+
                   <Sidebar
                     getRocja = {getRocja}
                     getNaranjo = {getNaranjo}
@@ -231,15 +242,6 @@ const [toggle, setToggle]= useState(false)
                     setCount = {setCount}
                     setToggle = {setToggle}
                   ></Sidebar>
-                  
-                  <Home 
-                  toggle = {toggle}
-                  setToggle = {setToggle}
-                  fetchWeather={fetchWeather}
-                  weather = {weather}
-                  getStation = {getStation}
-                  location = {location}
-                  ></Home>
               </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
@@ -271,16 +273,7 @@ const [toggle, setToggle]= useState(false)
               subtractHour = {subtractHour}
               setCount = {setCount}
             />
-              <Sidebar
-              getRocja = {getRocja}
-              getNaranjo = {getNaranjo}
-              fetchWeather={fetchWeather}
-              toggle = {toggle}
-              count = {count}
-              subtractHour = {subtractHour}
-              setCount = {setCount}
-              setToggle = {setToggle}
-            ></Sidebar>
+             
               <Dashboard
               toggle = {toggle}
               setCount = {setCount}
@@ -295,6 +288,16 @@ const [toggle, setToggle]= useState(false)
               
             
               ></Dashboard>
+               <Sidebar
+              getRocja = {getRocja}
+              getNaranjo = {getNaranjo}
+              fetchWeather={fetchWeather}
+              toggle = {toggle}
+              count = {count}
+              subtractHour = {subtractHour}
+              setCount = {setCount}
+              setToggle = {setToggle}
+            ></Sidebar>
             
           </>: <Login 
                   doLogin={doLogin}
