@@ -108,23 +108,28 @@ function Graph(props){
             data={state}
             height={400}
             width={600}
-            
+           
               options={{
+                zoomEnabled: true,
                   maintainAspectRatio: false,
                   scales: {
                       yAxes: [{
                           ticks: {
                             
+                            suggestedMax: 20
                             
                                
                           }
                       }],
                       xAxes: [{
                         ticks: {
-                          autoSkip: true,
-
                           
-                          maxTicksLimit: 15
+                          
+                         
+                          autoSkip:true,
+                          maxTicksLimit:10
+                          
+              
                           
                           
                             

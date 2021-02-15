@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 
 import TimeButton from './TimeButton'
+import addIcon from './images/addIcon.png'
+import subtractIcon from './images/subtractIcon.png'
 
 
 
@@ -22,13 +24,13 @@ function Dashboard(props){
     console.log(props.data[props.data.length - 1].level)
     if(props.data[props.data.length - 1].level <= 7){
        alertColor = "green"
-       alertMessage = "Alerta VERDE"
+       alertMessage = "ALERTA VERDE"
     } else if (props.data[props.data.length - 1].level > 7 && props.data[props.data.length - 1].level <= 14){
       alertColor = "orange"
-      alertMessage = "Alerta NARANJA"
+      alertMessage = "ALERTA NARANJA"
     }else if (props.data[props.data.length - 1].level > 14){
       alertColor = "red"
-      alertMessage = "Alerta ROJA"
+      alertMessage = "ALERTA ROJA"
     }
     console.log(alertColor)
   console.log(props.count)
@@ -36,9 +38,9 @@ function Dashboard(props){
   return(
         
         
-        <div className='dashboard' style={props.toggle ? {gridRow: '4/13'}:{gridRow: '2/13'}}>
+        <div className='dashboard'>
 
-            <div className='weatherAndButtons'>
+           
                 <div >
                   <Weather 
                     data = {props.data}
@@ -49,51 +51,48 @@ function Dashboard(props){
                 <div className="dashboardbuttons">
                
 
-                    <div  className="dashBox1">
-                      
-                      <div className="alertbox1">
-                      <p   style={{backgroundColor: alertColor}}>
-                        {alertMessage} Nivel: {props.data[props.data.length - 1].level}
-                      </p>
-                      </div>
-                    
-                    <div className="alertbox2">
-                    <p>Estacion: {props.data[0].station}</p>
-                     
-                  </div>
-                  </div>
+                   
                   <div className="dashBox2">
-                  <div className="alertbox3">
-                    <p>Mostrando ultimas:  </p> 
-                      <br/>
+                     
+                  <div className="alertbox1">
+                        <p>{alertMessage}</p> <span className="alertcolor" style={{backgroundColor: alertColor}}></span>
+                     
+                        <p>Nivel: {props.data[props.data.length - 1].level}</p>                     
+                       
+                        <p>Estacion: {props.data[0].station}</p>
+                      </div>
+                  <div className="hourbuttons">
+                    
                       <Link>
+                      <TimeButton 
+                          data = {props.data}
+                          handleClick = {(e) => {
+                            props.subtractHour(props.data[0].station)
+                          }}
+                          // count = {props.count}
+                          text = {<img src={subtractIcon}/>}>
+                        </TimeButton>
+                      </Link>
+                      <h2>
+                        {num} Hr
+                      </h2>
+                      <Link to='/graphs'>
                         <TimeButton 
                           data = {props.data}
                           handleClick = {(e) => {
                             props.addHour(props.data[0].station)
                           }}
                           //count = {props.count}
-                          text = {"+"}>
+                          text = {<img src={addIcon}/>}>
                         </TimeButton>
                       </Link>
-                      <h2>
-                        {num}
-                      </h2>
-                      <Link to='/graphs'>
-                        <TimeButton 
-                          data = {props.data}
-                          handleClick = {(e) => {
-                            props.subtractHour(props.data[0].station)
-                          }}
-                          // count = {props.count}
-                          text = {"-"}>
-                        </TimeButton>
-                      </Link>
-                      <br/>
-                      <p>horas</p>
+                  
+                      
                     </div>
-                    </div>
-                  <div></div>
+               
+                 
+                     
+                 
                   <div className = "extendedperiodbuttons">
                       <Link to='/graphs'>
                         <TimeButton 
@@ -103,7 +102,7 @@ function Dashboard(props){
                             props.getDay("day", props.data[0].station)
                             }}
                           count = {props.count}
-                          text = {"Dia"}>
+                          text = {"DIA"}>
                         </TimeButton>
                         <TimeButton 
                           data = {props.data}
@@ -112,7 +111,7 @@ function Dashboard(props){
                             props.getDay("week", props.data[0].station)
                             }}
                           count = {props.count}
-                          text = {"Semana"}>
+                          text = {"SEMANA"}>
                         </TimeButton>
                         <TimeButton 
                           data = {props.data}
@@ -121,7 +120,7 @@ function Dashboard(props){
                             props.getDay("month", props.data[0].station)
                             }}
                           count = {props.count}
-                          text = {"Mes"}>
+                          text = {"MES"}>
                         </TimeButton>
                       </Link>
 
@@ -149,9 +148,9 @@ function Dashboard(props){
                       
   }else{
     return(
-    <div className='dashboard' style={props.toggle ? {gridColumn: '4/13'}:{gridColumn: '1/13'}}>
+    <div className='dashboard' >
   
-  <div className='weatherAndButtons'>
+  
   <div >
     <Weather 
       data = {props.data}
@@ -160,33 +159,30 @@ function Dashboard(props){
     />
   </div>
   <div className="dashboardbuttons">
-    <div>
+  <div className="hourbuttons">
       
 
 
-      <h3>Mostrando ultimas:</h3>
-      <br/>
+      
+      
       <Link>
-        <TimeButton 
+      <TimeButton 
           data = {props.data}
-          handleClick = {(e) => {props.addHour(props.data[0].river)}}
+          handleClick = {(e) => {props.subtractHour( props.data[0].river)}}
           
-          text = {"+"}>
+          text = {<img src={subtractIcon}/>}>
         </TimeButton>
       </Link>
       <h2>
-        {num}
+        {num} Hr
       </h2>
       <Link to='/graphs'>
         <TimeButton 
           data = {props.data}
-          handleClick = {(e) => {props.subtractHour( props.data[0].river)}}
-          
-          text = {"-"}>
+          handleClick = {(e) => {props.addHour(props.data[0].river)}}
+          text = {<img src={addIcon}/>}>
         </TimeButton>
       </Link>
-      <br/>
-      <h3>horas</h3>
     </div>
     <div className = "extendedperiodbuttons">
     <Link to='/graphs'>
@@ -197,7 +193,7 @@ function Dashboard(props){
           props.getDay("day", props.data[0].river)
          }}
         count = {props.count }
-        text = {"Dia"}>
+        text = {"DIA"}>
       </TimeButton>
       <TimeButton 
         data = {props.data}
@@ -206,7 +202,7 @@ function Dashboard(props){
           props.getDay("week", props.data[0].river)
           }}
         count = {props.count }
-        text = {"Semana"}>
+        text = {"SEMANA"}>
       </TimeButton>
       <TimeButton 
         data = {props.data}
@@ -215,7 +211,7 @@ function Dashboard(props){
           props.getDay("month", props.data[0].river)
           }}
         count = {props.count}
-        text = {"Mes"}>
+        text = {"MES"}>
       </TimeButton>
     </Link>
 
@@ -223,7 +219,7 @@ function Dashboard(props){
       </div>
     </div>
 
-    </div> 
+    
   <div className="mainGraph">
       
       <Graph 
