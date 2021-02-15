@@ -196,6 +196,7 @@ const [alertColor, setAlertColor]=useState('')
     <Router>
       <Switch>
         {/* <NavbarBootstrap></NavbarBootstrap> */}
+        <div className='container'>
         <Route exact path="/">
         {/* {setIsLoggedIn(true),
         <Redirect to='/home' />} */}
@@ -241,13 +242,13 @@ const [alertColor, setAlertColor]=useState('')
                   // setUser={setUser}
                   
             /> }
-           
+           <Footer></Footer>
           </Route>
 
         
       
       
-         <div className='container'>
+        
           <Route path="/graphs" exact>
           {isLoggedIn ? <>
             <Navbar 

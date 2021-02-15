@@ -86,6 +86,7 @@ const stationDataByPeriod = async (req, res) =>{
             }
         })
         console.log('************')
+        console.log('$$$$$$$')
         console.log(data.length)
         res.json(data) 
     }else{
