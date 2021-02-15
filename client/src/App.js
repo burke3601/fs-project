@@ -12,7 +12,6 @@ import Dashboard from './Dashboard'
 import About from "./pages/About";
 import NavbarBootstrap from './NavbarBootstrap';
 
-
 import {useState, useEffect} from 'react'
 
 import { 
@@ -196,33 +195,32 @@ const [alertColor, setAlertColor]=useState('')
    
     <Router>
       <Switch>
+        {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
-        {isLoggedIn ? 
-          <Redirect to='/home' />
-
-          :
-                <Login 
-         
-                  doLogin={doLogin}
-                  setUsername={setUsername}
-                  username={username}
-                  setPassword={setPassword}
-                  password={password}
-                  // setUser={setUser}
-                /> 
-        }
-          </Route>
-          <div className='container'>
-          <Route path="/home">
-          {isLoggedIn ?  <>
-                  <Navbar 
+        {/* {setIsLoggedIn(true),
+        <Redirect to='/home' />} */}
+        {isLoggedIn ?  <>
+            <Navbar 
                     isLoggedIn={setIsLoggedIn}
+                    // doLogout={doLogout}
                     toggle = {toggle}
                     setToggle = {setToggle}
+
                     count = {count}
                     setCount = {setCount}
                     subtractHour = {subtractHour}
                 />
+                 
+                  
+                  <Home 
+                  toggle = {toggle}
+                  setToggle = {setToggle}
+                  fetchWeather={fetchWeather}
+                  weather = {weather}
+                  getStation = {getStation}
+                  location = {location}
+                  ></Home>
+
                   <Sidebar
                     getRocja = {getRocja}
                     getNaranjo = {getNaranjo}
@@ -233,16 +231,8 @@ const [alertColor, setAlertColor]=useState('')
                     setCount = {setCount}
                     setToggle = {setToggle}
                   ></Sidebar>
-                  
-                  <Home 
-                  toggle = {toggle}
-                  setToggle = {setToggle}
-                  fetchWeather={fetchWeather}
-                  weather = {weather}
-                  getStation = {getStation}
-                  location = {location}
-                  ></Home>
               </>: <Login 
+
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
@@ -250,39 +240,22 @@ const [alertColor, setAlertColor]=useState('')
                   password={password}
                   // setUser={setUser}
                   
-            /> } 
-          <Footer></Footer>
-
+            /> }
+           
           </Route>
+
         
       
       
-        
+         <div className='container'>
           <Route path="/graphs" exact>
           {isLoggedIn ? <>
-              <Navbar 
-              isLoggedIn={setIsLoggedIn}
-              // doLogout={()=>doLogout(history)}
-              toggle = {toggle}
-              setToggle = {setToggle}
-              getRocja = {getRocja}
-              getNaranjo = {getNaranjo}
-              fetchWeather={fetchWeather}
-              toggle = {toggle}
-              count = {count}
-              subtractHour = {subtractHour}
-              setCount = {setCount}
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    // doLogout={()=>doLogout(history)}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
             />
-              <Sidebar
-              getRocja = {getRocja}
-              getNaranjo = {getNaranjo}
-              fetchWeather={fetchWeather}
-              toggle = {toggle}
-              count = {count}
-              subtractHour = {subtractHour}
-              setCount = {setCount}
-              setToggle = {setToggle}
-            ></Sidebar>
               <Dashboard
               toggle = {toggle}
               setCount = {setCount}
@@ -295,21 +268,69 @@ const [alertColor, setAlertColor]=useState('')
               weather = {weather}
               getDay ={getDay}
               
-            
+             
               ></Dashboard>
+
+               <Sidebar
+              getRocja = {getRocja}
+              getNaranjo = {getNaranjo}
+              fetchWeather={fetchWeather}
+              toggle = {toggle}
+              count = {count}
+              subtractHour = {subtractHour}
+              setCount = {setCount}
+              setToggle = {setToggle}
+            ></Sidebar>
             
+
           </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
                   setPassword={setPassword}
                   password={password}
+                  // setUser={setUser}
+                  
             /> }
          <Footer></Footer>
 
           </Route>
 
-         
+          <Route path="/home">
+          {isLoggedIn ?  <>
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    // doLogout={()=>doLogout(history)}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
+            />
+              <Sidebar
+                toggle = {toggle}
+                setToggle = {setToggle}
+                count = {count}
+                setCount = {setCount}
+                subtractHour = {subtractHour}
+              ></Sidebar>
+              
+              <Home 
+              toggle = {toggle}
+              setToggle = {setToggle}
+              fetchWeather={fetchWeather}
+              weather = {weather}
+              getStation = {getStation}
+              location = {location}
+              ></Home>
+              <Footer></Footer></>: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> } 
+          
+          </Route>
           <Route path="/about">
           {isLoggedIn ?  <>
             <Navbar 
