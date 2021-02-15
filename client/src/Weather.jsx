@@ -13,8 +13,8 @@ function Weather(props) {
                     <h3>
                       {props && props.data && props.data.length>0?props.data[0].station: "Guatemala"},
                     </h3> 
-                    <div></div>
-                    <br/>
+                    
+                  
                     <p>
                         Departamento de {props && props.data && props.data.length>0?props.data[0].departamento: "Guatemala"}
                     </p>

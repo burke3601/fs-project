@@ -17,7 +17,6 @@ import subtractIcon from './images/subtractIcon.png'
 function Dashboard(props){
 
   let num = parseInt(props.count)
-  console.log(props.data)
   let alertColor = ''
   let alertMessage = ''
   if(props && props.data && props.data.length > 0 && props.data[0].station=== (props.data[1].station)){
@@ -32,9 +31,6 @@ function Dashboard(props){
       alertColor = "red"
       alertMessage = "ALERTA ROJA"
     }
-    console.log(alertColor)
-  console.log(props.count)
-    
   return(
         
         

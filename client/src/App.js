@@ -189,6 +189,8 @@ useEffect(()=>{
   // },1000*60*15)
 },[])
 const [toggle, setToggle]= useState(false)
+const [alertMessage, setAlertMessage]=useState('')
+const [alertColor, setAlertColor]=useState('')
   return (
    
     <Router>

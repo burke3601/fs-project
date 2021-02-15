@@ -48,12 +48,14 @@ function Login(props) {
     return(
 
         <div className="Login">
+
             <div className="LoginHeader">
                 
                 <h1>SATGAL</h1>
                 <h2>Sistema de Alerta Temprana</h2>
             </div>
             <div className="loginForm">
+
              {/* <h1 className='login-header'>SATGAL</h1> */}
             {/* {(user.userName !== "") ? (
                 <div className="welcome">
@@ -91,7 +93,7 @@ function Login(props) {
            
              {/* make a conditions of if loginSuccess is true then redirect to home */}
             {/* {loginSuccess &&  <Redirect to='/home' />} */}
-
+            </div>      
            
         </div>
 
