@@ -11,10 +11,8 @@ function Logout(props) {
   };
 
   return (
-    <Link to="/" >
-        <button onClick={onClick}>
-        <img className="sidebar-button"  src={logoutIcon}/>
-        </button>
+    <Link to="/" onClick={onClick}>
+       LOGOUT
     </Link>
   );
 }
