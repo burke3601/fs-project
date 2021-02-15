@@ -46,7 +46,14 @@ function Login(props) {
 
 
     return(
+
         <div className="Login">
+            <div className="LoginHeader">
+                
+                <h1>SATGAL</h1>
+                <h2>Sistema de Alerta Temprana</h2>
+            </div>
+            <div className="loginForm">
              {/* <h1 className='login-header'>SATGAL</h1> */}
             {/* {(user.userName !== "") ? (
                 <div className="welcome">
@@ -61,7 +68,7 @@ function Login(props) {
                 }}>
                     {/* <h1 className='login-header'>SATGAL</h1> */}
                     <div className="form-inner">
-                        <h2>Login</h2>
+                        {/* <h2>Login</h2> */}
                         {/* {(error !== "") ? ( <div className="error">{error}</div>) : ""} */}
                         {/* <div className="form-group">
                             <label htmlFor="name">Name:</label>
@@ -80,6 +87,7 @@ function Login(props) {
                            <input type="submit" value="LOGIN" />
                     </div>
                 </form>
+            </div>
            
              {/* make a conditions of if loginSuccess is true then redirect to home */}
             {/* {loginSuccess &&  <Redirect to='/home' />} */}
