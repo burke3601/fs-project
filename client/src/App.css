@@ -55,7 +55,7 @@
 .sidbardiv{
   position: sticky;
   top: 30%;
-  max-width: 100%;
+  max-width: fit-content;
   display: block;
   
 }
@@ -82,11 +82,11 @@
   margin-top: -2;
   display:flex;
   flex-direction: column;
-  border-radius: 2em;
+  /* border-radius: 2em; */
   border-top-left-radius: 0;
   background-color: white;
   width: fit-content;
-  border: rgb(204, 0, 255) solid ;
+  /* border: rgb(204, 0, 255) solid ; */
   z-index: 1;
   background-color:rgba(0, 0,0, 0.425);
 }
@@ -474,7 +474,7 @@ form:after {
   right: -5px;
   bottom: -5px;
   z-index: 1;
-  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+  background-image:linear-gradient(to bottom right, rgb(204, 0, 255), rgb(15, 6, 145));
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -543,7 +543,7 @@ form .form-inner input[type="submit"], .welcome button {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
+  background-image: linear-gradient(to bottom right, rgb(204, 0, 255), rgb(15, 6, 145));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -571,7 +571,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
 }
 
 .welcome h2 span {
-  color: #FE4880;
+  
   font-weight: 700;
 }
 
@@ -615,6 +615,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
 
 /* About Section */
 
+
 .section-about-section {
   font-family: sans-serif;
 }
@@ -628,6 +629,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
   font-family: sans-serif;
   padding: 2.5%;
 }
+
 
 .section-paragraph-2 {
   font-family: sans-serif;
