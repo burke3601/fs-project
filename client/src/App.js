@@ -12,7 +12,6 @@ import Dashboard from './Dashboard'
 import About from "./pages/About";
 import NavbarBootstrap from './NavbarBootstrap';
 
-
 import {useState, useEffect} from 'react'
 
 import { 
@@ -194,29 +193,17 @@ const [toggle, setToggle]= useState(false)
    
     <Router>
       <Switch>
+        {/* <NavbarBootstrap></NavbarBootstrap> */}
         <Route exact path="/">
-        {isLoggedIn ? 
-          <Redirect to='/home' />
-
-          :
-                <Login 
-         
-                  doLogin={doLogin}
-                  setUsername={setUsername}
-                  username={username}
-                  setPassword={setPassword}
-                  password={password}
-                  // setUser={setUser}
-                /> 
-        }
-          </Route>
-          <div className='container'>
-          <Route path="/home">
-          {isLoggedIn ?  <>
-                  <Navbar 
+        {/* {setIsLoggedIn(true),
+        <Redirect to='/home' />} */}
+        {isLoggedIn ?  <>
+            <Navbar 
                     isLoggedIn={setIsLoggedIn}
+                    // doLogout={doLogout}
                     toggle = {toggle}
                     setToggle = {setToggle}
+
                     count = {count}
                     setCount = {setCount}
                     subtractHour = {subtractHour}
@@ -243,6 +230,7 @@ const [toggle, setToggle]= useState(false)
                     setToggle = {setToggle}
                   ></Sidebar>
               </>: <Login 
+
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
@@ -250,30 +238,22 @@ const [toggle, setToggle]= useState(false)
                   password={password}
                   // setUser={setUser}
                   
-            /> } 
-          <Footer></Footer>
-
+            /> }
+           
           </Route>
+
         
       
       
-        
+         <div className='container'>
           <Route path="/graphs" exact>
           {isLoggedIn ? <>
-              <Navbar 
-              isLoggedIn={setIsLoggedIn}
-              // doLogout={()=>doLogout(history)}
-              toggle = {toggle}
-              setToggle = {setToggle}
-              getRocja = {getRocja}
-              getNaranjo = {getNaranjo}
-              fetchWeather={fetchWeather}
-              toggle = {toggle}
-              count = {count}
-              subtractHour = {subtractHour}
-              setCount = {setCount}
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    // doLogout={()=>doLogout(history)}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
             />
-             
               <Dashboard
               toggle = {toggle}
               setCount = {setCount}
@@ -286,8 +266,9 @@ const [toggle, setToggle]= useState(false)
               weather = {weather}
               getDay ={getDay}
               
-            
+             
               ></Dashboard>
+
                <Sidebar
               getRocja = {getRocja}
               getNaranjo = {getNaranjo}
@@ -299,18 +280,55 @@ const [toggle, setToggle]= useState(false)
               setToggle = {setToggle}
             ></Sidebar>
             
+
           </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
                   setPassword={setPassword}
                   password={password}
+                  // setUser={setUser}
+                  
             /> }
          <Footer></Footer>
 
           </Route>
 
-         
+          <Route path="/home">
+          {isLoggedIn ?  <>
+            <Navbar 
+                    isLoggedIn={setIsLoggedIn}
+                    // doLogout={()=>doLogout(history)}
+                    toggle = {toggle}
+                    setToggle = {setToggle}
+            />
+              <Sidebar
+                toggle = {toggle}
+                setToggle = {setToggle}
+                count = {count}
+                setCount = {setCount}
+                subtractHour = {subtractHour}
+              ></Sidebar>
+              
+              <Home 
+              toggle = {toggle}
+              setToggle = {setToggle}
+              fetchWeather={fetchWeather}
+              weather = {weather}
+              getStation = {getStation}
+              location = {location}
+              ></Home>
+              <Footer></Footer></>: <Login 
+                  doLogin={doLogin}
+                  setUsername={setUsername}
+                  username={username}
+                  setPassword={setPassword}
+                  password={password}
+                  // setUser={setUser}
+                  
+            /> } 
+          
+          </Route>
           <Route path="/about">
           {isLoggedIn ?  <>
             <Navbar 
