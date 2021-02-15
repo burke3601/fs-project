@@ -327,7 +327,7 @@ ul{
   
     
   }
-  .mainGraph{
+  /* .mainGraph{ */
     /* box-shadow:  0 0 10px 5px rgba(0,0,0,0.3);
     width: auto; */
     /* margin-left:3% ;
@@ -344,7 +344,7 @@ ul{
     max-height: 100%;
   }
 
-}
+
 
 .graphButtons{
   box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
@@ -397,10 +397,10 @@ ul{
   /* background-color: rgb(171, 169, 169); */
   
 }
-.main-map{
+/* .main-map{
  
   
-}
+} */
 
 .map-h2 {
   font-family: sans-serif ;
@@ -596,10 +596,10 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
 }
 
 
-.login-header {
+/* .login-header {
 
  
-}
+} */
 .alertbox1 {
   font-family: sans-serif;
   display:flex;
@@ -639,14 +639,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
 }
 
 
-.galileo {
- 
-}
 
-.galileo-box {
-  
-  
-}
 
 
 
