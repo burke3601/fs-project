@@ -1,26 +1,28 @@
 .container{
   display:block;
+
   
 }
 .navbar {
-  position: sticky;
-  top: 0;
+  /* position: sticky; */
+
   max-width: 100%;
   display: block;
   
 }
 .topnav{
+  /* position: sticky; */
+  top: 0;
   font-family: sans-serif;
- 
   display: flex;
-  align-items: flex-end;
-  border-bottom: 1em  #CB3D70 solid;
-  background-color: #211823;
-  font: white;
-  font-family:  'Helvetica Neue', sans-serif;
+  flex:stretch;
+  flex-direction: row;
+  background-color: black;
+  color:white;
+  padding: 2%;
+  justify-content: space-between;
 }
-
-a{
+.topnav a{
   color: white;
   text-decoration: none;
 }
@@ -42,8 +44,8 @@ a{
   width: fit-content;
   margin: 0 auto;
   position: relative;
-  background-color: rgba(221, 240, 237, 0.541);
-  font-size: 2em;
+  /* background-color: rgba(221, 240, 237, 0.541); */
+  font-size: 4em;
   padding: .5em;
   border-radius: 3em;
   /* border:  rgb(156, 72, 235) solid; */
