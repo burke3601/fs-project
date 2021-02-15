@@ -1,12 +1,11 @@
-import React from 'react';
+
+
 import { propTypes } from 'react-bootstrap/esm/Image';
 import {Link} from 'react-router-dom'
 import Logout from './Logout';
 import buttonIcon from './images/buttonIcon.png'
-
 import {useHistory} from 'react-router-dom';
 import axios from 'axios'
-
 function Navbar(props){
     const history = useHistory();
     async function doLogout() {
@@ -18,29 +17,30 @@ function Navbar(props){
         props.isLoggedIn(false)
         history.push("/")
       }
+
     return(
 
         <nav className="navbar">
-            <div className="satgal">
-                <Link to='/home'>home</Link>   
-                <div className="sidebar-button-container">
-                    <img className="sidebar-button" onClick={()=>{props.setToggle(!props.toggle)}} src={buttonIcon}/>
-                </div>
-            </div>
-            <div className="satgal1">
-                <h1>SATGAL</h1>
-                <h5>Sistema de Alerta Temprana Galileo</h5>
-            </div>
-            <div className="satgal2">
-                <Link to='/about'>about</Link>
             
-                <div className="sidebar-button-container">
+            <div className="topnav">
+                <Link className="navhome" to='/home'>HOME</Link>
+                <Link className="about" to='/about'>ABOUT</Link>
                 <Logout doLogout={doLogout}/>
-                </div>
-                   
             </div>
+            <div className="middlenav">
+                <div>
+                    <h1>SATGAL</h1>
+                    
+                </div>
+            </div>
+            
+                
+            
+            
+                
+               
+           
         </nav>
-
     )
 }
 
