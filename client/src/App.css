@@ -312,8 +312,6 @@ ul{
     width: 100%;
   }
 }
-
-  
   
   
 @media screen and (min-width: 375px){
@@ -322,22 +320,20 @@ ul{
     
     overflow-x: scroll;
     box-shadow:  0 0 10px 5px rgba(0,0,0,0.3);
-   
-    
-  
-    
-  }
-  .mainGraph{
-    /* box-shadow:  0 0 10px 5px rgba(0,0,0,0.3);
-    width: auto; */
-    /* margin-left:3% ;
+   }
+
+
+  /* .mainGraph {
+    box-shadow:  0 0 10px 5px rgba(0,0,0,0.3);
+    width: auto;
+    margin-left:3% ;
     margin-right: 3%;
-    margin-bottom: 5%; */
-    /* border: #456990 solid;
+    margin-bottom: 5%;
+    border: #456990 solid;
     border-radius: 1em;
     background-color: white;
-    padding: 1%; */
-  }
+    padding: 1%;
+  } */
   .canvas{
     /* overflow-x: scroll; */
     max-width: 100%;
@@ -379,14 +375,7 @@ ul{
    
    align-items: center;
 
-   
-  
-
 }
-
-
-
-
 
 .map {
   border: #6B2737 solid ;
@@ -395,10 +384,6 @@ ul{
   padding: 5%;
  
   /* background-color: rgb(171, 169, 169); */
-  
-}
-.main-map{
- 
   
 }
 
@@ -449,11 +434,6 @@ ul{
 .pin-text-links{
   text-decoration: none;
 }
-
-
-
-
-
 
 
 input, button {
@@ -595,11 +575,6 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
   font-weight: 700;
 }
 
-
-.login-header {
-
- 
-}
 .alertbox1 {
   font-family: sans-serif;
   display:flex;
@@ -638,32 +613,23 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
   font-weight: bold;
 }
 
+/* About Section */
 
-.galileo {
- 
+.section-about-section {
+  font-family: sans-serif;
 }
 
-.galileo-box {
-  
-  
+.section-title {
+  font-family: sans-serif;
+  padding: 2.5%;
 }
 
+.section-paragraph {
+  font-family: sans-serif;
+  padding: 2.5%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.section-paragraph-2 {
+  font-family: sans-serif;
+  padding: 2.5%;
+}
