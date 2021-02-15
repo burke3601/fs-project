@@ -55,7 +55,7 @@
 .sidbardiv{
   position: sticky;
   top: 30%;
-  max-width: 100%;
+  max-width: fit-content;
   display: block;
   
 }
@@ -82,11 +82,11 @@
   margin-top: -2;
   display:flex;
   flex-direction: column;
-  border-radius: 2em;
+  /* border-radius: 2em; */
   border-top-left-radius: 0;
   background-color: white;
   width: fit-content;
-  border: rgb(204, 0, 255) solid ;
+  /* border: rgb(204, 0, 255) solid ; */
   z-index: 1;
   background-color:rgba(0, 0,0, 0.425);
 }
