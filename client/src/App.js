@@ -203,35 +203,34 @@ const [toggle, setToggle]= useState(false)
                     // doLogout={doLogout}
                     toggle = {toggle}
                     setToggle = {setToggle}
-            />
-              {/* <NavbarBootstrap></NavbarBootstrap> */}
-             
-              <Sidebar
-              getRocja = {getRocja}
-              getNaranjo = {getNaranjo}
-              fetchWeather={fetchWeather}
-              toggle = {toggle}
-              count = {count}
-              subtractHour = {subtractHour}
-              setCount = {setCount}
 
-              ></Sidebar>
-              <Dashboard
-              toggle = {toggle}
-              setCount = {setCount}
-              addHour = {addHour}
-              subtractHour = {subtractHour}
-              count = {count}
-              data = {data}
-              location = {location}
-              fetchWeather={fetchWeather}
-              weather = {weather}
-              getDay ={getDay}
-              
-             
-              ></Dashboard>
-          
-          </>: <Login 
+                    count = {count}
+                    setCount = {setCount}
+                    subtractHour = {subtractHour}
+                />
+                 
+                  
+                  <Home 
+                  toggle = {toggle}
+                  setToggle = {setToggle}
+                  fetchWeather={fetchWeather}
+                  weather = {weather}
+                  getStation = {getStation}
+                  location = {location}
+                  ></Home>
+
+                  <Sidebar
+                    getRocja = {getRocja}
+                    getNaranjo = {getNaranjo}
+                    fetchWeather={fetchWeather}
+                    toggle = {toggle}
+                    count = {count}
+                    subtractHour = {subtractHour}
+                    setCount = {setCount}
+                    setToggle = {setToggle}
+                  ></Sidebar>
+              </>: <Login 
+
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
@@ -255,18 +254,6 @@ const [toggle, setToggle]= useState(false)
                     toggle = {toggle}
                     setToggle = {setToggle}
             />
-              {/* <NavbarBootstrap></NavbarBootstrap> */}
-             
-              <Sidebar
-              getRocja = {getRocja}
-              getNaranjo = {getNaranjo}
-              fetchWeather={fetchWeather}
-              toggle = {toggle}
-              count = {count}
-              subtractHour = {subtractHour}
-              setCount = {setCount}
-
-              ></Sidebar>
               <Dashboard
               toggle = {toggle}
               setCount = {setCount}
@@ -281,7 +268,19 @@ const [toggle, setToggle]= useState(false)
               
              
               ></Dashboard>
-          
+
+               <Sidebar
+              getRocja = {getRocja}
+              getNaranjo = {getNaranjo}
+              fetchWeather={fetchWeather}
+              toggle = {toggle}
+              count = {count}
+              subtractHour = {subtractHour}
+              setCount = {setCount}
+              setToggle = {setToggle}
+            ></Sidebar>
+            
+
           </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
