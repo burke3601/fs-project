@@ -20,7 +20,10 @@ const fullRiverData = async (req, res) =>{
             river: river,
             timeStamp: {
                 [Op.between]: [period, today]
-            }
+            },
+            order:[
+                ['timeStamp','ASC']
+            ]
         }
 
     })
@@ -37,7 +40,10 @@ const stationData = async (req, res) =>{
         limit: 50,
         where: {
             station: req.params.name
-        }
+        },
+        order:[
+            ['timeStamp','ASC']
+        ]
     })
     console.log('************')
     //console.log(data)
@@ -81,7 +87,10 @@ const stationDataByPeriod = async (req, res) =>{
                 river: req.params.station,
                 timeStamp: {
                     [Op.between]: [period, today]
-                }
+                },
+                order:[
+                    ['timeStamp','ASC']
+                ]
                 
             }
         })
