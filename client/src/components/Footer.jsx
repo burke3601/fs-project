@@ -1,9 +1,9 @@
 import React from 'react';
-import galileolcon from './images/galileoIcon.png'
-import caritaslcon from './images/caritasIcon.png'
-import conredlcon from './images/conredIcon.png'
-import trocairelcon from './images/trocaireIcon.jpg'
-import iccIcon from './images/iccIcon.jpg'
+import galileolcon from '../images/galileo.jpeg'
+import caritaslcon from '../images/caritasIcon.png'
+import conredlcon from '../images/conredresize1.png'
+import trocairelcon from '../images/trocaireIcon.png'
+import iccIcon from '../images/iccIcon.png'
 
 function Footer() {
     return(

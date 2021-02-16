@@ -378,8 +378,8 @@ ul{
 }
 .footer{
   align-items: center;
-  flex-shrink: 0;
-  border: solid black;
+  
+  /* border: solid black; */
   height: 3%;
 
 }

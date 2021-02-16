@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {Line} from 'react-chartjs-2'
-import './App.css';
+// import './App.css';
 
 
 
@@ -13,10 +13,10 @@ function Graph(props){
 
           //filter try
 
-          console.log(props.data.sort(function(a,b){
-            return a.id - b.id
-          })
-          )
+          // console.log(props.data.sort(function(a,b){
+          //   return a.id - b.id
+          // })
+          //)
           // let newIds
           // props.data.map(a=>{ 
           //   est.push(a.ID)
@@ -43,8 +43,8 @@ function Graph(props){
               displayDates = newDates.filter((val, index) => newDates.indexOf(val) === index)
             
 
-          console.log(newDates)
-          console.log(newDates.length)
+          //console.log(newDates)
+          //console.log(newDates.length)
 
          
           let est = []
@@ -54,7 +54,7 @@ function Graph(props){
             est.push(a.station)
             newEst = est.filter((val, index) => est.indexOf(val) === index)
           })
-          console.log(newEst)
+          //console.log(newEst)
           let levels = []
           newEst.forEach(el=>{
            // console.log(el)
@@ -65,7 +65,7 @@ function Graph(props){
                 lev.push(props.data[i].level)
               }
             }levels.push(lev)
-            console.log(levels)
+            //console.log(levels)
             
           })
           
