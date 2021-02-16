@@ -1,10 +1,10 @@
 import React from 'react';
-import Api from './Api'
+
 import{ useState, useEffect } from 'react';
 
 
 function Weather(props) {
-   console.log(props)
+   //console.log(props)
   
     return(
         <div className="weather-container">

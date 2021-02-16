@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
 import { Link } from 'react-router-dom';
-import logoutIcon from './images/logoutIcon.png'
+
 
 function Logout(props) {
 
@@ -12,7 +12,7 @@ function Logout(props) {
 
   return (
     <Link to="/" onClick={onClick}>
-       LOGOUT
+       SALIR
     </Link>
   );
 }

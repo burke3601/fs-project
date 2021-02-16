@@ -1,8 +1,5 @@
-import React, {useEffect,useState} from 'react'
-
-
+import React from 'react'
 import Map from './Map'
-import Api from './Api'
 import Weather from './Weather'
 
 
@@ -13,7 +10,7 @@ import Weather from './Weather'
 
 function Home(props){
   //useEffect(()=>props.fetchWeather(15.4651,-90.3843),[])
-    console.log(props.location)
+    //console.log(props.location)
     return(
         <div className="dashboard">
 

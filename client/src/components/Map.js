@@ -18,9 +18,9 @@ const LocationPin = ({ text, getStation, fetchWeather,location }) => (
                     fetchWeather(e.target.lat,e.target.lng)}}
                      id={text} />
       <p className="pin-text" onClick={(e)=>{
-        console.log(e.target.innerHTML)
+        //console.log(e.target.innerHTML)
         let sta = location.find(el => el.address === e.target.innerHTML)
-      console.log(sta);
+      //console.log(sta);
       getStation(e.target.id);
       fetchWeather(sta.lat,sta.lng)}}
        id={text}>{text}</p>

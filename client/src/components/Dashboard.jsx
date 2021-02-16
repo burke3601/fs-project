@@ -9,19 +9,19 @@ import {
 } from 'react-router-dom';
 
 import TimeButton from './TimeButton'
-import addIcon from './images/addIcon.png'
-import subtractIcon from './images/subtractIcon.png'
+import addIcon from '../images/addIcon.png'
+import subtractIcon from '../images/subtractIcon.png'
 
 
 
 function Dashboard(props){
-  console.log(props.count)
-  console.log(props.data)
+  //console.log(props.count)
+  //console.log(props.data)
   let num = parseInt(props.count)
   let alertColor = ''
   let alertMessage = ''
   if(props && props.data && props.data.length > 0 && props.data[0].station=== (props.data[1].station)){
-    console.log(props.data[props.data.length - 1].level)
+    //console.log(props.data[props.data.length - 1].level)
     if(props.data[props.data.length - 1].level <= 7){
        alertColor = "green"
        alertMessage = "ALERTA VERDE"

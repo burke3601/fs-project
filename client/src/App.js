@@ -1,16 +1,15 @@
 import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css'
-import Graph from './Graph'
+
+
 import axios from 'axios'
-import Home from './Home';
-import Login from './Login';
-import Logout from './Logout'
-import Map from './Map';
-import Navbar from './Navbar'
-import Api from './Api'
-import Dashboard from './Dashboard'
+import Home from './components/Home';
+import Login from './components/Login';
+import Logout from './components/Logout'
+import Navbar from './components/Navbar'
+
+import Dashboard from './components/Dashboard'
 import About from "./pages/About";
-import NavbarBootstrap from './NavbarBootstrap';
+
 
 import {useState, useEffect} from 'react'
 
@@ -22,11 +21,11 @@ import {
   Redirect,
   useHistory
 } from 'react-router-dom';
-import Sidebar from './Sidebar';
+import Sidebar from './components/Sidebar';
 
 import {REACT_APP_API_KEY} from './config'
 
-import Footer from './Footer';
+import Footer from './components/Footer';
 
 const api = {
     
@@ -88,7 +87,7 @@ function App() {
   useEffect(()=>{
     axios.get(`/api/getStationByPeriod/${count}/${station}`)
     .then(resp=>{
-    console.log(resp)
+    //console.log(resp)
     if (resp.data.length > 0){setData(resp.data)}
 
     })
@@ -116,30 +115,30 @@ function App() {
   async function getDay (day, station){
     setCount(1)
     const resp = await axios.get(`/api/getStationByPeriod/${day}/${station}`);
-    console.log(resp)
+    //console.log(resp)
     if (resp.data.length > 0){setData(resp.data)}
     
   }
   //this function is called from the 'map' (home) page only when the map icons are clicked
   async function getStation(params) {
-    console.log(params)
+    //console.log(params)
     const resp = await axios.get(`/api/getStation/${params}`);
-    console.log(resp)
+    //console.log(resp)
     setData(resp.data)
   }
   //from the sidebar
   //gets the data for rocja river
   async function getRocja(){
     const resp = await axios.get(`/api/rocja`);
-    console.log(resp)
+    //console.log(resp)
     setData(resp.data)
   }
   //from the sidebar
   //gets the data for naranjo river
   async function getNaranjo(){
     const resp = await axios.get(`/api/naranjo`);
-    console.log(`**************`)
-    console.log(resp,'139')
+    //console.log(`**************`)
+    //console.log(resp,'139')
     setData(resp.data)
   }
   //fetches weather data--- called at home and dashboard
@@ -154,7 +153,7 @@ async function doLogin(name, password) {
   
   const loginDetails= {name, password}
   const response = await axios.post(`/api/user/login`,loginDetails)
-  console.log('sweet you are logged in now, buddy');
+  //console.log('sweet you are logged in now, buddy');
   
  
   setIsLoggedIn(true);
@@ -168,11 +167,11 @@ useEffect(() => {
     // see if we're logged in
     try {      
       const resp = await axios.get('/api/users/login-status');
-      console.log('you are logged in already');
+      //console.log('you are logged in already');
       setIsLoggedIn(true);
     } catch (e) {
       // an error means that we're not logged in
-      console.log('error means not logged in');
+      //console.log('error means not logged in');
       setIsLoggedIn(false);
     }
   }
@@ -196,7 +195,7 @@ const [alertColor, setAlertColor]=useState('')
    
     <Router>
       <Switch>
-        {/* <NavbarBootstrap></NavbarBootstrap> */}
+        
         <div className='container'>
         <Route exact path="/">
         {/* {setIsLoggedIn(true),
@@ -233,6 +232,7 @@ const [alertColor, setAlertColor]=useState('')
                     setCount = {setCount}
                     setToggle = {setToggle}
                   ></Sidebar>
+                  <Footer></Footer>
               </>: <Login 
 
                   doLogin={doLogin}
@@ -243,7 +243,7 @@ const [alertColor, setAlertColor]=useState('')
                   // setUser={setUser}
                   
             /> }
-           <Footer></Footer>
+           
           </Route>
 
         
@@ -284,7 +284,7 @@ const [alertColor, setAlertColor]=useState('')
               setToggle = {setToggle}
             ></Sidebar>
             
-
+            <Footer></Footer>
           </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
@@ -294,7 +294,7 @@ const [alertColor, setAlertColor]=useState('')
                   // setUser={setUser}
                   
             /> }
-         <Footer></Footer>
+         
 
           </Route>
 
@@ -325,7 +325,9 @@ const [alertColor, setAlertColor]=useState('')
               getStation = {getStation}
               location = {location}
               ></Home>
-              <Footer></Footer></>: <Login 
+              <Footer></Footer>
+              
+              </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}

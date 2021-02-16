@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import buttonIcon from './images/buttonIcon.png'
+import buttonIcon from '../images/buttonIcon.png'
 const center = {
     lat: 15.4651,
     lng: -90.3843
@@ -24,8 +24,8 @@ function Sidebar(props){
                         props.fetchWeather()
                         props.setToggle(false)
                     }}>
-                         <span> View <br/>
-                           Map</span> 
+                         <span> Ver <br/>
+                           Mapa</span> 
                     </Link>
                   
                     <Link   to='/graphs' onClick={()=>{
