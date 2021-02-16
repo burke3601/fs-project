@@ -20,11 +20,12 @@ const fullRiverData = async (req, res) =>{
             river: river,
             timeStamp: {
                 [Op.between]: [period, today]
-            },
-            order:[
-                ['timeStamp','ASC']
-            ]
-        }
+            }
+        },
+                order:[
+                    ['timeStamp','ASC']
+                ]
+
 
     })
     console.log('river length')
