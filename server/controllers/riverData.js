@@ -87,7 +87,10 @@ const stationDataByPeriod = async (req, res) =>{
                 river: req.params.station,
                 timeStamp: {
                     [Op.between]: [period, today]
-                }
+                },
+                order:[
+                    ['timeStamp','ASC']
+                ]
                 
             }
         })
