@@ -1,4 +1,3 @@
-Executing (default): SELECT "id", "stationId", "level", "timeStamp", "river", "station", "departamento", "createdAt", "updatedAt" FROM "Data" AS "Data";
 [
     {
         "id": 1,
