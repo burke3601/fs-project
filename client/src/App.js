@@ -1,6 +1,4 @@
 import './App.css';
-
-
 import axios from 'axios'
 import Home from './components/Home';
 import Login from './components/Login';
