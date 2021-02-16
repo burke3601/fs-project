@@ -1,0 +1,80 @@
+Executing (default): SELECT "id", "stationId", "level", "timeStamp", "river", "station", "departamento", "createdAt", "updatedAt" FROM "Data" AS "Data";
+[
+    {
+        "id": 1,
+        "stationId": "50202002",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Naranjo",
+        "station": "La Playa",
+        "departamento": "San Marcos",
+        "createdAt": "2021-02-09T19:30:50.502Z",
+        "updatedAt": "2021-02-09T19:30:50.502Z"
+    },
+    {
+        "id": 2,
+        "stationId": "50202001",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Naranjo",
+        "station": "Pueblo Nuevo",
+        "departamento": "San Marcos",
+        "createdAt": "2021-02-09T19:30:50.667Z",
+        "updatedAt": "2021-02-09T19:30:50.667Z"
+    },
+    {
+        "id": 3,
+        "stationId": "50202004",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Naranjo",
+        "station": "La Virgen",
+        "departamento": "San Marcos",
+        "createdAt": "2021-02-09T19:30:50.681Z",
+        "updatedAt": "2021-02-09T19:30:50.681Z"
+    },
+    {
+        "id": 4,
+        "stationId": "50202003",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Naranjo",
+        "station": "Sintana",
+        "departamento": "San Marcos",
+        "createdAt": "2021-02-09T19:30:50.692Z",
+        "updatedAt": "2021-02-09T19:30:50.692Z"
+    },
+    {
+        "id": 5,
+        "stationId": "50201002",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Rocja Pontila",
+        "station": "La Paz",
+        "departamento": "Alta verapaz",
+        "createdAt": "2021-02-09T19:30:50.704Z",
+        "updatedAt": "2021-02-09T19:30:50.704Z"
+    },
+    {
+        "id": 6,
+        "stationId": "50201003",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Rocja Pontila",
+        "station": "Rocja Pontila",
+        "departamento": "Alta verapaz",
+        "createdAt": "2021-02-09T19:30:50.715Z",
+        "updatedAt": "2021-02-09T19:30:50.715Z"
+    },
+    {
+        "id": 7,
+        "stationId": "50201001",
+        "level": 0,
+        "timeStamp": "2021-02-09T12:02:00.000Z",
+        "river": "Rio Rocja Pontila",
+        "station": "Entre Rios",
+        "departamento": "Alta verapaz",
+        "createdAt": "2021-02-09T19:30:50.726Z",
+        "updatedAt": "2021-02-09T19:30:50.726Z"
+    }
+]
