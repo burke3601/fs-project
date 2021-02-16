@@ -118,7 +118,10 @@ const stationDataByPeriod = async (req, res) =>{
                         [Op.between]: [period, today]
                     }
                     
-                }
+                },
+                order:[
+                    ['timeStamp','ASC']
+                ]
             })
             console.log('************')
             console.log(data.length)
