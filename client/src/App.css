@@ -193,10 +193,8 @@ ul{
   color: white;
   display: flex;
   flex-direction: column; 
-  /* max-width: 50%; */
-  margin:5%;
+  margin:1em;
   border-radius: 1em;
-  /* border-top-left-radius: 0; */
 
  
   }
