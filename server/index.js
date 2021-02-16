@@ -79,6 +79,10 @@ app.post("/api/logout", userController.processLogout)
 //   getData()
 //   .then(addData)
 
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/index.html'));
+});
+
 server.listen(4000, ()=>{
     console.log(`Express API listening on port 4000`)
 })

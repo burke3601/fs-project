@@ -119,16 +119,16 @@ function App() {
   }
   //this function is called from the 'map' (home) page only when the map icons are clicked
   async function getStation(params) {
-    //console.log(params)
+    console.log(params)
     const resp = await axios.get(`/api/getStation/${params}`);
-    //console.log(resp)
+    console.log(resp)
     setData(resp.data)
   }
   //from the sidebar
   //gets the data for rocja river
   async function getRocja(){
     const resp = await axios.get(`/api/rocja`);
-    //console.log(resp)
+    console.log(resp)
     setData(resp.data)
   }
   //from the sidebar
@@ -190,8 +190,13 @@ const [toggle, setToggle]= useState(false)
 const [alertMessage, setAlertMessage]=useState('')
 const [alertColor, setAlertColor]=useState('')
   return (
+
+//     <Router history={hashHistory} >
+//    <Route path="/home" component={Home} />
+//    <Route path="/aboutus" component={AboutUs} />
+// </Router>
    
-    <Router>
+    <Router >
       <Switch>
         
         <div className='container'>
