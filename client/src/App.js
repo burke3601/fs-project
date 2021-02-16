@@ -29,7 +29,7 @@ import Footer from './components/Footer';
 
 const api = {
     
-  url: `http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lng}&units=metric&appid=${REACT_APP_API_KEY}`
+  url: `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lng}&units=metric&appid=${REACT_APP_API_KEY}`
 }
   
  
@@ -145,7 +145,7 @@ function App() {
   //displays data for specific station location in dashboard
   //displays data for guatemala city as default when map is displayed
   async function fetchWeather(lat,lng){
-  const response = await axios.get(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${REACT_APP_API_KEY}`)
+  const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${REACT_APP_API_KEY}`)
   setWeather(response.data)
 }
 //executes login
