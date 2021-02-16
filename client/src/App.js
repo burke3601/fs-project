@@ -232,6 +232,7 @@ const [alertColor, setAlertColor]=useState('')
                     setCount = {setCount}
                     setToggle = {setToggle}
                   ></Sidebar>
+                  <Footer></Footer>
               </>: <Login 
 
                   doLogin={doLogin}
@@ -242,7 +243,7 @@ const [alertColor, setAlertColor]=useState('')
                   // setUser={setUser}
                   
             /> }
-           <Footer></Footer>
+           
           </Route>
 
         
@@ -283,7 +284,7 @@ const [alertColor, setAlertColor]=useState('')
               setToggle = {setToggle}
             ></Sidebar>
             
-
+            <Footer></Footer>
           </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
@@ -293,7 +294,7 @@ const [alertColor, setAlertColor]=useState('')
                   // setUser={setUser}
                   
             /> }
-         <Footer></Footer>
+         
 
           </Route>
 
@@ -324,7 +325,9 @@ const [alertColor, setAlertColor]=useState('')
               getStation = {getStation}
               location = {location}
               ></Home>
-              <Footer></Footer></>: <Login 
+              <Footer></Footer>
+              
+              </>: <Login 
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}

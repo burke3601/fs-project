@@ -1,8 +1,5 @@
-import React, {useEffect,useState} from 'react'
-
-
+import React from 'react'
 import Map from './Map'
-
 import Weather from './Weather'
 
 

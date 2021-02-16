@@ -1,15 +1,4 @@
-import React, {useState} from 'react';
-import Home from './Home'
-import { 
-    BrowserRouter as Router, 
-    Link,
-    Switch,
-    Route,
-    Redirect
-  } from 'react-router-dom';
-import { render } from '@testing-library/react';
-
-
+import React from 'react';
 
 
 function Login(props) {
@@ -49,17 +38,19 @@ function Login(props) {
 
         <div className="Login">
 
-            <div className="LoginHeader">
+           
+            <div className="loginForm">
+                 <div className="LoginHeader">
                 
                 <h1>SATGAL</h1>
                 <h2>Sistema de Alerta Temprana</h2>
             </div>
-            <div className="loginForm">
                 <form onSubmit={e => {
                     e.preventDefault();
                     doLogin(username, password)
                     
                 }}>
+
                     
                     <div className="form-inner">
                        
@@ -77,6 +68,7 @@ function Login(props) {
                     </div>
                 </form>
             </div>
+            
            
             </div>      
            
