@@ -115,7 +115,7 @@ function Graph(props){
                   scales: {
                       yAxes: [{
                           ticks: {
-                            
+                            beginAtZero: true,
                             suggestedMax: 20
                             
                                
