@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from './Map'
+import Status from './Status'
 import Weather from './Weather'
 
 
@@ -14,13 +15,15 @@ function Home(props){
     return(
         <div className="dashboard">
 
-
+          <div className='weatherandstatus'>
+          <Status
+            status = {props.status}/>
             <Weather 
             
             weather={props.weather}
             />
-              
-
+            
+            </div>
 
             <Map
             getStation = {props.getStation}

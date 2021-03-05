@@ -50,6 +50,7 @@ app.use('/api/getStation/:name',riverControllers.stationData)
     
 app.use('/api/getStationByPeriod/:period/:station',riverControllers.stationDataByPeriod)
 
+app.use('/api/getStatus', riverControllers.getStatus)
 
 app.use('/api/naranjo', riverControllers.fullRiverData)
 

@@ -68,18 +68,48 @@ function Graph(props){
             //console.log(levels)
             
           })
-          
-   
-    const state = {
+         let backcolor = ''
+          let bordcolor = ''
+          let color = ''
+        const state = {
         
         labels: displayDates,
         datasets: newEst.map((sta, index) =>{
-        
-            const r = Math.floor(Math.random() * 256)
-            const g = Math.floor(Math.random() * 256)
-            const b = Math.floor(Math.random() * 256)
+              if(sta === "Sintana"){
+                backcolor = 'rgba(255, 0, 0, 0.1)'
+                bordcolor =  'rgba(255, 0, 0, 0.4)'
+              }else if (sta === "Rocja Pontila"){
+                backcolor = 'rgba(0, 255, 0, 0.1)'
+                bordcolor =  'rgba(0, 255, 0, 0.4)'
+                
+              }else if (sta === "La Virgen"){
+                backcolor = 'rgba(200, 0, 200, 0.1)'
+                bordcolor =  'rgba(200, 0, 200, 0.4)'
+                
+              }else if (sta === "Pueblo Nuevo"){
+                backcolor = 'rgba(0, 200, 0, 0.1)'
+                bordcolor =  'rgba(0, 200, 0, 0.4)'
+                
+              }else if (sta === "Entre Rios"){
+                backcolor = 'rgba(200, 100, 200, 0.1)'
+                bordcolor =  'rgba(200, 100, 200, 0.4)'
+                
+              }else if (sta === "La Paz"){
+                backcolor = 'rgba(0, 0, 255, 0.1)'
+                bordcolor =  'rgba(0, 0, 255, 0.4)'
+                
+              }else if (sta === "La Playa"){
+                backcolor = 'rgba(55, 10, 100, 0.1)'
+                bordcolor =  'rgba(55, 10, 100, 0.4)'
+                
+              
+            // const r = Math.floor(Math.random() * 256)
+            // const g = Math.floor(Math.random() * 256)
+            // const b = Math.floor(Math.random() * 256)
             
-            const color  = [r,b,g]
+            // color  = [r,b,g]
+        }
+       console.log(color)
           
 
            
@@ -89,8 +119,8 @@ function Graph(props){
             label: sta,
             fill: true,
             lineTension: 0.5,
-            backgroundColor: `rgba(${color},.1)`,
-            borderColor: `rgba(${color},2)`,
+            backgroundColor: backcolor,
+            borderColor: bordcolor,
             borderWidth: 2,
             data: levels[index]
           }

@@ -4,17 +4,17 @@ const { Op } = require('sequelize')
 const bcrypt = require('bcryptjs');
 
 const processLogin = async (req, res) =>{
-    console.log(req, res, 'req,res')
+    console.log( 'req,res')
 const {name,password} = req.body;
     console.log(name)
+   
     const user = await User.findOne({
         where: {
             username: name,
            
         }
     })
-    console.log(user);
-try {
+    try {
     if (user) {
         console.log('valid user...checking password', user);
         const isValid = bcrypt.compareSync(password, user.hash);
@@ -36,12 +36,15 @@ try {
 
         } else {
             console.log('but password is wrong');
-            res.json('bad');
+            res.json("nopassword");
         }
 
-}}
+}else{
+    res.json("nouser")
+}
+}
     catch(e) {
-        console.log('e',e);
+     
         res.json({message: 'There has been an Error', e})
     }
     

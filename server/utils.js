@@ -8,7 +8,7 @@ const { Data } = require('./models')
 async function addData(){
     
     var text = fs.readFileSync("./MENSAJES.txt",{encoding:'utf8', flag:'r'});
-    console.log(text)
+    
     const data = []   
     const exes = /x*/
     var textByLine = text.split("\\r\\n")
@@ -25,9 +25,9 @@ async function addData(){
                   
                 } 
             }
-            // console.log(`**************${data}**************`)
+            console.log(`**************${data}**************`)
         }
-    
+    const alarma = /ALARMA:([A-Z]*)/
     const id = /Device id:(\d{8})/
     const level = /[+-]?([0-9]*[.])?[0-9]+/
     const time = /[0-3][0-9]:[0-5][0-9]/
@@ -39,8 +39,13 @@ async function addData(){
     let newDate = ''
     let counter = 0
     for(let d of data){
+        
+        let picture = d.match(alarma)?d.match(alarma)[1]:null
+        console.log(picture)
         let Id = d.match(id)?d.match(id)[1]:null
+        // console.log(Id)
         let Level = parseFloat(d.match(level))
+        console.log(`$$$$$$$$$$$$$$$$$${Level}$$$$$$$$$$$$$$$$$$$$`)
         if(Id == '50202002'){
             river = 'Rio Naranjo'
             station = 'La Playa'
@@ -105,7 +110,8 @@ async function addData(){
                     timeStamp: dat,
                     river: river,
                     station:station,
-                    departamento
+                    departamento,
+                    picture
             });    
             // console.log(newData)
         
@@ -113,9 +119,9 @@ async function addData(){
                 console.log(error)
             } 
         }
-        console.log(counter,"before")
+        // console.log(counter,"before")
         counter++
-        console.log(counter,"after")
+        // console.log(counter,"after")
     }
         //console.log(Data)
 }

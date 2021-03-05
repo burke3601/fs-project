@@ -79,17 +79,28 @@ function App() {
   const [weather, setWeather] = useState([])
   const [count, setCount] = useState(1)
   const [station, setStation] = useState('')
+  const [status, setStatus] = useState([])
   const [user, setUser] = useState({userName: ""});  
   
-  //adds one hour of data from backend
-  useEffect(()=>{
-    axios.get(`/api/getStationByPeriod/${count}/${station}`)
-    .then(resp=>{
-    //console.log(resp)
-    if (resp.data.length > 0){setData(resp.data)}
 
+
+  useEffect(()=>{
+    axios.get(`/api/getStatus`)
+    .then(resp=>{
+    console.log(resp.data)
+    setStatus(resp.data);
+    console.log(status)
     })
-    
+  },[])
+
+  //gets status for each station
+    useEffect(()=>{
+      axios.get(`/api/getStationByPeriod/${count}/${station}`)
+      .then(resp=>{
+      //console.log(resp)
+      if (resp.data.length > 0){setData(resp.data)}
+  
+      })
   },[count])
   async function addHour ( station){
     setStation(station)
@@ -151,11 +162,15 @@ async function doLogin(name, password) {
   
   const loginDetails= {name, password}
   const response = await axios.post(`/api/user/login`,loginDetails)
-  //console.log('sweet you are logged in now, buddy');
-  
+  if(response.data === 'nouser'){
+    window.alert("Incorrect Username")
  
-  setIsLoggedIn(true);
  
+  }else if(response.data === "nopassword"){
+    window.alert("Incorrect Password or Username")
+  }else{
+    setIsLoggedIn(true);
+  }
 
 }
 
@@ -165,17 +180,24 @@ useEffect(() => {
     // see if we're logged in
     try {      
       const resp = await axios.get('/api/users/login-status');
-      //console.log('you are logged in already');
+      
       setIsLoggedIn(true);
     } catch (e) {
+      
       // an error means that we're not logged in
-      //console.log('error means not logged in');
+      
       setIsLoggedIn(false);
+      
     }
   }
   checkLogin();    
 }, []);
 //fetches initial data for weather and Naranjo river by default
+
+
+  
+
+
 useEffect(()=>{
   fetchWeather(15.950753,-90.546267)
   // setInterval(fetchWeather,1000*60*30)
@@ -187,8 +209,7 @@ useEffect(()=>{
   // },1000*60*15)
 },[])
 const [toggle, setToggle]= useState(false)
-const [alertMessage, setAlertMessage]=useState('')
-const [alertColor, setAlertColor]=useState('')
+
   return (
 
 //     <Router history={hashHistory} >
@@ -223,6 +244,7 @@ const [alertColor, setAlertColor]=useState('')
                   weather = {weather}
                   getStation = {getStation}
                   location = {location}
+                  status = {status}
                   ></Home>
 
                   <Sidebar
@@ -236,16 +258,19 @@ const [alertColor, setAlertColor]=useState('')
                     setToggle = {setToggle}
                   ></Sidebar>
                   <Footer></Footer>
-              </>: <Login 
-
+              </>: 
+              <Login 
+                  
                   doLogin={doLogin}
                   setUsername={setUsername}
                   username={username}
                   setPassword={setPassword}
                   password={password}
+                  
                   // setUser={setUser}
                   
-            /> }
+            />
+            }
            
           </Route>
 
@@ -262,6 +287,7 @@ const [alertColor, setAlertColor]=useState('')
                     setToggle = {setToggle}
             />
               <Dashboard
+              status = {status}
               toggle = {toggle}
               setCount = {setCount}
               addHour = {addHour}
@@ -321,6 +347,7 @@ const [alertColor, setAlertColor]=useState('')
               ></Sidebar>
               
               <Home 
+              status = {status}
               toggle = {toggle}
               setToggle = {setToggle}
               fetchWeather={fetchWeather}

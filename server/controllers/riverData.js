@@ -142,8 +142,23 @@ const stationDataByPeriod = async (req, res) =>{
     
 }
 
+const getStatus = async(req,res)=>{
+    const data = await Data.findAll({
+        limit: 7,
+    attributes: ['station','picture'],
+    distinct: true,
+    order: [ [ 'createdAt', 'DESC' ]],
+    
+    
+    });
+    console.log("giving status")
+    console.log(data)
+    res.json(data)
+}
+
 module.exports = {
     fullRiverData,
     stationData,
-    stationDataByPeriod
+    stationDataByPeriod,
+    getStatus
 }
