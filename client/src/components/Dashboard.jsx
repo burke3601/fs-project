@@ -11,6 +11,7 @@ import {
 import TimeButton from './TimeButton'
 import addIcon from '../images/addIcon.png'
 import subtractIcon from '../images/subtractIcon.png'
+import Status from './Status';
 
 
 
@@ -37,13 +38,17 @@ function Dashboard(props){
         
         <div className='dashboard'>
 
-           
-                <div >
+           <div className = "weatherandstatus">
+               
+           <Status
+                status = {props.status}/>
                   <Weather 
                     data = {props.data}
                     fetchWeather = {props.fetchWeather}
                     weather={props.weather}
                   />
+               
+               
                 </div>
                 <div className="dashboardbuttons">
                
@@ -148,12 +153,15 @@ function Dashboard(props){
     <div className='dashboard' >
   
   
-  <div >
+  <div className = "weatherandstatus">
+  <Status
+    status= {props.status}/>
     <Weather 
       data = {props.data}
       fetchWeather = {props.fetchWeather}
       weather={props.weather}
     />
+   
   </div>
   <div className="dashboardbuttons">
   <div className="hourbuttons">

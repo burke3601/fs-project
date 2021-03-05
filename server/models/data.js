@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     timeStamp: DataTypes.DATE,
     river: DataTypes.STRING,
     station: DataTypes.STRING,
-    departamento: DataTypes.STRING
+    departamento: DataTypes.STRING,
+    picture: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Data',
