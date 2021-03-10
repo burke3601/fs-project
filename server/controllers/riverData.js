@@ -145,7 +145,7 @@ const stationDataByPeriod = async (req, res) =>{
 const getStatus = async(req,res)=>{
     const data = await Data.findAll({
         limit: 7,
-    attributes: ['station','picture'],
+    attributes: ['station','picture','level'],
     distinct: true,
     order: [ [ 'createdAt', 'DESC' ]],
     

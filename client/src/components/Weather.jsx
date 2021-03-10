@@ -48,10 +48,6 @@ function Weather(props) {
                 </div>
              
             </div>
-        
-            <footer className="weatherfooter">
-                   
-            </footer>
         </div>
     );
 }
