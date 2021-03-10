@@ -85,10 +85,12 @@ function App() {
 
 
   useEffect(()=>{
+    var stations = ['Sintana','La Playa','La Virgen','Pueblo Nuevo','La Paz','Rocja Pontila','Entre Rios']
     axios.get(`/api/getStatus`)
     .then(resp=>{
     console.log(resp.data)
-    setStatus(resp.data);
+    let data =stations.map(x =>{return resp.data.find(y=>{return y.station === x})})
+    setStatus(data);
     console.log(status)
     })
   },[])
