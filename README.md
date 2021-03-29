@@ -20,9 +20,6 @@
     - chart.js
     - google-maps-react
     - bcryptjs
-# Features
-
-# Blockers
 
 # Contributors 
 - Matthew Robinson
@@ -30,4 +27,3 @@
 - Brian Summerset
 - Darren Raines
 
-# Screenshots
