@@ -32,7 +32,7 @@ function Sidebar(props){
                         props.getRocja()
                         props.setToggle(false)
                     }}>
-                        <span>Rio Rocja Pontila</span> 
+                        <span>Rio Icbolay</span> 
                     </Link>
                 
                     <Link  to='/graphs' onClick={()=>{
