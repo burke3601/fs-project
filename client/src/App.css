@@ -802,3 +802,6 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover {
   font-family: sans-serif;
   padding: 2.5%;
 }
+.caritas-box{
+  margin-right:1%;
+}
