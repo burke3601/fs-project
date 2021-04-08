@@ -1,6 +1,6 @@
 import React from 'react';
 import galileolcon from '../images/galileo.jpeg'
-import caritaslcon from '../images/caritasIcon.png'
+import caritaslcon from '../images/CARITAS_SN_MARCOS.png'
 import conredlcon from '../images/conredresize1.png'
 import trocairelcon from '../images/trocaireIcon.png'
 import iccIcon from '../images/iccIcon.png'

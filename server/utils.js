@@ -74,12 +74,12 @@ async function addData(){
             }
         else if(Id == '50201003'){
             river = 'Rio Rocja Pontila'
-            station = 'Rocja Pontila'
+            station = 'Entre Rios'
             departamento = 'Alta verapaz'
             }   
         else if(Id == '50201001'){
             river = 'Rio Rocja Pontila'
-            station = 'Entre Rios'
+            station = 'Rocja Pontila'
             departamento = 'Alta verapaz'
             }   
         
