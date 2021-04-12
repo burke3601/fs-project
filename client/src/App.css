@@ -170,6 +170,16 @@
   justify-content: space-around;
   align-items: center;
 }
+.statusmain{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2.7%;
+}
+.status h2{
+  background-color:black;
+  text-align: center;
+ 
+}
 .status{
   font-family: sans-serif;
   color: white;
@@ -178,6 +188,7 @@
   height: auto;
   background-color: rgb(161, 161, 157);
   border: gray solid;
+  margin-bottom: 2%;  
 }
 .status ul{
   padding-left: 5%;
